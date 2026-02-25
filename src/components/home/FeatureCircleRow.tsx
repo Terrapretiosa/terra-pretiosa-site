@@ -7,17 +7,24 @@ import { cn } from "@/lib/cn";
 interface FeatureCircleRowProps {
   feature: FeatureBlock;
   reverse?: boolean;
+  tinted?: boolean;
 }
 
 export function FeatureCircleRow({
   feature,
   reverse = false,
+  tinted = false,
 }: FeatureCircleRowProps) {
   const imageX = reverse ? 36 : -36;
   const textX = reverse ? -24 : 24;
 
   return (
-    <section className="py-12 sm:py-16">
+    <section
+      className={cn(
+        "py-12 sm:py-16",
+        tinted && "bg-gradient-to-br from-blue-50/55 to-teal-50/30",
+      )}
+    >
       <div
         className={cn(
           "tp-container grid items-center gap-8 lg:grid-cols-2",

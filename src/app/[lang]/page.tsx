@@ -21,15 +21,71 @@ export default async function HomePage({ params }: HomePageProps) {
 
   const dictionary = getDictionary(lang);
 
+  const totalCategories = dictionary.services.categories.length;
+  const totalServices = dictionary.services.categories.reduce(
+    (sum, cat) => sum + cat.services.length,
+    0,
+  );
+
+  const statsLabels =
+    lang === "fr"
+      ? {
+          domains: "Domaines d'expertise",
+          services: "Services spécialisés",
+          languages: "Langues de service",
+        }
+      : {
+          domains: "Service Domains",
+          services: "Specialized Services",
+          languages: "Service Languages",
+        };
+
   return (
     <>
       <HeroCarousel dictionary={dictionary} />
+
+      {/* Stats strip */}
+      <section className="relative border-b border-blue-100/70 bg-white py-12">
+        {/* Subtle top teal line */}
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
+        <div className="tp-container">
+          <Reveal y={16}>
+            <div className="grid grid-cols-3 divide-x divide-blue-100">
+              <div className="px-4 text-center sm:px-8">
+                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+                  {totalCategories}
+                </p>
+                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                  {statsLabels.domains}
+                </p>
+              </div>
+              <div className="px-4 text-center sm:px-8">
+                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+                  {totalServices}+
+                </p>
+                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                  {statsLabels.services}
+                </p>
+              </div>
+              <div className="px-4 text-center sm:px-8">
+                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+                  FR·EN
+                </p>
+                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                  {statsLabels.languages}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {dictionary.home.features.map((feature, index) => (
         <FeatureCircleRow
           key={feature.title}
           feature={feature}
           reverse={index % 2 === 1}
+          tinted={index % 2 === 0}
         />
       ))}
 
