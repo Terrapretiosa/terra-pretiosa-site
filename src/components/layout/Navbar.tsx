@@ -278,37 +278,55 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
             <div className="space-y-2">
               <button
                 type="button"
-                className="flex w-full items-center justify-between rounded-sm border border-white/10 px-3 py-2.5 text-left text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+                className="flex w-full items-center justify-between rounded-xl border border-white/10 px-4 py-3 text-left text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
                 onClick={() => setMobileServicesOpen((prev) => !prev)}
               >
                 {dictionary.nav.services}
-                <span
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
                   className={cn(
-                    "inline-block transition",
+                    "h-4 w-4 shrink-0 text-white/60 transition duration-300",
                     mobileServicesOpen ? "rotate-90" : "",
                   )}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {">"}
-                </span>
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
               </button>
 
               {mobileServicesOpen ? (
-                <div className="space-y-2 rounded-sm border border-white/10 bg-white/5 p-3">
+                <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
                   {dictionary.services.categories.map((category) => (
                     <details
                       key={category.slug}
-                      className="rounded-sm border border-white/10 bg-neutral-900/70"
+                      className="group rounded-xl border border-white/10 bg-neutral-900/70"
                     >
-                      <summary className="flex cursor-pointer list-none items-center justify-between px-3 py-2 text-sm font-semibold text-white">
+                      <summary className="flex cursor-pointer list-none items-center justify-between px-3 py-3 text-sm font-semibold text-white">
                         <span className="pr-3 leading-snug">{category.title}</span>
-                        <span className="text-xs text-white/70">{">"}</span>
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          className="h-3.5 w-3.5 shrink-0 text-white/50 transition duration-300 group-open:rotate-90"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="m9 18 6-6-6-6" />
+                        </svg>
                       </summary>
 
                       <div className="space-y-1 border-t border-white/10 px-3 py-2">
                         <Link
                           href={`/${lang}/services/${category.slug}`}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block rounded-sm px-2 py-1.5 text-sm font-semibold text-cyan-200 transition hover:bg-white/10 hover:text-white"
+                          className="block rounded-lg px-2 py-2 text-sm font-semibold text-cyan-200 transition hover:bg-white/10 hover:text-white"
                         >
                           {dictionary.common.learnMore}
                         </Link>
@@ -318,7 +336,7 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
                             key={service.slug}
                             href={`/${lang}/services/${category.slug}/${service.slug}`}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block rounded-sm px-2 py-1.5 text-sm text-white/85 transition hover:bg-white/10 hover:text-white"
+                            className="block rounded-lg px-2 py-2 text-sm text-white/85 transition hover:bg-white/10 hover:text-white"
                           >
                             {service.title}
                           </Link>
@@ -331,28 +349,35 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
 
               <button
                 type="button"
-                className="flex w-full items-center justify-between rounded-sm border border-white/10 px-3 py-2.5 text-left text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+                className="flex w-full items-center justify-between rounded-xl border border-white/10 px-4 py-3 text-left text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
                 onClick={() => setMobileCompanyOpen((prev) => !prev)}
               >
                 {dictionary.nav.company}
-                <span
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
                   className={cn(
-                    "inline-block transition",
+                    "h-4 w-4 shrink-0 text-white/60 transition duration-300",
                     mobileCompanyOpen ? "rotate-90" : "",
                   )}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {">"}
-                </span>
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
               </button>
 
               {mobileCompanyOpen ? (
-                <div className="space-y-2 rounded-sm border border-white/10 bg-white/5 p-3">
+                <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
                   {companyLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block rounded-sm px-2 py-2 text-sm text-white/90 transition hover:bg-white/10 hover:text-white"
+                      className="block rounded-lg px-2 py-3 text-sm text-white/90 transition hover:bg-white/10 hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -363,14 +388,14 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
               <Link
                 href={`/${lang}/team`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-sm border border-white/10 px-3 py-2.5 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+                className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
               >
                 {dictionary.nav.team}
               </Link>
               <Link
                 href={`/${lang}/contact`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-sm border border-white/10 px-3 py-2.5 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+                className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
               >
                 {dictionary.nav.contact}
               </Link>

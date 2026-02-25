@@ -52,17 +52,29 @@ export function Footer({ lang, dictionary }: FooterProps) {
             {mobileGroups.map((group, index) => (
               <details
                 key={`mobile-group-${group.title}-${index}`}
-                className="rounded-sm border border-white/15 bg-white/5"
+                className="group rounded-xl border border-white/15 bg-white/5"
               >
-                <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-white">
-                  {group.title}
+                <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3.5 text-sm font-semibold text-white">
+                  <span>{group.title}</span>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-3.5 w-3.5 shrink-0 text-white/50 transition duration-300 group-open:rotate-90"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
                 </summary>
-                <div className="space-y-2 px-4 pb-4">
+                <div className="space-y-1 border-t border-white/10 px-4 pb-4 pt-2">
                   {group.links.map((link) => (
                     <Link
                       key={`mobile-${group.title}-${link.href}`}
                       href={link.href}
-                      className="block text-sm text-white/80 underline-offset-2 transition hover:text-white hover:underline"
+                      className="block py-1.5 text-sm text-white/80 underline-offset-2 transition hover:text-white hover:underline"
                     >
                       {link.label}
                     </Link>

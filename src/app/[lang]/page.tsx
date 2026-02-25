@@ -51,27 +51,27 @@ export default async function HomePage({ params }: HomePageProps) {
         <div className="tp-container">
           <Reveal y={16}>
             <div className="grid grid-cols-3 divide-x divide-blue-100">
-              <div className="px-4 text-center sm:px-8">
-                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+              <div className="px-2 text-center sm:px-8">
+                <p className="text-3xl font-bold text-blue-900 sm:text-5xl">
                   {totalCategories}
                 </p>
-                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                <p className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-blue-600/70 sm:mt-2 sm:text-xs sm:tracking-[0.16em]">
                   {statsLabels.domains}
                 </p>
               </div>
-              <div className="px-4 text-center sm:px-8">
-                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+              <div className="px-2 text-center sm:px-8">
+                <p className="text-3xl font-bold text-blue-900 sm:text-5xl">
                   {totalServices}+
                 </p>
-                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                <p className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-blue-600/70 sm:mt-2 sm:text-xs sm:tracking-[0.16em]">
                   {statsLabels.services}
                 </p>
               </div>
-              <div className="px-4 text-center sm:px-8">
-                <p className="text-4xl font-bold text-blue-900 sm:text-5xl">
+              <div className="px-2 text-center sm:px-8">
+                <p className="text-3xl font-bold text-blue-900 sm:text-5xl">
                   FR·EN
                 </p>
-                <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-600/70 sm:text-xs">
+                <p className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-blue-600/70 sm:mt-2 sm:text-xs sm:tracking-[0.16em]">
                   {statsLabels.languages}
                 </p>
               </div>

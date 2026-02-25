@@ -31,7 +31,7 @@ export function FeatureCircleRow({
           reverse && "lg:[&>*:first-child]:order-2",
         )}
       >
-        <Reveal x={imageX} className="relative mx-auto h-72 w-72 sm:h-80 sm:w-80">
+        <Reveal x={imageX} className="relative mx-auto h-60 w-60 sm:h-72 sm:w-72 lg:h-80 lg:w-80">
           {/* Ambient orbs */}
           <div className="absolute -left-7 top-6 h-24 w-24 rounded-full bg-blue-500/12 blur-xl [animation:tpFloat_7s_ease-in-out_infinite]" />
           <div className="absolute -right-5 bottom-4 h-20 w-20 rounded-full bg-blue-300/18 blur-lg [animation:tpFloat_6s_ease-in-out_infinite_0.2s]" />
