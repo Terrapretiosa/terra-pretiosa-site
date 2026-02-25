@@ -43,7 +43,7 @@ export function ServiceMasthead({
           </h1>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={`/${lang}/mission`} className="tp-blue-button">
+            <Link href={`/${lang}/contact`} className="tp-blue-button">
               {dictionary.common.partnerCta}
               <svg
                 aria-hidden="true"

@@ -301,7 +301,7 @@ const makeService = (
       title: "Mesure des résultats",
       text: "Nous suivons des indicateurs techniques et économiques pour sécuriser la performance de la mission.",
       ctaLabel: "Lancer une mission",
-      ctaHref: "/fr/mission",
+      ctaHref: "/fr/contact",
       image: "/placeholders/highlight-3.svg",
     },
     {
@@ -369,7 +369,7 @@ export const fr: Dictionary = {
         subtitle:
           "Nous accompagnons la conception et la mise en œuvre de stratégies intégrées pour passer d'un modèle d'exportation brute à une économie de valeur ajoutée locale.",
         ctaLabel: "Lancer une mission",
-        ctaHref: "/fr/mission",
+        ctaHref: "/fr/contact",
         image: "/placeholders/hero-3.svg",
       },
     ],
@@ -936,7 +936,7 @@ export const fr: Dictionary = {
             title: "Corridor d activite",
             links: [
               { label: "Pays d intervention", href: "/fr/company#corridor" },
-              { label: "Lancer une mission", href: "/fr/mission" },
+              { label: "Lancer une mission", href: "/fr/contact" },
             ],
           },
         ],
@@ -1061,7 +1061,7 @@ export const fr: Dictionary = {
             links: [
               { label: "Tous les services", href: "/fr/services" },
               { label: "Nous ecrire", href: "/fr/contact" },
-              { label: "Lancer une mission", href: "/fr/mission" },
+              { label: "Lancer une mission", href: "/fr/contact" },
             ],
           },
         ],
@@ -1071,7 +1071,7 @@ export const fr: Dictionary = {
     quickLinks: [
       { label: "Corridor d activite", href: "/fr/company#corridor" },
       { label: "Page entreprise", href: "/fr/company" },
-      { label: "Formulaire mission", href: "/fr/mission" },
+      { label: "Formulaire mission", href: "/fr/contact" },
     ],
     legal: "(c) Terra Pretiosa. Tous droits reserves.",
     socials: [

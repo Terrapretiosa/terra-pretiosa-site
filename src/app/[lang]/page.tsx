@@ -110,9 +110,6 @@ export default async function HomePage({ params }: HomePageProps) {
               </h2>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link href={`/${lang}/mission`} className="tp-outline-button">
-                {dictionary.home.ctaBand.missionCta}
-              </Link>
               <Link
                 href={`/${lang}/contact`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-blue-900 shadow-[0_4px_14px_rgba(255,255,255,0.20)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-[0_12px_24px_rgba(255,255,255,0.25)]"

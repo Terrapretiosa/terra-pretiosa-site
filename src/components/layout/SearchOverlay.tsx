@@ -31,7 +31,6 @@ export function SearchOverlay({
       { label: dictionary.nav.company, href: `/${lang}/company` },
       { label: dictionary.nav.team, href: `/${lang}/team` },
       { label: dictionary.nav.contact, href: `/${lang}/contact` },
-      { label: dictionary.nav.mission, href: `/${lang}/mission` },
     ];
 
     const serviceItems = dictionary.services.categories.flatMap((category) => [

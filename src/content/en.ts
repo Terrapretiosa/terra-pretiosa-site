@@ -190,7 +190,7 @@ export const en: Dictionary = {
         subtitle:
           "Our teams integrate technical, ESG, and performance requirements for measurable outcomes.",
         ctaLabel: "Launch a mission",
-        ctaHref: "/en/mission",
+        ctaHref: "/en/contact",
         image: "/placeholders/hero-3.svg",
       },
     ],
@@ -495,7 +495,7 @@ export const en: Dictionary = {
             title: "Activity corridor",
             links: [
               { label: "Countries of operation", href: "/en/company#corridor" },
-              { label: "Launch a mission", href: "/en/mission" },
+              { label: "Launch a mission", href: "/en/contact" },
             ],
           },
         ],
@@ -620,7 +620,7 @@ export const en: Dictionary = {
             links: [
               { label: "All services", href: "/en/services" },
               { label: "Contact us", href: "/en/contact" },
-              { label: "Launch a mission", href: "/en/mission" },
+              { label: "Launch a mission", href: "/en/contact" },
             ],
           },
         ],
@@ -630,7 +630,7 @@ export const en: Dictionary = {
     quickLinks: [
       { label: "Activity corridor", href: "/en/company#corridor" },
       { label: "Company page", href: "/en/company" },
-      { label: "Mission request", href: "/en/mission" },
+      { label: "Mission request", href: "/en/contact" },
     ],
     legal: "(c) Terra Pretiosa. All rights reserved.",
     socials: [

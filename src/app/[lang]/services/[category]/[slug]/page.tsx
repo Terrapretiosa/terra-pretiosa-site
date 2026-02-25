@@ -75,9 +75,6 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               {dictionary.services.ctaBand.title}
             </h2>
             <div className="flex flex-wrap gap-3">
-              <Link href={`/${lang}/mission`} className="tp-outline-button tp-card-lift">
-                {dictionary.services.ctaBand.primaryCta}
-              </Link>
               <Link
                 href={`/${lang}/contact`}
                 className="tp-blue-button tp-card-lift bg-white text-blue-900 hover:bg-blue-100"
