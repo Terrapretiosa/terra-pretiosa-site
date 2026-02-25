@@ -41,20 +41,20 @@ body {
 }
 
 .tp-blue-button {
-  @apply inline-flex items-center justify-center bg-gradient-to-r from-blue-800 to-blue-900 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition duration-300 hover:-translate-y-0.5 hover:from-blue-900 hover:to-blue-950 hover:shadow-[0_12px_24px_rgba(15,46,58,0.35)];
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-900 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_4px_14px_rgba(26,77,95,0.30)] transition duration-300 hover:-translate-y-0.5 hover:from-blue-800 hover:to-blue-950 hover:shadow-[0_12px_28px_rgba(15,46,58,0.40)];
 }
 
 .tp-outline-button {
-  @apply inline-flex items-center justify-center border border-white/75 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/12;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/75 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/15;
 }
 
 .tp-card-lift {
-  @apply transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_rgba(15,23,42,0.18)];
+  @apply transition duration-500 hover:-translate-y-2 hover:shadow-[0_22px_40px_rgba(15,23,42,0.20)];
 }
 
 .tp-soft-panel {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(243, 245, 247, 0.88));
-  backdrop-filter: blur(2px);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(238, 252, 252, 0.90));
+  backdrop-filter: blur(4px);
 }
 
 .tp-ambient-grid {
@@ -65,7 +65,44 @@ body {
 }
 
 .tp-logo-glow {
-  filter: drop-shadow(0 0 14px rgba(102, 213, 213, 0.34));
+  filter: drop-shadow(0 0 16px rgba(102, 213, 213, 0.42));
+}
+
+/* Gradient text utility */
+.tp-gradient-text {
+  background: linear-gradient(135deg, #1a4d5f 0%, #2ea9b0 55%, #1a4d5f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Small section chip / eyebrow label */
+.tp-eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700;
+}
+
+/* Accent bar before section headings */
+.tp-accent-bar::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, #44c8cb, #1f6675);
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+/* Card with cyan border glow on hover */
+.tp-card-glow {
+  @apply transition duration-500 hover:-translate-y-2 hover:shadow-[0_22px_40px_rgba(15,23,42,0.20),0_0_0_1px_rgba(68,200,203,0.25)];
+}
+
+/* Gradient top border for section dividers */
+.tp-gradient-border-top {
+  border-top: 1px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(90deg, transparent, #44c8cb 40%, #1f6675 60%, transparent);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 @keyframes tpDrift {
@@ -82,7 +119,7 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(0px);
@@ -95,7 +132,7 @@ body {
     opacity: 0.35;
   }
   100% {
-    transform: scale(1.18);
+    transform: scale(1.22);
     opacity: 0;
   }
 }
@@ -117,6 +154,15 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes tpShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }
 

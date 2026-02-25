@@ -85,8 +85,20 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
               <p className="mt-5 max-w-2xl text-base text-white/85 sm:text-lg">
                 {slide.subtitle}
               </p>
-              <Link href={slide.ctaHref} className="tp-blue-button tp-card-lift mt-8">
+              <Link href={slide.ctaHref} className="tp-blue-button mt-8">
                 {slide.ctaLabel}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
               </Link>
             </div>
           </div>
@@ -95,41 +107,67 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
 
       <div className="tp-container absolute bottom-7 left-1/2 flex w-full -translate-x-1/2 items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-1 w-28 overflow-hidden rounded-full bg-white/25 sm:w-44">
+          <div className="h-0.5 w-24 overflow-hidden rounded-full bg-white/20 sm:w-40">
             <span
               key={`progress-${index}`}
-              className="block h-full origin-left bg-white [animation:tpProgress_6.5s_linear_forwards]"
+              className="block h-full origin-left rounded-full bg-gradient-to-r from-blue-300 to-white [animation:tpProgress_6.5s_linear_forwards]"
             />
           </div>
-          {slides.map((slide, dotIndex) => (
-            <button
-              key={`${slide.title}-${dotIndex}`}
-              type="button"
-              onClick={() => setIndex(dotIndex)}
-              className={cn(
-                "h-2.5 w-8 rounded-full transition",
-                dotIndex === index ? "bg-white" : "bg-white/40 hover:bg-white/70",
-              )}
-              aria-label={`Slide ${dotIndex + 1}`}
-            />
-          ))}
+          <div className="flex items-center gap-2">
+            {slides.map((slide, dotIndex) => (
+              <button
+                key={`${slide.title}-${dotIndex}`}
+                type="button"
+                onClick={() => setIndex(dotIndex)}
+                className={cn(
+                  "rounded-full transition-all duration-300",
+                  dotIndex === index
+                    ? "h-2 w-6 bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                    : "h-2 w-2 bg-white/40 hover:bg-white/70",
+                )}
+                aria-label={`Slide ${dotIndex + 1}`}
+              />
+            ))}
+          </div>
         </div>
         <div className="flex gap-2">
           <button
             type="button"
             onClick={prevSlide}
-            className="h-10 w-10 rounded-full border border-white/60 bg-black/20 text-sm backdrop-blur-sm transition hover:bg-white/10"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20"
             aria-label="Previous slide"
           >
-            {"<"}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
           </button>
           <button
             type="button"
             onClick={nextSlide}
-            className="h-10 w-10 rounded-full border border-white/60 bg-black/20 text-sm backdrop-blur-sm transition hover:bg-white/10"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20"
             aria-label="Next slide"
           >
-            {">"}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
           </button>
         </div>
       </div>
