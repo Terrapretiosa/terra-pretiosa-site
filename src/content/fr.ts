@@ -438,7 +438,7 @@ export const fr: Dictionary = {
     ctaBand: {
       title: "Prêt à lancer une mission structurante ?",
       missionCta: "Lancer une mission",
-      contactCta: "Contact us",
+      contactCta: "Nous contacter",
     },
   },
   company: {
@@ -764,7 +764,7 @@ export const fr: Dictionary = {
       subtitle:
         "Nous mobilisons les bonnes expertises pour accélérer l'impact opérationnel, institutionnel et durable.",
       primaryCta: "PARTENAIRE AVEC TERRA PRETIOSA",
-      secondaryCta: "Contact us",
+      secondaryCta: "Nous contacter",
     },
     relatedTitle: "Services associés",
     faqTitle: "Questions fréquentes",
@@ -817,36 +817,36 @@ export const fr: Dictionary = {
   contact: {
     pageTitle: "Contact",
     intro:
-      "Discutons de vos enjeux techniques, environnementaux et de gouvernance des matieres premieres minerales. Vous pouvez egalement nous contacter via le formulaire ci-dessous.",
-    hqTitle: "Siege social",
+      "Discutons de vos enjeux techniques, environnementaux et de gouvernance des matières premières minérales. Vous pouvez également nous contacter via le formulaire ci-dessous.",
+    hqTitle: "Siège social",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
-    corridorTitle: "Corridor d activite",
+    corridorTitle: "Corridor d'activité",
     corridorCountries: [
       "Burkina Faso",
       "RDC",
-      "Guinee Conakry",
-      "Senegal",
+      "Guinée Conakry",
+      "Sénégal",
       "Niger",
       "Mali",
     ],
-    phoneLabel: "Telephone",
-    phoneValue: "Numero personnel (temporaire, en attendant la ligne entreprise)",
+    phoneLabel: "Téléphone",
+    phoneValue: "Numéro personnel (temporaire, en attendant la ligne entreprise)",
     emailLabel: "Email",
-    emailValue: "Email de la compagnie a creer",
-    formTitle: "Contact us",
-    formSuccess: "Merci, votre message a bien ete envoye.",
+    emailValue: "Email de la compagnie à créer",
+    formTitle: "Nous contacter",
+    formSuccess: "Merci, votre message a bien été envoyé.",
     formFields: {
-      firstName: "Prenom *",
+      firstName: "Prénom *",
       lastName: "Nom *",
       email: "Email *",
-      phoneOptional: "Telephone (optionnel)",
+      phoneOptional: "Téléphone (optionnel)",
       serviceLocation: "Lieu du service *",
-      stateProvince: "Etat/Province",
+      stateProvince: "État/Province",
       serviceIndustry: "Secteur de service",
       enquiryType: "Type de demande *",
       message: "Message *",
-      consentText: "J accepte la",
-      privacyPolicyLabel: "Politique de confidentialite",
+      consentText: "J'accepte la",
+      privacyPolicyLabel: "Politique de confidentialité",
       submit: "SOUMETTRE",
     },
     formOptions: {
@@ -854,8 +854,8 @@ export const fr: Dictionary = {
       serviceLocations: [
         "Burkina Faso",
         "RDC",
-        "Guinee Conakry",
-        "Senegal",
+        "Guinée Conakry",
+        "Sénégal",
         "Niger",
         "Mali",
         "Etats-Unis",
@@ -871,10 +871,10 @@ export const fr: Dictionary = {
       ],
       serviceIndustries: [
         "Essais & Analyses",
-        "Operations minieres",
+        "Opérations minières",
         "Formations",
         "Environnement",
-        "Gouvernance minerale",
+        "Gouvernance minérale",
       ],
       enquiryTypes: [
         "Demande de service",
@@ -886,7 +886,7 @@ export const fr: Dictionary = {
     formErrors: {
       required: "Ce champ est requis.",
       email: "Adresse email invalide.",
-      consent: "Vous devez accepter la politique de confidentialite.",
+      consent: "Vous devez accepter la politique de confidentialité.",
     },
   },
   mission: {
@@ -924,18 +924,18 @@ export const fr: Dictionary = {
           {
             title: "Informations entreprise",
             links: [
-              { label: "A propos", href: "/fr/company#about" },
-              { label: "Megatendance", href: "/fr/company#megatrends" },
-              { label: "Developpement durable", href: "/fr/company#sustainable" },
+              { label: "À propos", href: "/fr/company#about" },
+              { label: "Mégatendance", href: "/fr/company#megatrends" },
+              { label: "Développement durable", href: "/fr/company#sustainable" },
               { label: "Nos ambitions", href: "/fr/company#ambitions" },
-              { label: "Equipe", href: "/fr/team" },
+              { label: "Équipe", href: "/fr/team" },
               { label: "Contact", href: "/fr/contact" },
             ],
           },
           {
-            title: "Corridor d activite",
+            title: "Corridor d'activité",
             links: [
-              { label: "Pays d intervention", href: "/fr/company#corridor" },
+              { label: "Pays d'intervention", href: "/fr/company#corridor" },
               { label: "Lancer une mission", href: "/fr/contact" },
             ],
           },
@@ -951,21 +951,21 @@ export const fr: Dictionary = {
                 href: "/fr/services/essais-analyses/fragmentation-des-roches",
               },
               {
-                label: "Preparation des echantillons",
+                label: "Préparation des échantillons",
                 href: "/fr/services/essais-analyses/preparation-des-echantillons",
               },
               {
-                label: "Analyses mineralogiques et chimiques",
+                label: "Analyses minéralogiques et chimiques",
                 href: "/fr/services/essais-analyses/analyses-mineralogiques-et-chimiques",
               },
               {
-                label: "Tests mineralurgiques et metallurgiques",
+                label: "Tests minéralurgiques et métallurgiques",
                 href: "/fr/services/essais-analyses/tests-mineralurgiques-et-metallurgiques",
               },
             ],
           },
           {
-            title: "Operations minieres",
+            title: "Opérations minières",
             links: [
               {
                 label: "Exhaure des mines",
@@ -989,11 +989,11 @@ export const fr: Dictionary = {
             title: "Formations",
             links: [
               {
-                label: "Amelioration continue",
+                label: "Amélioration continue",
                 href: "/fr/services/formations/amelioration-continue",
               },
               {
-                label: "Traitement mineralurgique et des eaux",
+                label: "Traitement minéralurgique et des eaux",
                 href: "/fr/services/formations/traitement-mineralurgique-et-des-eaux",
               },
             ],
@@ -1006,15 +1006,15 @@ export const fr: Dictionary = {
                 href: "/fr/services/environnement/politique-environnementale",
               },
               {
-                label: "Evaluation et rehabilitation des sites",
+                label: "Évaluation et réhabilitation des sites",
                 href: "/fr/services/environnement/evaluation-et-rehabilitation-des-sites",
               },
               {
-                label: "Controle qualite / Assurance qualite",
+                label: "Contrôle qualité / Assurance qualité",
                 href: "/fr/services/environnement/controle-qualite-assurance-qualite",
               },
               {
-                label: "Surveillance qualite des eaux",
+                label: "Surveillance qualité des eaux",
                 href: "/fr/services/environnement/surveillance-qualite-des-eaux",
               },
               {
@@ -1028,39 +1028,39 @@ export const fr: Dictionary = {
       {
         groups: [
           {
-            title: "Gouvernance minerale",
+            title: "Gouvernance minérale",
             links: [
               {
-                label: "Strategie recettes minieres",
+                label: "Stratégie recettes minières",
                 href: "/fr/services/gouvernance-minerale/strategie-recettes-minieres",
               },
               {
-                label: "Structuration organes et unites revenus",
+                label: "Structuration organes et unités revenus",
                 href: "/fr/services/gouvernance-minerale/structuration-organes-et-unites-revenus",
               },
               {
-                label: "Integration locale et politique industrielle",
+                label: "Intégration locale et politique industrielle",
                 href: "/fr/services/gouvernance-minerale/integration-locale-et-politique-industrielle",
               },
               {
-                label: "Controle production et reporting",
+                label: "Contrôle production et reporting",
                 href: "/fr/services/gouvernance-minerale/controle-production-et-reporting",
               },
               {
-                label: "Audit flux paiements et tracabilite export",
+                label: "Audit flux paiements et traçabilité export",
                 href: "/fr/services/gouvernance-minerale/audit-flux-paiements-et-tracabilite-export",
               },
               {
-                label: "Renforcement capacites administration",
+                label: "Renforcement capacités administration",
                 href: "/fr/services/gouvernance-minerale/renforcement-capacites-administration",
               },
             ],
           },
           {
-            title: "Acces rapide",
+            title: "Accès rapide",
             links: [
               { label: "Tous les services", href: "/fr/services" },
-              { label: "Nous ecrire", href: "/fr/contact" },
+              { label: "Nous écrire", href: "/fr/contact" },
               { label: "Lancer une mission", href: "/fr/contact" },
             ],
           },
@@ -1069,11 +1069,11 @@ export const fr: Dictionary = {
     ],
     quickLinksTitle: "Autres liens",
     quickLinks: [
-      { label: "Corridor d activite", href: "/fr/company#corridor" },
+      { label: "Corridor d'activité", href: "/fr/company#corridor" },
       { label: "Page entreprise", href: "/fr/company" },
       { label: "Formulaire mission", href: "/fr/contact" },
     ],
-    legal: "(c) Terra Pretiosa. Tous droits reserves.",
+    legal: "(c) Terra Pretiosa. Tous droits réservés.",
     socials: [
       { label: "LinkedIn", href: "https://www.linkedin.com/" },
       { label: "X", href: "https://x.com/" },
@@ -1087,6 +1087,5 @@ export const fr: Dictionary = {
     noResult: "Aucun résultat pour cette recherche.",
   },
 };
-
 
 

@@ -447,441 +447,441 @@ export const serviceFaqsBySlugFr: Record<string, FaqItem[]> = {
   "fragmentation-des-roches": [
     {
       "question": "A qui s'adresse ce service?",
-      "answer": "Pour les equipes d'exploration et d'exploitation qui ont besoin d'une reduction controlee de la taille avant les tests d'echantillonnage, d'analyse en laboratoire ou de traitement. Cela est egalement pertinent pour les projets preparant des composites representatifs a partir de materiaux heterogenes."
+      "answer": "Pour les équipes d'exploration et d'exploitation qui ont besoin d'une réduction contrôlée de la taille avant les tests d'échantillonnage, d'analyse en laboratoire ou de traitement. Cela est également pertinent pour les projets préparant des composites représentatifs à partir de matériaux hétérogènes."
     },
     {
       "question": "De quoi avez-vous besoin du client pour commencer?",
-      "answer": "Type d'echantillon et masse approximative, objectif en aval (analyse chimique, mineralogie ou essais metallurgiques), taille superieure cible si connue et eventuelles contraintes telles que l'humidite, le risque de contamination ou les exigences de securite."
+      "answer": "Type d'échantillon et masse approximative, objectif en aval (analyse chimique, minéralogie ou essais métallurgiques), taille supérieure cible si connue et eventuelles contraintes telles que l'humidite, le risque de contamination ou les exigences de sécurité."
     },
     {
-      "question": "Comment definir la taille des particules cibles?",
-      "answer": "Nous definissons la taille cible en fonction de l'etape suivante : representativite pour le fractionnement, adequation a des methodes analytiques specifiques ou besoins de liberation pour les travaux de test. Nous pouvons valider la cible a l'aide de controles simples tels que le tamisage ou la distribution granulometrique le cas echeant."
+      "question": "Comment définir la taille des particules cibles?",
+      "answer": "Nous définissons la taille cible en fonction de l'étape suivante : représentativité pour le fractionnement, adéquation a des méthodes analytiques spécifiques ou besoins de libération pour les travaux de test. Nous pouvons valider la cible a l'aide de contrôles simples tels que le tamisage ou la distribution granulométrique le cas echeant."
     },
     {
-      "question": "Comment eviter les exces de broyage et les biais analytiques?",
-      "answer": "Nous utilisons une reduction par etapes (de grossiere a fine), controlons le temps de sejour, limitons les fines excessives et appliquons des etapes de nettoyage entre les lots. Si necessaire, nous separons les materiaux de haute qualite et documentons les etapes cles afin que les resultats soient reproductibles."
+      "question": "Comment éviter les exces de broyage et les biais analytiques?",
+      "answer": "Nous utilisons une réduction par étapes (de grossiere a fine), controlons le temps de sejour, limitons les fines excessives et appliquons des étapes de nettoyage entre les lots. Si nécessaire, nous séparons les matériaux de haute qualité et documentons les étapes clés afin que les résultats soient reproductibles."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Vous recevez des resultats etiquetes dans la plage de tailles requise, ainsi qu'un bref enregistrement du processus decrivant les etapes de reduction, la taille cible et toutes les verifications effectuees. Sur demande, nous fournissons egalement un simple instantane de distribution de taille."
+      "answer": "Vous recevez des résultats étiquetés dans la plage de tailles requise, ainsi qu'un bref enregistrement du processus décrivant les étapes de réduction, la taille cible et toutes les vérifications effectuées. Sur demande, nous fournissons également un simple instantané de distribution de taille."
     }
   ],
   "preparation-des-echantillons": [
     {
-      "question": "Comment vous assurez-vous que l'echantillon prepare reste representatif?",
-      "answer": "Nous suivons un flux de travail controle : inventaire et identification des echantillons, sechage si necessaire, concassage/broyage par etapes, melange minutieux et fractionnement/fractionnement discipline. L'objectif est de minimiser les biais et de maintenir la coherence des sous-echantillons avec le materiel original."
+      "question": "Comment vous assurez-vous que l'échantillon préparé reste représentatif?",
+      "answer": "Nous suivons un flux de travail contrôle : inventaire et identification des échantillons, sechage si nécessaire, concassage/broyage par étapes, melange minutieux et fractionnement/fractionnement discipline. L'objectif est de minimiser les biais et de maintenir la cohérence des sous-échantillons avec le matériel original."
     },
     {
-      "question": "De quoi avez-vous besoin de ma part pour commencer la preparation des echantillons?",
-      "answer": "Nous avons besoin des identifiants des echantillons, du type de materiau, de la masse approximative, des analyses/tests prevus et de la granulometrie ou du format requis (fraction grossiere, pulpe, doublons). Les eventuelles contraintes particulieres (elements traces, sensibilite a la contamination) doivent etre communiquees en amont."
+      "question": "De quoi avez-vous besoin de ma part pour commencer la préparation des échantillons?",
+      "answer": "Nous avons besoin des identifiants des échantillons, du type de matériau, de la masse approximative, des analyses/tests prevus et de la granulometrie ou du format requis (fraction grossiere, pulpe, doublons). Les eventuelles contraintes particulieres (éléments traces, sensibilité a la contamination) doivent être communiquees en amont."
     },
     {
-      "question": "Comment eviter la contamination croisee entre les echantillons?",
-      "answer": "Nous appliquons des protocoles de nettoyage entre les lots, utilisons des conteneurs appropries, separons les materiaux sensibles ou de haute qualite si necessaire et documentons les etapes de traitement. Des precautions supplementaires peuvent etre ajoutees pour les travaux au niveau des traces."
+      "question": "Comment éviter la contamination croisée entre les échantillons?",
+      "answer": "Nous appliquons des protocoles de nettoyage entre les lots, utilisons des conteneurs appropriés, séparons les matériaux sensibles ou de haute qualité si nécessaire et documentons les étapes de traitement. Des précautions supplémentaires peuvent être ajoutées pour les travaux au niveau des traces."
     },
     {
       "question": "Quels formats de sortie pouvez-vous fournir?",
-      "answer": "Les resultats courants incluent les fractions grossieres, la pulpe fine, les doublons fractionnes et les echantillons composites. Le format exact depend de la methode en aval et des decisions que vous devez prendre."
+      "answer": "Les résultats courants incluent les fractions grossieres, la pulpe fine, les doublons fractionnes et les échantillons composites. Le format exact dépend de la méthode en aval et des décisions que vous devez prendre."
     },
     {
-      "question": "Fournissez-vous un support en matiere de documentation et de chaine de tracabilite?",
-      "answer": "Oui. Nous pouvons fournir un journal d'inventaire, des conventions d'etiquetage et d'emballage, ainsi que des transferts documentes afin que le chemin de l'echantillon depuis la reception jusqu'a la sortie finale reste tracable."
+      "question": "Fournissez-vous un support en matière de documentation et de chaîne de traçabilité?",
+      "answer": "Oui. Nous pouvons fournir un journal d'inventaire, des conventions d'étiquetage et d'emballage, ainsi que des transferts documentes afin que le chemin de l'échantillon depuis la reception jusqu'a la sortie finale reste tracable."
     }
   ],
   "analyses-mineralogiques-et-chimiques": [
     {
       "question": "Comment choisir la bonne approche analytique?",
-      "answer": "Nous partons de la decision que vous devez prendre (comprehension des ressources, conception des processus, risque environnemental ou conformite), puis selectionnons les methodes qui y repondent le mieux. Nous combinons souvent mineralogie et chimie pour eviter des interpretations incompletes."
+      "answer": "Nous partons de la décision que vous devez prendre (compréhension des ressources, conception des processus, risque environnemental ou conformité), puis sélectionnons les méthodes qui y repondent le mieux. Nous combinons souvent minéralogie et chimie pour éviter des interpretations incompletes."
     },
     {
-      "question": "Quand ai-je besoin de mineralogie plutot que de chimie?",
-      "answer": "La chimie vous indique la quantite de chaque element presente ; la mineralogie vous indique les mineraux qui hebergent ces elements et comment ils sont associes. La mineralogie est particulierement importante pour le comportement de transformation, la liberation et la reactivite environnementale."
+      "question": "Quand ai-je besoin de minéralogie plutôt que de chimie?",
+      "answer": "La chimie vous indique la quantité de chaque élément présente ; la minéralogie vous indique les minéraux qui hébergent ces éléments et comment ils sont associés. La minéralogie est particulièrement importante pour le comportement de transformation, la libération et la réactivité environnementale."
     },
     {
-      "question": "De quelles informations avez-vous besoin sur l'echantillon?",
-      "answer": "Nous avons besoin des identifiants des echantillons, du type de materiau, du contexte du projet et de ce que vous souhaitez apprendre (par exemple, phases hotes, gangue, elements deleteres). Nous pouvons demander des preparations specifiques telles que de la pate, des fractions calibrees ou des supports prepares selon la methode."
+      "question": "De quelles informations avez-vous besoin sur l'échantillon?",
+      "answer": "Nous avons besoin des identifiants des échantillons, du type de matériau, du contexte du projet et de ce que vous souhaitez apprendre (par exemple, phases hôtes, gangue, éléments délétères). Nous pouvons demander des préparations spécifiques telles que de la pâte, des fractions calibrées ou des supports prepares selon la méthode."
     },
     {
-      "question": "Comment gerez-vous la confiance et la qualite des donnees?",
-      "answer": "Nous appliquons des pratiques d'AQ/CQ appropriees aux normes de portee, aux doublons, aux blancs et aux controles de coherence, puis interpretons les resultats avec des notes claires sur les limites. Toutes les hypotheses sont explicitees dans le rapport."
+      "question": "Comment gerez-vous la confiance et la qualité des données?",
+      "answer": "Nous appliquons des pratiques d'AQ/CQ appropriees aux normes de portée, aux doublons, aux blancs et aux contrôles de cohérence, puis interpretons les résultats avec des notes claires sur les limites. Toutes les hypothèses sont explicitees dans le rapport."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Vous recevez des resultats structures (tableaux et resumes), des conclusions cles telles que des associations de mineraux ou des facteurs de comportement, et les prochaines etapes recommandees (tests supplementaires, options de processus ou priorites de surveillance) en fonction des resultats."
+      "answer": "Vous recevez des résultats structurés (tableaux et résumés), des conclusions clés telles que des associations de minéraux ou des facteurs de comportement, et les prochaines étapes recommandées (tests supplémentaires, options de processus ou priorités de surveillance) en fonction des résultats."
     }
   ],
   "tests-mineralurgiques-et-metallurgiques": [
     {
-      "question": "Quels types de tests pouvez-vous executer?",
-      "answer": "En fonction du minerai et des objectifs, nous pouvons definir et executer des tests tels que l'analyse granulometrique, le criblage par separation par gravite, la determination de la portee par flottation et la determination de la portee par lixiviation. Le programme est adapte aux objectifs en matiere de produits et au stade du projet."
+      "question": "Quels types de tests pouvez-vous exécuter?",
+      "answer": "En fonction du minerai et des objectifs, nous pouvons définir et exécuter des tests tels que l'analyse granulométrique, le criblage par séparation par gravite, la determination de la portée par flottation et la determination de la portée par lixiviation. Le programme est adapté aux objectifs en matière de produits et au stade du projet."
     },
     {
-      "question": "De quelle masse d'echantillon et de quelle preparation avez-vous besoin?",
-      "answer": "Les exigences dependent de la variabilite, des objectifs du test et du nombre de conditions a evaluer. Nous definissons la masse cible, la taille superieure et les etapes de preparation apres une breve discussion de portee et un examen des echantillons disponibles."
+      "question": "De quelle masse d'échantillon et de quelle préparation avez-vous besoin?",
+      "answer": "Les exigences dépendent de la variabilite, des objectifs du test et du nombre de conditions a evaluer. Nous définissons la masse cible, la taille supérieure et les étapes de préparation après une breve discussion de portée et un examen des échantillons disponibles."
     },
     {
       "question": "Quels indicateurs de performance rapportez-vous?",
-      "answer": "Les KPI typiques incluent la recuperation, la qualite du produit, la traction massique et la sensibilite a la taille de la mouture ou aux conditions de fonctionnement. Le cas echeant, nous notons egalement des observations pratiques qui affectent les decisions de mise a l'echelle."
+      "answer": "Les KPI typiques incluent la récupération, la qualité du produit, la traction massique et la sensibilité a la taille de la mouture ou aux conditions de fonctionnement. Le cas echeant, nous notons également des observations pratiques qui affectent les décisions de mise a l'échelle."
     },
     {
-      "question": "Comment ces resultats soutiennent-ils les decisions de projet?",
-      "answer": "Ils aident a selectionner les itineraires de traitement viables, a identifier les principaux risques (limites de liberation, sensibilite des reactifs, comportement de lixiviation) et a prioriser les tests de l'etape suivante. Cela reduit l'incertitude avant de s'engager dans des programmes ou une conception de processus plus vastes."
+      "question": "Comment ces résultats soutiennent-ils les décisions de projet?",
+      "answer": "Ils aident a sélectionner les itinéraires de traitement viables, a identifier les principaux risques (limites de libération, sensibilité des réactifs, comportement de lixiviation) et a prioriser les tests de l'étape suivante. Cela réduit l'incertitude avant de s'engager dans des programmes ou une conception de processus plus vastes."
     },
     {
       "question": "Quelle est une chronologie typique?",
-      "answer": "Les delais dependent de l'etat de preparation des echantillons et de la portee des tests. Apres le cadrage, nous fournissons un plan pratique avec le sequencage (preparation -> tests de base -> boucles d'optimisation) et le delai d'execution attendu pour chaque etape."
+      "answer": "Les délais dépendent de l'état de préparation des échantillons et de la portée des tests. Après le cadrage, nous fournissons un plan pratique avec le séquençage (préparation -> tests de base -> boucles d'optimisation) et le délai d'exécution attendu pour chaque étape."
     }
   ],
   "exhaure-des-mines": [
     {
-      "question": "Quand ai-je besoin de services d'assechement de mine?",
-      "answer": "Lorsque l'afflux ou l'accumulation d'eau menace la securite, la continuite de la production, la stabilite des pentes, les acces souterrains ou la fiabilite des equipements. La deshydratation est egalement essentielle pendant les saisons des pluies, lors de la mise en service ou lors de l'expansion vers de nouveaux bancs ou captages."
+      "question": "Quand ai-je besoin de services d'assèchement de mine ?",
+      "answer": "Lorsque l'afflux ou l'accumulation d'eau menace la sécurité, la continuité de la production, la stabilité des pentes, les accès souterrains ou la fiabilité des équipements. La déshydratation est également essentielle pendant les saisons des pluies, lors de la mise en service ou lors de l'expansion vers de nouveaux bancs ou captages."
     },
     {
       "question": "De quelles informations avez-vous besoin pour dimensionner la solution?",
-      "answer": "Nous avons besoin du contexte du site (a ciel ouvert ou souterrain), des debits entrants estimes, de la hauteur de pompage (profondeur/elevation), des contraintes de qualite de l'eau, de la disponibilite de l'electricite, des points de rejet et de toute contrainte operationnelle (acces, mobilite, cycle de service). Si les donnees de debit ne sont pas disponibles, nous pouvons commencer par des mesures sur le terrain et des hypotheses prudentes."
+      "answer": "Nous avons besoin du contexte du site (à ciel ouvert ou souterrain), des débits entrants estimés, de la hauteur de pompage (profondeur/élévation), des contraintes de qualité de l'eau, de la disponibilité de l'électricité, des points de rejet et de toute contrainte opérationnelle (accès, mobilité, cycle de service). Si les données de débit ne sont pas disponibles, nous pouvons commencer par des mesures sur le terrain et des hypothèses prudentes."
     },
     {
       "question": "Comment choisissez-vous les pompes et leur configuration (submersibles, diesel, pipelines)?",
-      "answer": "Nous selectionnons les equipements en fonction du debit requis, de la hauteur, de la teneur en solides, des besoins de fiabilite et de la logistique du site. La configuration est concue pour la robustesse et la maintenabilite, avec une redondance la ou la disponibilite est critique."
+      "answer": "Nous sélectionnons les équipements en fonction du débit requis, de la hauteur, de la teneur en solides, des besoins de fiabilité et de la logistique du site. La configuration est conçue pour la robustesse et la maintenabilité, avec une redondance la ou la disponibilité est critique."
     },
     {
-      "question": "Comment gerer les risques HSE lors des operations d'assechement?",
-      "answer": "Nous appliquons une evaluation des risques specifiques au site, des procedures de travail sures, un verrouillage/etiquetage le cas echeant et des controles pour les risques electriques, de levage, d'espace confine et de glissade. Nous nous coordonnons egalement avec le systeme HSE de la mine et les exigences en matiere de reporting."
+      "question": "Comment gérer les risques HSE lors des opérations d'assèchement?",
+      "answer": "Nous appliquons une évaluation des risques spécifiques au site, des procédures de travail sûres, un verrouillage/étiquetage le cas echeant et des contrôles pour les risques électriques, de levage, d'espace confine et de glissade. Nous nous coordonnons également avec le système HSE de la mine et les exigences en matière de reporting."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Typiquement : un plan de deshydratation (hypotheses, dimensionnement des equipements, disposition), des procedures d'exploitation, des recommandations de maintenance et des indicateurs de suivi optionnels (debit, temps d'arret, niveaux d'eau). Pour les deploiements urgents, nous proposons un plan d'action rapide suivi d'ameliorations de stabilisation."
+      "answer": "Typiquement : un plan de déshydratation (hypothèses, dimensionnement des équipements, disposition), des procédures d'exploitation, des recommandations de maintenance et des indicateurs de suivi optionnels (débit, temps d'arrêt, niveaux d'eau). Pour les déploiements urgents, nous proposons un plan d'action rapide suivi d'améliorations de stabilisation."
     }
   ],
   "forage-minier": [
     {
       "question": "Quels types de forages proposez-vous?",
-      "answer": "Nous soutenons le forage pour les besoins de production et operationnels, y compris le forage de drainage dans les environnements a ciel ouvert et souterrains. La portee exacte est definie en fonction de la profondeur, du diametre, de la precision et des conditions du site."
+      "answer": "Nous soutenons le forage pour les besoins de production et opérationnels, y compris le forage de drainage dans les environnements à ciel ouvert et souterrains. La portée exacte est définie en fonction de la profondeur, du diametre, de la précision et des conditions du site."
     },
     {
       "question": "Qu'attendez-vous du client avant la mobilisation?",
-      "answer": "Nous avons besoin des objectifs de forage, des conditions d'acces au site, des profondeurs/diametres cibles, des conditions du sol (si connues), des exigences HSE et de toute contrainte d'autorisation ou d'induction du site. Un calendrier et des priorites de base aident a optimiser le deploiement."
+      "answer": "Nous avons besoin des objectifs de forage, des conditions d'accès au site, des profondeurs/diametres cibles, des conditions du sol (si connues), des exigences HSE et de toute contrainte d'autorisation ou d'induction du site. Un calendrier et des priorités de base aident a optimiser le deploiement."
     },
     {
-      "question": "Comment garantissez-vous les performances techniques et la precision?",
-      "answer": "Nous definissons les parametres de fonctionnement et les controles de qualite alignes sur l'objectif, maintenons l'etat de preparation des equipements et utilisons une supervision et une documentation disciplinees. Si necessaire, nous capturons les journaux de forage et verifions les parametres cles pendant l'execution."
+      "question": "Comment garantissez-vous les performances techniques et la précision?",
+      "answer": "Nous définissons les paramètres de fonctionnement et les contrôles de qualité alignés sur l'objectif, maintenons l'état de préparation des équipements et utilisons une supervision et une documentation disciplinees. Si nécessaire, nous capturons les journaux de forage et verifions les paramètres clés pendant l'exécution."
     },
     {
-      "question": "Comment gerez-vous la securite et la conformite operationnelle sur site?",
-      "answer": "Nous suivons les regles du site minier, effectuons des verifications avant le demarrage, appliquons une analyse des risques professionnels et garantissons la competence de l'equipe pour l'environnement (a ciel ouvert ou souterrain). La coordination avec les superviseurs du client et l'equipe HSE est integree au flux de travail."
+      "question": "Comment gerez-vous la sécurité et la conformité opérationnelle sur site?",
+      "answer": "Nous suivons les règles du site minier, effectuons des vérifications avant le démarrage, appliquons une analyse des risques professionnels et garantissons la competence de l'équipe pour l'environnement (à ciel ouvert ou souterrain). La coordination avec les superviseurs du client et l'équipe HSE est intégrée au flux de travail."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Les livrables peuvent inclure des journaux de forage, des resumes d'execution, des mesures de performance de base (par exemple, compteurs termines, causes de temps d'arret) et des recommandations pour l'optimisation ou les travaux de suivi. Le pack exact livrable depend du type de programme de forage."
+      "answer": "Les livrables peuvent inclure des journaux de forage, des résumés d'exécution, des mesures de performance de base (par exemple, compteurs termines, causes de temps d'arrêt) et des recommandations pour l'optimisation ou les travaux de suivi. Le pack exact livrable dépend du type de programme de forage."
     }
   ],
   "transport-minier": [
     {
-      "question": "Que peut-on transporter pour les operations minieres?",
-      "answer": "Nous pouvons prendre en charge le transport de minerais, d'equipements et de consommables industriels entre les sites, les installations de traitement et les poles logistiques. La portee exacte depend du type de charge, des contraintes d'itineraire et des exigences de securite."
+      "question": "Que peut-on transporter pour les opérations minières?",
+      "answer": "Nous pouvons prendre en charge le transport de minerais, d'équipements et de consommables industriels entre les sites, les installations de traitement et les pôles logistiques. La portée exacte dépend du type de charge, des contraintes d'itinéraire et des exigences de sécurité."
     },
     {
       "question": "Quel type de flotte et de configuration logistique utilisez-vous?",
-      "answer": "Nous deployons des configurations de flotte adaptees a la cargaison (par exemple, camions a benne basculante, plateaux, camions-citernes le cas echeant) et coordonnons l'expedition avec la planification et la planification des itineraires. L'objectif est de respecter les delais tout en preservant la securite et la tracabilite."
+      "answer": "Nous déployons des configurations de flotte adaptées a la cargaison (par exemple, camions a benne basculante, plateaux, camions-citernes le cas echeant) et coordonnons l'expédition avec la planification et la planification des itinéraires. L'objectif est de respecter les délais tout en préservant la sécurité et la traçabilité."
     },
     {
-      "question": "Comment assurer la securite et la tracabilite?",
-      "answer": "Nous mettons en oeuvre un suivi et une documentation de base pour les chargements, les transferts et les confirmations de livraison. Pour les marchandises a plus haut risque, nous pouvons ajouter des controles plus stricts tels que des points de remise controles et des points de controle de declaration."
+      "question": "Comment assurer la sécurité et la traçabilité?",
+      "answer": "Nous mettons en oeuvre un suivi et une documentation de base pour les chargements, les transferts et les confirmations de livraison. Pour les marchandises a plus haut risque, nous pouvons ajouter des contrôles plus stricts tels que des points de remise contrôles et des points de contrôle de declaration."
     },
     {
-      "question": "Quelles regions couvrez-vous?",
-      "answer": "Nous donnons la priorite aux operations alignees sur le corridor d'activite de Terra Pretiosa en Afrique de l'Ouest et selectionnons les itineraires voisins en fonction de la faisabilite, de la securite et des delais du client. La couverture est confirmee lors du cadrage pour correspondre aux realites logistiques du projet."
+      "question": "Quelles régions couvrez-vous?",
+      "answer": "Nous donnons la priorité aux opérations alignees sur le corridor d'activité de Terra Pretiosa en Afrique de l'Ouest et sélectionnons les itinéraires voisins en fonction de la faisabilite, de la sécurité et des délais du client. La couverture est confirmée lors du cadrage pour correspondre aux réalités logistiques du projet."
     },
     {
       "question": "Comment gerez-vous les incidents, les retards ou les changements de plan?",
-      "answer": "Nous communiquons rapidement, documentons la situation et proposons des alternatives pratiques (reacheminement, reprogrammation ou ajustements de charge) tout en maintenant la securite avant tout. Pour les operations critiques, nous recommandons une planification d'urgence et une capacite tampon."
+      "answer": "Nous communiquons rapidement, documentons la situation et proposons des alternatives pratiques (reacheminement, reprogrammation ou ajustements de charge) tout en maintenant la sécurité avant tout. Pour les opérations critiques, nous recommandons une planification d'urgence et une capacité tampon."
     }
   ],
   "amelioration-continue": [
     {
       "question": "A qui s'adresse cette formation?",
-      "answer": "Pour les professionnels des mines et de la metallurgie impliques dans les operations, la maintenance, la transformation, la qualite et la supervision. Il convient egalement aux managers qui ont besoin de leviers pratiques pour ameliorer la productivite, reduire la variabilite et renforcer la culture de la performance."
+      "answer": "Pour les professionnels des mines et de la métallurgie impliqués dans les opérations, la maintenance, la transformation, la qualité et la supervision. Il convient également aux managers qui ont besoin de leviers pratiques pour améliorer la productivite, réduire la variabilite et renforcer la culture de la performance."
     },
     {
-      "question": "Quel est le format et la duree typique?",
-      "answer": "Nous proposons une livraison sur place ou a distance selon les contraintes. La duree varie d'ateliers courts (1 a 2 jours) a des programmes de plusieurs semaines avec coaching et missions basees sur des projets, en fonction de vos objectifs."
+      "question": "Quel est le format et la durée typique?",
+      "answer": "Nous proposons une livraison sur place ou à distance selon les contraintes. La durée varie d'ateliers courts (1 a 2 jours) a des programmes de plusieurs semaines avec coaching et missions basees sur des projets, en fonction de vos objectifs."
     },
     {
-      "question": "Quels sujets sont abordes?",
-      "answer": "Les modules typiques incluent les principes fondamentaux du Lean Mining, la cartographie des processus, la reduction des dechets, le controle statistique des processus (SPC), la maintenance preventive et la fiabilite des equipements, les facteurs de couts et les performances operationnelles, ainsi que la maniere de maintenir une amelioration continue grace aux routines et a la gouvernance."
+      "question": "Quels sujets sont abordés?",
+      "answer": "Les modules typiques incluent les principes fondamentaux du Lean Mining, la cartographie des processus, la réduction des déchets, le contrôle statistique des processus (SPC), la maintenance préventive et la fiabilité des équipements, les facteurs de coûts et les performances opérationnelles, ainsi que la manière de maintenir une amélioration continue grâce aux routines et a la gouvernance."
     },
     {
-      "question": "La formation peut-elle etre adaptee a notre site et a nos KPI?",
-      "answer": "Oui. Nous adaptons exemples, exercices et etudes de cas a vos flux, contraintes et KPI (debit, recuperation, temps d'arret, energie, qualite). Si vous partagez des donnees de reference, nous pouvons aligner la formation sur de reelles opportunites d'amelioration."
+      "question": "La formation peut-elle être adaptée a notre site et a nos KPI?",
+      "answer": "Oui. Nous adaptons exemples, exercices et études de cas a vos flux, contraintes et KPI (débit, récupération, temps d'arrêt, energie, qualité). Si vous partagez des données de reference, nous pouvons aligner la formation sur de réelles opportunités d'amélioration."
     },
     {
-      "question": "Quels livrables les participants recoivent-ils?",
-      "answer": "Les participants recoivent du materiel de formation, des outils/modeles pratiques et un plan d'action clair. Pour les programmes plus longs, nous proposons egalement une liste restreinte de projets d'amelioration avec des objectifs mesurables et un plan de suivi."
+      "question": "Quels livrables les participants reçoivent-ils?",
+      "answer": "Les participants reçoivent du matériel de formation, des outils/modèles pratiques et un plan d'action clair. Pour les programmes plus longs, nous proposons également une liste restreinte de projets d'amélioration avec des objectifs mesurables et un plan de suivi."
     }
   ],
   "traitement-mineralurgique-et-des-eaux": [
     {
       "question": "Qui doit suivre cette formation?",
-      "answer": "Il est concu pour les operateurs d'usine, les techniciens, les metallurgistes et les superviseurs qui souhaitent ameliorer les performances du traitement des mineraux et la gestion de l'eau industrielle. Il accompagne egalement les equipes travaillant sur la conformite environnementale et la reutilisation de l'eau."
+      "answer": "Il est conçu pour les opérateurs d'usine, les techniciens, les métallurgistes et les superviseurs qui souhaitent améliorer les performances du traitement des minéraux et la gestion de l'eau industrielle. Il accompagne également les équipes travaillant sur la conformité environnementale et la réutilisation de l'eau."
     },
     {
-      "question": "Y a-t-il des prerequis?",
-      "answer": "Aucune condition prealable stricte n'est requise, mais une connaissance de base du fonctionnement de l'usine est utile. Nous pouvons proposer un parcours de base pour le personnel les plus recents et un parcours plus avance pour les equipes experimentees."
+      "question": "Y a-t-il des prérequis?",
+      "answer": "Aucune condition préalable stricte n'est requise, mais une connaissance de base du fonctionnement de l'usine est utile. Nous pouvons proposer un parcours de base pour le personnel les plus récents et un parcours plus avancé pour les équipes experimentees."
     },
     {
       "question": "Quels sujets sont inclus?",
-      "answer": "Les modules peuvent couvrir le concassage, le broyage, la classification, la flottation, la separation par gravite, les bases de la lixiviation, les bilans de masse et le controle des performances, ainsi que les principes de traitement et de recyclage de l'eau, y compris les contraintes en matiere d'effluents et la surveillance pratique."
+      "answer": "Les modules peuvent couvrir le concassage, le broyage, la classification, la flottation, la séparation par gravite, les bases de la lixiviation, les bilans de masse et le contrôle des performances, ainsi que les principes de traitement et de recyclage de l'eau, y compris les contraintes en matière d'effluents et la surveillance pratique."
     },
     {
-      "question": "La formation est-elle pratique et concrete?",
-      "answer": "Oui. Nous utilisons des etudes de cas reels, des exercices de calcul (bilans massiques, KPI) et des resolutions de problemes basees sur des scenarios. Lorsque cela est possible, nous alignons les exercices sur votre circuit et vos contraintes operationnelles."
+      "question": "La formation est-elle pratique et concrète?",
+      "answer": "Oui. Nous utilisons des études de cas reels, des exercices de calcul (bilans massiques, KPI) et des resolutions de problèmes basees sur des scenarios. Lorsque cela est possible, nous alignons les exercices sur votre circuit et vos contraintes opérationnelles."
     },
     {
-      "question": "A quels resultats mesurables devons-nous nous attendre?",
-      "answer": "Les equipes beneficient generalement d'un meilleur controle des variables operationnelles cles, d'une comprehension plus claire des pertes de performances et d'une prise de decision plus solide concernant les options de reutilisation et de traitement de l'eau. Nous pouvons definir des mesures de reussite specifiques au site lors de la definition du perimetre."
+      "question": "A quels résultats mesurables devons-nous nous attendre?",
+      "answer": "Les équipes beneficient généralement d'un meilleur contrôle des variables opérationnelles clés, d'une compréhension plus claire des pertes de performances et d'une prise de décision plus solide concernant les options de réutilisation et de traitement de l'eau. Nous pouvons définir des mesures de reussite spécifiques au site lors de la definition du périmètre."
     }
   ],
   "politique-environnementale": [
     {
-      "question": "Pourquoi avons-nous besoin d'une politique et d'une strategie environnementales avant les travaux de rehabilitation?",
-      "answer": "Une politique claire definit les normes, les roles et les mecanismes d'application afin que la rehabilitation et la conformite soient coherentes et defendables. Cela permet egalement d'aligner les parties prenantes, de securiser les mecanismes de financement et de reduire l'incertitude reglementaire et operationnelle."
+      "question": "Pourquoi avons-nous besoin d'une politique et d'une stratégie environnementales avant les travaux de réhabilitation?",
+      "answer": "Une politique claire définit les normes, les rôles et les mécanismes d'application afin que la réhabilitation et la conformité soient cohérentes et défendables. Cela permet également d'aligner les parties prenantes, de sécuriser les mécanismes de financement et de réduire l'incertitude réglementaire et opérationnelle."
     },
     {
-      "question": "Que comprend generalement la portee de votre elaboration de politiques?",
-      "answer": "Il comprend generalement un diagnostic de secteur ou de site, une revue du cadre juridique et institutionnel, une consultation des parties prenantes, la definition de normes et de procedures, l'alignement ESG avec les attentes internationales et une feuille de route de mise en oeuvre pratique."
+      "question": "Que comprend généralement la portée de votre élaboration de politiques?",
+      "answer": "Il comprend généralement un diagnostic de secteur ou de site, une revue du cadre juridique et institutionnel, une consultation des parties prenantes, la definition de normes et de procédures, l'alignement ESG avec les attentes internationales et une feuille de route de mise en œuvre pratique."
     },
     {
       "question": "Comment gerez-vous la consultation des parties prenantes?",
-      "answer": "Nous definissons la carte des parties prenantes pertinentes (gouvernement, operateurs, communautes, financiers, regulateurs), organisons des entretiens ou des ateliers structures et traduisons les resultats en exigences et compromis clairs. Le processus est documente pour soutenir la transparence."
+      "answer": "Nous définissons la carte des parties prenantes pertinentes (gouvernement, opérateurs, communautes, financiers, régulateurs), organisons des entretiens ou des ateliers structurés et traduisons les résultats en exigences et compromis clairs. Le processus est documente pour soutenir la transparence."
     },
     {
-      "question": "Comment abordez-vous les mecanismes d'application et de conformite?",
-      "answer": "Nous proposons des mecanismes realistes de suivi, de reporting et de controle qui correspondent aux capacites institutionnelles. Cela peut inclure des routines d'audit, des seuils d'action, des modeles de reporting et des structures de gouvernance recommandees pour la surveillance."
+      "question": "Comment abordez-vous les mécanismes d'application et de conformité?",
+      "answer": "Nous proposons des mécanismes réalistes de suivi, de reporting et de contrôle qui correspondent aux capacités institutionnelles. Cela peut inclure des routines d'audit, des seuils d'action, des modèles de reporting et des structures de gouvernance recommandées pour la surveillance."
     },
     {
       "question": "Quels livrables recevrons-nous?",
-      "answer": "Les livrables comprennent generalement un document de politique, des normes/directives, un plan de mise en oeuvre avec des etapes, des roles institutionnels recommandes et des mecanismes financiers facultatifs tels que des garanties environnementales, le cas echeant."
+      "answer": "Les livrables comprennent généralement un document de politique, des normes/directives, un plan de mise en œuvre avec des étapes, des rôles institutionnels recommandés et des mécanismes financiers facultatifs tels que des garanties environnementales, le cas echeant."
     }
   ],
   "evaluation-et-rehabilitation-des-sites": [
     {
-      "question": "Qu'evaluez-vous lors d'une evaluation de site?",
-      "answer": "Nous evaluons les risques environnementaux, geotechniques et operationnels lies a l'heritage minier, y compris les sols, l'eau, les residus/residus, les voies de drainage et l'etat des infrastructures. L'objectif est de cartographier les responsabilites et de prioriser les interventions."
+      "question": "Qu'évaluez-vous lors d'une évaluation de site?",
+      "answer": "Nous évaluons les risques environnementaux, géotechniques et opérationnels liés a l'héritage minier, y compris les sols, l'eau, les résidus/résidus, les voies de drainage et l'état des infrastructures. L'objectif est de cartographier les responsabilités et de prioriser les interventions."
     },
     {
-      "question": "Comment estimez-vous les couts de rehabilitationoe",
-      "answer": "Nous basons nos estimations sur les responsabilites identifiees, les actions correctives requises, les contraintes d'acces/logistique, les volumes de materiaux et les besoins de surveillance. Les hypotheses et les plages d'incertitude sont documentees afin que les decisions restent transparentes."
+      "question": "Comment estimez-vous les coûts de réhabilitation ?",
+      "answer": "Nous basons nos estimations sur les responsabilités identifiées, les actions correctives requises, les contraintes d'accès/logistique, les volumes de matériaux et les besoins de surveillance. Les hypothèses et les plages d'incertitude sont documentees afin que les décisions restent transparentes."
     },
     {
-      "question": "Que comprend un plan de rehabilitation?",
-      "answer": "Un plan typique comprend l'approche technique (stabilisation, confinement, traitement, revegetalisation), le sequencage, les controles HSE, les ressources requises, les couts et le calendrier, ainsi que les indicateurs de suivi pour verifier l'efficacite dans le temps."
+      "question": "Que comprend un plan de réhabilitation?",
+      "answer": "Un plan typique comprend l'approche technique (stabilisation, confinement, traitement, revégétalisation), le séquençage, les contrôles HSE, les ressources requises, les coûts et le calendrier, ainsi que les indicateurs de suivi pour vérifier l'efficacité dans le temps."
     },
     {
-      "question": "Vous coordonnez-vous avec les autorites et les exigences de conformite?",
-      "answer": "Oui. Nous alignons l'approche de rehabilitation sur les reglementations applicables et les attentes des parties prenantes, et nous pouvons prendre en charge des packages de reporting qui facilitent l'examen, les approbations et la surveillance de suivi."
+      "question": "Vous coordonnez-vous avec les autorités et les exigences de conformité?",
+      "answer": "Oui. Nous alignons l'approche de réhabilitation sur les réglementations applicables et les attentes des parties prenantes, et nous pouvons prendre en charge des packages de reporting qui facilitent l'examen, les approbations et la surveillance de suivi."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Vous recevez un rapport d'evaluation, une cartographie des risques et des responsabilites, un plan d'action priorise et un concept de rehabilitation avec cout/echeancier. Si necessaire, nous incluons des recommandations de suivi et une documentation adaptee aux decideurs."
+      "answer": "Vous recevez un rapport d'évaluation, une cartographie des risques et des responsabilités, un plan d'action priorisé et un concept de réhabilitation avec coût/échéancier. Si nécessaire, nous incluons des recommandations de suivi et une documentation adaptée aux décideurs."
     }
   ],
   "controle-qualite-assurance-qualite": [
     {
       "question": "Que signifie QA/QC dans votre contexte?",
-      "answer": "L'AQ/CQ fait reference a des procedures structurees qui garantissent que les resultats sont fiables, tracables et defendables. Il comprend des controles preventifs (AQ) et des controles de verification (CQ) appliques a l'echantillonnage, a la manipulation, a l'analyse et aux rapports."
+      "answer": "L'AQ/CQ fait reference a des procédures structurees qui garantissent que les résultats sont fiables, tracables et défendables. Il comprend des contrôles preventifs (AQ) et des contrôles de vérification (CQ) appliques a l'échantillonnage, a la manipulation, a l'analyse et aux rapports."
     },
     {
-      "question": "Quels controles utilisez-vous generalement?",
-      "answer": "Les controles courants comprennent les controles d'etalonnage des instruments, les materiaux de reference certifies, les blancs, les duplicata et les procedures documentees pour la manipulation des echantillons et la validation des donnees. L'ensemble de controles exact est adapte au niveau de risque du projet."
+      "question": "Quels contrôles utilisez-vous généralement?",
+      "answer": "Les contrôles courants comprennent les contrôles d'etalonnage des instruments, les matériaux de reference certifies, les blancs, les duplicata et les procédures documentees pour la manipulation des échantillons et la validation des données. L'ensemble de contrôles exact est adapté au niveau de risque du projet."
     },
     {
-      "question": "Soutenez-vous la chaine de tracabilite et la tracabilite?",
-      "answer": "Oui. Nous pouvons mettre en oeuvre une documentation de chaine de tracabilite et des transferts controles, y compris des conventions d'etiquetage, des journaux et des controles d'integrite, pour preserver la tracabilite depuis la collecte jusqu'au reporting."
+      "question": "Soutenez-vous la chaîne de traçabilité et la traçabilité?",
+      "answer": "Oui. Nous pouvons mettre en oeuvre une documentation de chaîne de traçabilité et des transferts contrôles, y compris des conventions d'étiquetage, des journaux et des contrôles d'intégrité, pour préserver la traçabilité depuis la collecte jusqu'au reporting."
     },
     {
-      "question": "Effectuez-vous des audits ou une validation des resultats?",
-      "answer": "Nous pouvons effectuer des controles internes et des examens de coherence, et nous pouvons prendre en charge des rapports prets a etre audites en documentant les methodes, les controles et le traitement des non-conformites. Toutes les limitations sont clairement indiquees."
+      "question": "Effectuez-vous des audits ou une validation des résultats?",
+      "answer": "Nous pouvons effectuer des contrôles internes et des examens de cohérence, et nous pouvons prendre en charge des rapports prets a être audites en documentant les méthodes, les contrôles et le traitement des non-conformités. Toutes les limitations sont clairement indiquées."
     },
     {
-      "question": "Comment gerer les non-conformites ou les resultats douteux?",
-      "answer": "Nous signalons les anomalies, examinons les causes possibles (echantillonnage, preparation, derive des instruments, contamination) et recommandons des actions correctives telles qu'une nouvelle analyse, des controles supplementaires ou des procedures revisees. Le chemin de resolution est documente."
+      "question": "Comment gérer les non-conformités ou les résultats douteux?",
+      "answer": "Nous signalons les anomalies, examinons les causes possibles (échantillonnage, préparation, dérive des instruments, contamination) et recommandons des actions correctives telles qu'une nouvelle analyse, des contrôles supplémentaires ou des procédures revisees. Le chemin de resolution est documente."
     }
   ],
   "surveillance-qualite-des-eaux": [
     {
       "question": "Quels types d'eau surveillez-vous?",
-      "answer": "Nous pouvons surveiller les eaux potables, de surface, souterraines, les eaux de procedes industriels et les eaux usees en fonction du contexte du site. Le champ d'application est defini en fonction de l'utilisation prevue, des risques et des exigences reglementaires."
+      "answer": "Nous pouvons surveiller les eaux potables, de surface, souterraines, les eaux de procédés industriels et les eaux usees en fonction du contexte du site. Le champ d'application est defini en fonction de l'utilisation prévue, des risques et des exigences réglementaires."
     },
     {
-      "question": "Comment definir le plan d'echantillonnage?",
-      "answer": "Nous definissons les lieux d'echantillonnage, la frequence et les parametres en fonction des cheminements de risque, des besoins operationnels et des attentes en matiere de conformite. Si les donnees de reference sont limitees, nous commencons par une campagne de reference pratique et affinons a partir des resultats."
+      "question": "Comment définir le plan d'échantillonnage?",
+      "answer": "Nous définissons les lieux d'échantillonnage, la fréquence et les paramètres en fonction des cheminements de risque, des besoins opérationnels et des attentes en matière de conformité. Si les données de reference sont limitees, nous commencons par une campagne de reference pratique et affinons à partir des résultats."
     },
     {
-      "question": "Pouvez-vous operer dans des zones reculees et de nouveaux forages?",
-      "answer": "Oui, nous pouvons planifier la logistique pour l'echantillonnage a distance et coordonner la manipulation afin de preserver l'integrite des echantillons. Nous accordons la priorite a une planification pratique, aux contraintes de securite et a une documentation claire des conditions sur le terrain."
+      "question": "Pouvez-vous opérer dans des zones reculées et de nouveaux forages?",
+      "answer": "Oui, nous pouvons planifier la logistique pour l'échantillonnage à distance et coordonner la manipulation afin de préserver l'intégrité des échantillons. Nous accordons la priorité a une planification pratique, aux contraintes de sécurité et a une documentation claire des conditions sur le terrain."
     },
     {
-      "question": "Comment les resultats sont-ils rapportes et interpretes?",
-      "answer": "Les resultats sont presentes sous forme de tableaux structures avec des indicateurs cles et de courtes notes d'interpretation. Lorsque des seuils s'appliquent, nous soulignons les depassements et recommandons des actions de suivi ou un echantillonnage de confirmation."
+      "question": "Comment les résultats sont-ils rapportés et interprétés?",
+      "answer": "Les résultats sont presentes sous forme de tableaux structurés avec des indicateurs clés et de courtes notes d'interpretation. Lorsque des seuils s'appliquent, nous soulignons les dépassements et recommandons des actions de suivi ou un échantillonnage de confirmation."
     },
     {
-      "question": "A quelle frequence la surveillance doit-elle etre effectuee?",
-      "answer": "La frequence depend du niveau de risque, de la saisonnalite, des changements operationnels et des besoins reglementaires. Nous recommandons generalement une phase de base suivie d'un programme de routine qui peut etre augmente pendant les periodes a haut risque."
+      "question": "A quelle fréquence la surveillance doit-elle être effectuée?",
+      "answer": "La fréquence dépend du niveau de risque, de la saisonnalite, des changements opérationnels et des besoins réglementaires. Nous recommandons généralement une phase de base suivie d'un programme de routine qui peut être augmente pendant les périodes a haut risque."
     }
   ],
   "effluents-miniers-et-drainage-minier-acide": [
     {
-      "question": "Quels parametres evaluez-vous generalement?",
-      "answer": "Nous nous concentrons sur les indicateurs pertinents aux effluents miniers tels que le pH, la conductivite, les sulfates, les metaux dissous et d'autres contaminants specifiques au site. La liste finale est basee sur le contexte minier et les seuils de conformite."
+      "question": "Quels paramètres évaluez-vous généralement?",
+      "answer": "Nous nous concentrons sur les indicateurs pertinents aux effluents miniers tels que le pH, la conductivite, les sulfates, les métaux dissous et d'autres contaminants spécifiques au site. La liste finale est basee sur le contexte minier et les seuils de conformité."
     },
     {
-      "question": "Comment diagnostiquer les sources de pollution (DMA, residus, bassins)?",
-      "answer": "Nous cartographions les voies de drainage, identifions les zones de production probables, examinons les circuits d'eau operationnels et correlons la chimie de l'eau avec les caracteristiques du site. L'objectif est de cibler les interventions la ou elles seront les plus efficaces."
+      "question": "Comment diagnostiquer les sources de pollution (DMA, résidus, bassins)?",
+      "answer": "Nous cartographions les voies de drainage, identifions les zones de production probables, examinons les circuits d'eau opérationnels et correlons la chimie de l'eau avec les caractéristiques du site. L'objectif est de cibler les interventions la ou elles seront les plus efficaces."
     },
     {
       "question": "Quelles options de traitement pouvez-vous proposer?",
-      "answer": "Les options peuvent inclure la neutralisation, la precipitation chimique, la filtration et d'autres approches modulaires en fonction de la chimie et des volumes de l'eau. Nous privilegions les solutions exploitables dans le contexte local et maintenables dans le temps."
+      "answer": "Les options peuvent inclure la neutralisation, la précipitation chimique, la filtration et d'autres approches modulaires en fonction de la chimie et des volumes de l'eau. Nous privilegions les solutions exploitables dans le contexte local et maintenables dans le temps."
     },
     {
       "question": "Pouvez-vous contribuer a optimiser le recyclage des eaux industrielles?",
-      "answer": "Oui. Nous pouvons proposer des ameliorations pratiques des circuits, des strategies de retention ou de decantation et des etapes de traitement qui ameliorent la reutilisation tout en controlant les risques de tartre, de corrosion et de contamination."
+      "answer": "Oui. Nous pouvons proposer des améliorations pratiques des circuits, des stratégies de rétention ou de decantation et des étapes de traitement qui ameliorent la réutilisation tout en controlant les risques de tartre, de corrosion et de contamination."
     },
     {
       "question": "Quels livrables vais-je recevoir?",
-      "answer": "Vous recevez un resume de l'evaluation (sources, risques, contraintes), les options de traitement et de prise en charge recommandees et un plan de surveillance. Si necessaire, nous incluons des etapes de mise en oeuvre et des controles operationnels pour maintenir les performances."
+      "answer": "Vous recevez un resume de l'évaluation (sources, risques, contraintes), les options de traitement et de prise en charge recommandées et un plan de surveillance. Si nécessaire, nous incluons des étapes de mise en œuvre et des contrôles opérationnels pour maintenir les performances."
     }
   ],
   "strategie-recettes-minieres": [
     {
-      "question": "Quel est l'objectif d'une strategie d'amelioration des revenus miniers?",
-      "answer": "Accroitre la capacite de l'Etat a tirer une valeur juste et previsible de l'exploitation miniere en ameliorant les regles, les processus, la surveillance et la capacite de negociation. L'accent est mis sur la reduction des fuites, le renforcement des rapports et l'alignement des incitations sur le developpement a long terme."
+      "question": "Quel est l'objectif d'une stratégie d'amélioration des revenus miniers?",
+      "answer": "Accroître la capacité de l'État a tirer une valeur juste et prévisible de l'exploitation minière en améliorant les règles, les processus, la surveillance et la capacité de négociation. L'accent est mis sur la réduction des fuites, le renforcement des rapports et l'alignement des incitations sur le développement a long terme."
     },
     {
       "question": "De quelles informations avez-vous besoin pour commencer?",
-      "answer": "Nous avons generalement besoin du cadre fiscal et reglementaire actuel, des donnees de production et d'exportation, des structures de contrats/permis, des roles institutionnels et des processus de reporting existants. Si les donnees sont fragmentees, nous commencons par un inventaire structure des donnees et une analyse des lacunes."
+      "answer": "Nous avons généralement besoin du cadre fiscal et réglementaire actuel, des données de production et d'exportation, des structures de contrats/permis, des rôles institutionnels et des processus de reporting existants. Si les données sont fragmentees, nous commencons par un inventaire structure des données et une analyse des lacunes."
     },
     {
       "question": "Comment abordez-vous le travail en pratique?",
-      "answer": "Nous combinons la comprehension technique des chaines de valeur minerales avec l'analyse politique et macroeconomique. Le travail comprend generalement un diagnostic, une analyse comparative, des entretiens avec les parties prenantes et une feuille de route hierarchisee avec des gains rapides et des reformes structurelles."
+      "answer": "Nous combinons la compréhension technique des chaînes de valeur minérales avec l'analyse politique et macroéconomique. Le travail comprend généralement un diagnostic, une analyse comparative, des entretiens avec les parties prenantes et une feuille de route hiérarchisée avec des gains rapides et des réformes structurelles."
     },
     {
       "question": "Quels livrables recevrons-nous?",
-      "answer": "Les produits livrables courants comprennent un rapport de diagnostic, une feuille de route de reforme hierarchisee, des KPI et des modeles de rapport recommandes, ainsi que des propositions de renforcement institutionnel. Sur demande, nous incluons des conseils de mise en oeuvre et des actions de renforcement des capacites."
+      "answer": "Les produits livrables courants comprennent un rapport de diagnostic, une feuille de route de réforme hiérarchisée, des KPI et des modèles de rapport recommandés, ainsi que des propositions de renforcement institutionnel. Sur demande, nous incluons des conseils de mise en œuvre et des actions de renforcement des capacités."
     },
     {
       "question": "Comment mesurer l'impact?",
-      "answer": "Nous definissons des indicateurs mesurables tels qu'une couverture amelioree des rapports, une reduction des ecarts de rapprochement, des cycles d'audit plus rapides, une conformite accrue et une meilleure previsibilite des flux de revenus. Les KPI exacts sont convenus lors du cadrage."
+      "answer": "Nous définissons des indicateurs mesurables tels qu'une couverture améliorée des rapports, une réduction des écarts de rapprochement, des cycles d'audit plus rapides, une conformité accrue et une meilleure previsibilite des flux de revenus. Les KPI exacts sont convenus lors du cadrage."
     }
   ],
   "structuration-organes-et-unites-revenus": [
     {
       "question": "Que signifie la structuration institutionnelle dans ce contexte?",
-      "answer": "Cela signifie concevoir ou ameliorer les roles, les flux de travail et les mecanismes de coordination entre les agences responsables de la surveillance, des revenus et de la conformite du secteur minier. L'objectif est de reduire les chevauchements, de combler les ecarts et d'ameliorer la capacite d'execution."
+      "answer": "Cela signifie concevoir ou améliorer les rôles, les flux de travail et les mécanismes de coordination entre les agences responsables de la surveillance, des revenus et de la conformité du secteur minier. L'objectif est de réduire les chevauchements, de combler les écarts et d'améliorer la capacité d'exécution."
     },
     {
-      "question": "Qu'est-ce qui est generalement inclus dans le champ d'application?",
-      "answer": "Nous evaluons le paysage institutionnel actuel, proposons des modeles operationnels cibles, definissons les responsabilites et recommandons des profils de personnel et des flux de travail. Nous alignons egalement les procedures sur les besoins en matiere de reporting et de preparation aux audits."
+      "question": "Qu'est-ce qui est généralement inclus dans le champ d'application?",
+      "answer": "Nous évaluons le paysage institutionnel actuel, proposons des modèles opérationnels cibles, définissons les responsabilités et recommandons des profils de personnel et des flux de travail. Nous alignons également les procédures sur les besoins en matière de reporting et de préparation aux audits."
     },
     {
-      "question": "Aidez-vous a creer des unites specialisees dans les revenus miniers?",
-      "answer": "Oui. Nous pouvons proposer le mandat, la structure, la gouvernance et les procedures de fonctionnement des unites specialisees, y compris les competences requises et les interfaces avec d'autres ministeres et regulateurs."
+      "question": "Aidez-vous a creer des unités spécialisées dans les revenus miniers?",
+      "answer": "Oui. Nous pouvons proposer le mandat, la structure, la gouvernance et les procédures de fonctionnement des unités spécialisées, y compris les compétences requises et les interfaces avec d'autres ministères et régulateurs."
     },
     {
-      "question": "Produisez-vous des manuels et des procedures?",
-      "answer": "Oui. Nous pouvons rediger des manuels de procedures pratiques, des modeles et des listes de controle pour standardiser les operations, ameliorer la tracabilite et soutenir la continuite meme lorsque les equipes changent."
+      "question": "Produisez-vous des manuels et des procédures?",
+      "answer": "Oui. Nous pouvons rediger des manuels de procédures pratiques, des modèles et des listes de contrôle pour standardiser les opérations, améliorer la traçabilité et soutenir la continuité même lorsque les équipes changent."
     },
     {
-      "question": "Comment soutenez-vous le renforcement des capacites?",
-      "answer": "Nous proposons des formations ciblees pour les managers et le personnel technique, un coaching pour la mise en oeuvre et des outils qui aident les equipes a appliquer les nouvelles procedures dans leur travail quotidien. L'objectif est d'integrer des capacites, et pas seulement de fournir des documents."
+      "question": "Comment soutenez-vous le renforcement des capacités?",
+      "answer": "Nous proposons des formations ciblees pour les managers et le personnel technique, un coaching pour la mise en œuvre et des outils qui aident les équipes a appliquer les nouvelles procédures dans leur travail quotidien. L'objectif est d'integrer des capacités, et pas seulement de fournir des documents."
     }
   ],
   "integration-locale-et-politique-industrielle": [
     {
       "question": "Quel est l'objectif du travail sur le contenu local et la politique industrielle?",
-      "answer": "Passer d'une dependance brute aux exportations vers une valeur ajoutee, des chaines d'approvisionnement locales competitives et la creation d'emplois, tout en restant realiste quant aux couts, aux infrastructures et a l'acces au marche. L'objectif est une voie pratique vers l'industrialisation."
+      "answer": "Passer d'une dépendance brute aux exportations vers une valeur ajoutée, des chaînes d'approvisionnement locales compétitives et la création d'emplois, tout en restant réaliste quant aux coûts, aux infrastructures et a l'accès au marché. L'objectif est une voie pratique vers l'industrialisation."
     },
     {
-      "question": "Quelle analyse effectuez-vous generalement?",
-      "answer": "Nous evaluons la competitivite des options de transformation locales, les besoins d'investissement et d'exploitation, les contraintes de la chaine d'approvisionnement et les impacts potentiels sur l'emploi et les revenus. Nous examinons egalement les structures d'incitation et la faisabilite de leur mise en oeuvre."
+      "question": "Quelle analyse effectuez-vous généralement?",
+      "answer": "Nous évaluons la compétitivité des options de transformation locales, les besoins d'investissement et d'exploitation, les contraintes de la chaîne d'approvisionnement et les impacts potentiels sur l'emploi et les revenus. Nous examinons également les structures d'incitation et la faisabilite de leur mise en œuvre."
     },
     {
       "question": "Quels livrables recevrons-nous?",
-      "answer": "Les livrables peuvent inclure des etudes de competitivite, des options politiques avec des compromis, des propositions de conception d'incitations et une feuille de route de mise en oeuvre. Le cas echeant, nous incluons des recommandations pour les zones industrielles liees aux corridors miniers."
+      "answer": "Les livrables peuvent inclure des études de compétitivité, des options politiques avec des compromis, des propositions de conception d'incitations et une feuille de route de mise en œuvre. Le cas echeant, nous incluons des recommandations pour les zones industrielles liées aux corridors miniers."
     },
     {
       "question": "Avec qui travaillez-vous pendant la mission?",
-      "answer": "Nous coordonnons generalement avec les ministeres, les regulateurs, les entites publiques, les financiers et les partenaires industriels. Nous alignons les priorites via des ateliers structures et les traduisons en recommandations politiques operationnelles."
+      "answer": "Nous coordonnons généralement avec les ministères, les régulateurs, les entites publiques, les financiers et les partenaires industriels. Nous alignons les priorités via des ateliers structurés et les traduisons en recommandations politiques opérationnelles."
     },
     {
-      "question": "Comment definissez-vous le succes de ce travail?",
-      "answer": "Le succes est un plan realiste qui peut etre execute : des chaines de valeur prioritaires clairement definies, des exigences credibles en matiere d'investissement et d'infrastructure, des mesures de contenu local executoires et des KPI mesurables pour les emplois, les capacites et la valeur ajoutee."
+      "question": "Comment definissez-vous le succès de ce travail?",
+      "answer": "Le succès est un plan réaliste qui peut être exécuté : des chaînes de valeur prioritaires clairement définies, des exigences crédibles en matière d'investissement et d'infrastructure, des mesures de contenu local exécutoires et des KPI mesurables pour les emplois, les capacités et la valeur ajoutée."
     }
   ],
   "controle-production-et-reporting": [
     {
-      "question": "Pourquoi les controles de production et les systemes de reporting sont-ils essentiels?",
-      "answer": "Parce que les volumes de production et d'exportation determinent les redevances, les impots et la planification macroeconomique. Des controles faibles creent des fuites, des conflits et une planification peu fiable. Des systemes solides ameliorent la transparence et la confiance."
+      "question": "Pourquoi les contrôles de production et les systèmes de reporting sont-ils essentiels?",
+      "answer": "Parce que les volumes de production et d'exportation determinent les redevances, les impôts et la planification macroéconomique. Des contrôles faibles creent des fuites, des conflits et une planification peu fiable. Des systèmes solides ameliorent la transparence et la confiance."
     },
     {
-      "question": "Qu'implementez-vous ou ameliorez-vous generalement?",
-      "answer": "Nous pouvons vous aider a concevoir des flux de travail de reporting, a definir les champs de donnees requis, a proposer des points de verification et a recommander des outils de consolidation et d'auditabilite. L'approche est adaptee aux capacites locales et aux infrastructures disponibles."
+      "question": "Qu'implémentez-vous ou améliorez-vous généralement?",
+      "answer": "Nous pouvons vous aider à concevoir des flux de travail de reporting, à définir les champs de données requis, à proposer des points de vérification et à recommander des outils de consolidation et d'auditabilité. L'approche est adaptée aux capacités locales et aux infrastructures disponibles."
     },
     {
-      "question": "Comment verifiez-vous la production et les exportations declarees?",
-      "answer": "Nous proposons des controles tels que le rapprochement entre sources (site, transport, port, douane), des audits cibles et des etapes de tracabilite. L'objectif est d'avoir une chaine de donnees defendable plutot que de s'appuyer sur un seul point de reporting."
+      "question": "Comment vérifiez-vous la production et les exportations déclarées?",
+      "answer": "Nous proposons des contrôles tels que le rapprochement entre sources (site, transport, port, douane), des audits cibles et des étapes de traçabilité. L'objectif est d'avoir une chaîne de données defendable plutôt que de s'appuyer sur un seul point de reporting."
     },
     {
       "question": "Quels livrables recevrons-nous?",
-      "answer": "Generalement : un cadre de reporting cible, des modeles et des procedures, des controles de verification recommandes et une feuille de route de mise en oeuvre. Nous pouvons egalement definir des KPI et des routines de gouvernance pour perenniser le systeme."
+      "answer": "Généralement : un cadre de reporting cible, des modèles et des procédures, des contrôles de vérification recommandés et une feuille de route de mise en œuvre. Nous pouvons également définir des KPI et des routines de gouvernance pour pérenniser le système."
     },
     {
-      "question": "Combien de temps prend habituellement la mise en oeuvre?",
-      "answer": "Cela depend de la portee et de la maturite des donnees. Nous commencons generalement par un diagnostic rapide et des ameliorations rapides, puis nous construisons vers un systeme plus complet par etapes avec des jalons clairs."
+      "question": "Combien de temps prend habituellement la mise en œuvre?",
+      "answer": "Cela dépend de la portée et de la maturité des données. Nous commencons généralement par un diagnostic rapide et des améliorations rapides, puis nous construisons vers un système plus complet par étapes avec des jalons clairs."
     }
   ],
   "audit-flux-paiements-et-tracabilite-export": [
     {
       "question": "Sur quoi se concentre un audit des flux de paiement?",
-      "answer": "Il se concentre sur la maniere dont l'argent devrait circuler par rapport a la maniere dont il circule reellement, en identifiant les ecarts, les problemes de calendrier, les problemes de rapprochement et les fuites potentielles. Il verifie egalement si les paiements correspondent a la production, aux prix et aux conditions contractuelles."
+      "answer": "Il se concentre sur la manière dont l'argent devrait circuler par rapport a la manière dont il circule réellement, en identifiant les écarts, les problèmes de calendrier, les problèmes de rapprochement et les fuites potentielles. Il vérifie également si les paiements correspondent a la production, aux prix et aux conditions contractuelles."
     },
     {
-      "question": "De quelles donnees avez-vous besoin pour realiser l'audit?",
-      "answer": "Nous avons generalement besoin de releves de paiement, de declarations, de donnees de production/exportation, de conditions contractuelles, de processus institutionnels et de toute conclusion d'audit prealable. Si l'acces complet aux donnees est limite, nous pouvons commencer par une cartographie de haut niveau et l'approfondir progressivement."
+      "question": "De quelles données avez-vous besoin pour réaliser l'audit?",
+      "answer": "Nous avons généralement besoin de releves de paiement, de declarations, de données de production/exportation, de conditions contractuelles, de processus institutionnels et de toute conclusion d'audit préalable. Si l'accès complet aux données est limite, nous pouvons commencer par une cartographie de haut niveau et l'approfondir progressivement."
     },
     {
-      "question": "Comment abordez-vous la tracabilite des exportations?",
-      "answer": "Nous cartographions la chaine depuis la mine jusqu'au point d'exportation, definissons les points de controle et proposons des etapes de documentation et de rapprochement. L'objectif est de reduire l'incertitude sur les volumes, les qualites et les valeurs declarees."
+      "question": "Comment abordez-vous la traçabilité des exportations?",
+      "answer": "Nous cartographions la chaîne depuis la mine jusqu'au point d'exportation, définissons les points de contrôle et proposons des étapes de documentation et de rapprochement. L'objectif est de réduire l'incertitude sur les volumes, les qualités et les valeurs déclarées."
     },
     {
-      "question": "Quels resultats livrez-vous?",
-      "answer": "Vous recevez un rapport de conclusions avec les problemes prioritaires, les controles recommandes et les modifications de procedures, ainsi qu'un plan d'action pratique. Le cas echeant, nous fournissons des modeles de rapprochement et de reporting."
+      "question": "Quels résultats livrez-vous?",
+      "answer": "Vous recevez un rapport de conclusions avec les problèmes prioritaires, les contrôles recommandés et les modifications de procédures, ainsi qu'un plan d'action pratique. Le cas echeant, nous fournissons des modèles de rapprochement et de reporting."
     },
     {
-      "question": "Comment gerez-vous la confidentialite et les informations sensibles?",
-      "answer": "Nous appliquons des pratiques de confidentialite strictes, limitons l'acces aux donnees de mission et documentons les hypotheses sans exposer de details sensibles dans les documents destines au public. Des regles de traitement confidentielles sont convenues au debut de la mission."
+      "question": "Comment gerez-vous la confidentialité et les informations sensibles?",
+      "answer": "Nous appliquons des pratiques de confidentialité strictes, limitons l'accès aux données de mission et documentons les hypothèses sans exposer de details sensibles dans les documents destines au public. Des règles de traitement confidentielles sont convenues au début de la mission."
     }
   ],
   "renforcement-capacites-administration": [
     {
-      "question": "A qui s'adresse le renforcement des capacites?",
-      "answer": "Pour le personnel gouvernemental et reglementaire implique dans les licences, la surveillance, la surveillance des revenus, la conformite environnementale et la gestion des donnees. Il peut egalement inclure des equipes de coordination interministerielles ou les responsabilites se chevauchent."
+      "question": "A qui s'adresse le renforcement des capacités?",
+      "answer": "Pour le personnel gouvernemental et réglementaire impliqué dans les licences, la surveillance, la surveillance des revenus, la conformité environnementale et la gestion des données. Il peut également inclure des équipes de coordination interministérielles ou les responsabilités se chevauchent."
     },
     {
-      "question": "Quels sujets le renforcement des capacites peut-il couvrir?",
-      "answer": "Les sujets peuvent inclure les outils, procedures et manuels d'evaluation de projet, la preparation a l'audit, les methodes de reporting et de rapprochement, les routines de gouvernance et l'aide aux negociations. Le programme est adapte aux profils de role et a la maturite actuelle."
+      "question": "Quels sujets le renforcement des capacités peut-il couvrir?",
+      "answer": "Les sujets peuvent inclure les outils, procédures et manuels d'évaluation de projet, la préparation a l'audit, les méthodes de reporting et de rapprochement, les routines de gouvernance et l'aide aux negociations. Le programme est adapté aux profils de rôle et a la maturité actuelle."
     },
     {
       "question": "Quel est le format de livraison?",
-      "answer": "Nous pouvons organiser des ateliers, des laboratoires pratiques utilisant des ensembles de donnees reels (lorsque cela est autorise), des seances de coaching et un soutien de suivi pendant la mise en oeuvre. Les programmes peuvent etre courts et intensifs ou echelonnes dans le temps."
+      "answer": "Nous pouvons organiser des ateliers, des laboratoires pratiques utilisant des ensembles de données reels (lorsque cela est autorise), des séances de coaching et un soutien de suivi pendant la mise en œuvre. Les programmes peuvent être courts et intensifs ou echelonnes dans le temps."
     },
     {
       "question": "Quels livrables accompagnent la formation?",
-      "answer": "Les participants recoivent des boites a outils pratiques (modeles, listes de controle, flux de travail) et un manuel operationnel clair adapte a leurs responsabilites. Si necessaire, nous definissons des procedures operationnelles standard pour assurer la continuite."
+      "answer": "Les participants reçoivent des boîtes à outils pratiques (modèles, listes de contrôle, flux de travail) et un manuel opérationnel clair adapté a leurs responsabilités. Si nécessaire, nous définissons des procédures opérationnelles standard pour assurer la continuité."
     },
     {
-      "question": "Comment mesurez-vous le succes du renforcement des capacites?",
-      "answer": "Nous utilisons des resultats mesurables tels qu'une qualite de reporting amelioree, des cycles d'examen plus rapides, des ecarts de rapprochement reduits, une execution d'audit plus solide et une documentation de decision plus claire. Les mesures sont convenues des le depart pour correspondre aux objectifs de l'institution."
+      "question": "Comment mesurez-vous le succès du renforcement des capacités?",
+      "answer": "Nous utilisons des résultats mesurables tels qu'une qualité de reporting améliorée, des cycles d'examen plus rapides, des écarts de rapprochement réduits, une exécution d'audit plus solide et une documentation de décision plus claire. Les mesures sont convenues dès le départ pour correspondre aux objectifs de l'institution."
     }
   ]
 };
