@@ -288,28 +288,28 @@ const makeService = (
       text: "Nous identifions rapidement les points critiques pour prioriser les actions à plus fort impact.",
       ctaLabel: "Échanger avec un expert",
       ctaHref: "/fr/contact",
-      image: "/placeholders/highlight-1.svg",
+      image: "/placeholders/highlight-1.png",
     },
     {
       title: "Exécution maîtrisée",
       text: "Le plan d'intervention est rythmé par des jalons clairs, un suivi qualité et des revues d'avancement.",
       ctaLabel: "Voir nos services",
       ctaHref: "/fr/services",
-      image: "/placeholders/highlight-2.svg",
+      image: "/placeholders/highlight-2.png",
     },
     {
       title: "Mesure des résultats",
       text: "Nous suivons des indicateurs techniques et économiques pour sécuriser la performance de la mission.",
       ctaLabel: "Lancer une mission",
       ctaHref: "/fr/contact",
-      image: "/placeholders/highlight-3.svg",
+      image: "/placeholders/highlight-3.png",
     },
     {
       title: "Transfert durable",
       text: "Les équipes client disposent de méthodes, standards et supports directement utilisables après la mission.",
       ctaLabel: "Nous contacter",
       ctaHref: "/fr/contact",
-      image: "/placeholders/highlight-4.svg",
+      image: "/placeholders/highlight-4.png",
     },
   ],
 });
@@ -336,7 +336,7 @@ export const fr: Dictionary = {
     },
   },
   common: {
-    partnerCta: "PARTENAIRE AVEC TERRA PRETIOSA",
+    partnerCta: "PARTENARIAT AVEC TERRA PRETIOSA",
     contactUs: "Contactez-nous",
     learnMore: "En savoir plus",
     readMore: "Lire plus",
@@ -354,7 +354,7 @@ export const fr: Dictionary = {
           "Nous devons l'exploiter intelligemment pour notre prospérité et nous devons aussi le protéger pour les générations futures.",
         ctaLabel: "Découvrir nos services",
         ctaHref: "/fr/services",
-        image: "/placeholders/hero-1.svg",
+        image: "/placeholders/hero-1.png",
       },
       {
         title: "Gouvernance minérale et industrialisation durable",
@@ -362,7 +362,7 @@ export const fr: Dictionary = {
           "Firme stratégique spécialisée en prestation de services et gouvernance des ressources minérales, résilience des chaînes d'approvisionnement et industrialisation durable en Afrique.",
         ctaLabel: "Voir notre approche",
         ctaHref: "/fr/company",
-        image: "/placeholders/hero-2.svg",
+        image: "/placeholders/hero-2.png",
       },
       {
         title: "Partenaire des États, institutions et industriels",
@@ -370,7 +370,7 @@ export const fr: Dictionary = {
           "Nous accompagnons la conception et la mise en œuvre de stratégies intégrées pour passer d'un modèle d'exportation brute à une économie de valeur ajoutée locale.",
         ctaLabel: "Lancer une mission",
         ctaHref: "/fr/contact",
-        image: "/placeholders/hero-3.svg",
+        image: "/placeholders/hero-3.png",
       },
     ],
     features: [
@@ -379,21 +379,21 @@ export const fr: Dictionary = {
         text: "Essais et analyses, opérations minières, formations, environnement et gouvernance: des services intégrés, durables et orientés résultats.",
         ctaLabel: "Explorer les catégories",
         ctaHref: "/fr/services",
-        image: "/placeholders/feature-1.svg",
+        image: "/placeholders/feature-1.png",
       },
       {
         title: "Corridor d'activité africain",
         text: "Nous intervenons au Burkina Faso, en RDC, en Guinée Conakry, au Sénégal, au Niger et au Mali, avec un siège social à Gaithersburg (Maryland, USA).",
         ctaLabel: "Voir le corridor d'activité",
         ctaHref: "/fr/company#corridor",
-        image: "/placeholders/feature-2.svg",
+        image: "/placeholders/feature-2.png",
       },
       {
         title: "Souveraineté industrielle et prospérité durable",
         text: "Notre ambition est de transformer les ressources naturelles en leviers de développement économique, de souveraineté industrielle et de stabilité macroéconomique.",
         ctaLabel: "Découvrir nos ambitions",
         ctaHref: "/fr/company#ambitions",
-        image: "/placeholders/feature-3.svg",
+        image: "/placeholders/feature-3.png",
       },
     ],
     servicesSitemapTitle: "SERVICES",
@@ -514,31 +514,31 @@ export const fr: Dictionary = {
         summary:
           "Essais et analyses en traitement des minerais: au cœur de l'action pour une Afrique plus prospère et soucieuse de ses ressources.",
         icon: "EA",
-        image: "/placeholders/category-1.svg",
+        image: "/placeholders/category-1.png",
         services: [
           makeService(
             "fragmentation-des-roches",
             "Fragmentation des roches",
             "Contrôle de la fragmentation et du broyage pour fiabiliser l'échantillonnage, les analyses et la récupération métallurgique.",
-            "/placeholders/service-card-1.svg",
+            "/placeholders/service-card-1.png",
           ),
           makeService(
             "preparation-des-echantillons",
             "Préparation des échantillons",
             "Préparation rigoureuse d'échantillons homogènes et représentatifs pour sécuriser les décisions techniques et économiques.",
-            "/placeholders/service-card-2.svg",
+            "/placeholders/service-card-2.png",
           ),
           makeService(
             "analyses-mineralogiques-et-chimiques",
             "Analyses minéralogiques et chimiques",
             "Analyses avancées (XRD, FRX, SEM, QEMSCAN) pour comprendre le gisement et optimiser les choix métallurgiques.",
-            "/placeholders/service-card-3.svg",
+            "/placeholders/service-card-3.png",
           ),
           makeService(
             "tests-mineralurgiques-et-metallurgiques",
             "Tests minéralurgiques et métallurgiques",
             "Essais complets (flottation, gravimétrie, lixiviation) pour optimiser rendement, récupération et schémas de traitement.",
-            "/placeholders/service-card-4.svg",
+            "/placeholders/service-card-4.png",
           ),
         ],
         faq: [
@@ -565,25 +565,25 @@ export const fr: Dictionary = {
         summary:
           "Exhaure, forage et transport minier avec une approche orientée sécurité, rendement et continuité des opérations.",
         icon: "OM",
-        image: "/placeholders/category-2.svg",
+        image: "/placeholders/category-2.png",
         services: [
           makeService(
             "exhaure-des-mines",
             "Exhaure des mines",
             "Exhaure et pompage d'eau pour sécuriser les opérations, prévenir les risques HSE et protéger les équipements.",
-            "/placeholders/service-card-5.svg",
+            "/placeholders/service-card-5.png",
           ),
           makeService(
             "forage-minier",
             "Forage minier",
             "Forage de production et de drainage en mine à ciel ouvert/souterraine avec maîtrise technique, rendement et sécurité.",
-            "/placeholders/service-card-6.svg",
+            "/placeholders/service-card-6.png",
           ),
           makeService(
             "transport-minier",
             "Transport minier",
             "Transport sécurisé des minerais, équipements et consommables industriels avec traçabilité et coordination temps réel.",
-            "/placeholders/service-card-7.svg",
+            "/placeholders/service-card-7.png",
           ),
         ],
         faq: [
@@ -610,19 +610,19 @@ export const fr: Dictionary = {
         summary:
           "Montée en compétences des équipes minières pour gagner en confiance, leadership et performance.",
         icon: "FO",
-        image: "/placeholders/category-3.svg",
+        image: "/placeholders/category-3.png",
         services: [
           makeService(
             "amelioration-continue",
             "Amélioration continue",
             "Formations Lean Mining, SPC, maintenance, coûts et performance pour ancrer une culture d'excellence opérationnelle.",
-            "/placeholders/service-card-8.svg",
+            "/placeholders/service-card-8.png",
           ),
           makeService(
             "traitement-mineralurgique-et-des-eaux",
             "Traitement minéralurgique et des eaux",
             "Formation en procédés minéralurgiques, performance métallurgique, traitement des effluents et gestion durable de l'eau.",
-            "/placeholders/service-card-9.svg",
+            "/placeholders/service-card-9.png",
           ),
         ],
         faq: [
@@ -644,37 +644,37 @@ export const fr: Dictionary = {
         summary:
           "Politique environnementale, réhabilitation de sites, QA/QC et surveillance des eaux pour une performance durable.",
         icon: "EN",
-        image: "/placeholders/category-4.svg",
+        image: "/placeholders/category-4.png",
         services: [
           makeService(
             "politique-environnementale",
             "Politique environnementale",
             "Diagnostic, cadre juridique, consultation, standards ESG et mécanismes de contrôle pour des politiques environnementales robustes.",
-            "/placeholders/service-card-10.svg",
+            "/placeholders/service-card-10.png",
           ),
           makeService(
             "evaluation-et-rehabilitation-des-sites",
             "Évaluation & réhabilitation des sites",
             "Audits des passifs environnementaux, cartographie des risques et plans techniques/financiers de réhabilitation.",
-            "/placeholders/service-card-11.svg",
+            "/placeholders/service-card-11.png",
           ),
           makeService(
             "controle-qualite-assurance-qualite",
             "Contrôle qualité / Assurance qualité",
             "Système QA/QC complet (étalonnage, standards, blancs, duplicatas, chain of custody) pour résultats défendables.",
-            "/placeholders/service-card-12.svg",
+            "/placeholders/service-card-12.png",
           ),
           makeService(
             "surveillance-qualite-des-eaux",
             "Surveillance qualité des eaux",
             "Surveillance de la qualité des eaux en zones reculées et nouveaux forages selon les usages et exigences de conformité.",
-            "/placeholders/service-card-13.svg",
+            "/placeholders/service-card-13.png",
           ),
           makeService(
             "effluents-miniers-et-drainage-minier-acide",
             "Effluents miniers + drainage minier acide (AMD)",
             "Analyses, diagnostic des pollutions et conception de solutions de traitement des effluents et du drainage minier acide.",
-            "/placeholders/service-card-14.svg",
+            "/placeholders/service-card-14.png",
           ),
         ],
         faq: [
@@ -701,7 +701,7 @@ export const fr: Dictionary = {
         summary:
           "Gouvernance et développement stratégique des ressources naturelles pour transformer l'extraction en valeur locale durable.",
         icon: "GV",
-        image: "/placeholders/category-5.svg",
+        image: "/placeholders/category-5.png",
         services: [
           makeService(
             "strategie-recettes-minieres",
@@ -737,7 +737,7 @@ export const fr: Dictionary = {
             "renforcement-capacites-administration",
             "Renforcement capacités administration",
             "Renforcement des capacités des administrations minières: formation, outils d'évaluation et assistance technique continue.",
-            "/placeholders/service-card-20.svg",
+            "/placeholders/service-card-20.png",
           ),
         ],
         faq: [
@@ -763,7 +763,7 @@ export const fr: Dictionary = {
       title: "Partenaire de vos projets miniers",
       subtitle:
         "Nous mobilisons les bonnes expertises pour accélérer l'impact opérationnel, institutionnel et durable.",
-      primaryCta: "PARTENAIRE AVEC TERRA PRETIOSA",
+      primaryCta: "PARTENARIAT AVEC TERRA PRETIOSA",
       secondaryCta: "Nous contacter",
     },
     relatedTitle: "Services associés",
@@ -858,7 +858,7 @@ export const fr: Dictionary = {
         "Sénégal",
         "Niger",
         "Mali",
-        "Etats-Unis",
+        "États-Unis",
       ],
       statesProvinces: [
         "Kadiogo",
