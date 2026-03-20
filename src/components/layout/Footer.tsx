@@ -42,7 +42,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
             </Link>
           </div>
 
-          <Link href={`/${lang}/contact`} className="tp-blue-button w-full">
+          <Link href={`/${lang}/mission`} className="tp-blue-button w-full">
             {dictionary.nav.mission}
           </Link>
 
@@ -137,7 +137,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
                 {dictionary.contact.hqAddress}
               </p>
               <Link
-                href={`/${lang}/contact`}
+                href={`/${lang}/mission`}
                 className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-cyan-300 transition duration-300 hover:gap-2.5 hover:text-white"
               >
                 {dictionary.nav.mission}

@@ -291,29 +291,37 @@ const makeService = (
     ],
   highlights: [
     {
-      title: "Diagnostic ciblé",
-      text: "Nous identifions rapidement les points critiques pour prioriser les actions à plus fort impact.",
-      ctaLabel: "Échanger avec un expert",
+      title: serviceDetails[slug]?.capabilities?.[0] ?? "Diagnostic ciblé",
+      text: `Nos interventions en ${title.toLowerCase()} démarrent par un cadrage technique centré sur ${(
+        serviceDetails[slug]?.capabilities?.[0] ?? "les points critiques"
+      ).toLowerCase()} afin de fiabiliser l'exécution et les décisions terrain.`,
+      ctaLabel: "Contactez-nous",
       ctaHref: "/fr/contact",
       image: highlightMedia.diagnostic,
     },
     {
-      title: "Exécution maîtrisée",
-      text: "Le plan d'intervention est rythmé par des jalons clairs, un suivi qualité et des revues d'avancement.",
-      ctaLabel: "Voir nos services",
-      ctaHref: "/fr/services",
+      title: serviceDetails[slug]?.capabilities?.[1] ?? "Exécution maîtrisée",
+      text: `La mission est structurée autour de ${(
+        serviceDetails[slug]?.capabilities?.[1] ?? "jalons opérationnels"
+      ).toLowerCase()} pour réduire la variabilité, maîtriser les risques et sécuriser la qualité des résultats.`,
+      ctaLabel: "Lancer une mission",
+      ctaHref: "/fr/mission",
       image: highlightMedia.execution,
     },
     {
-      title: "Mesure des résultats",
-      text: "Nous suivons des indicateurs techniques et économiques pour sécuriser la performance de la mission.",
-      ctaLabel: "Lancer une mission",
-      ctaHref: "/fr/contact",
+      title: serviceDetails[slug]?.capabilities?.[2] ?? "Résultats défendables",
+      text: `Les livrables documentent ${(
+        serviceDetails[slug]?.capabilities?.[2] ?? "la traçabilité des opérations"
+      ).toLowerCase()} afin d'offrir une base technique exploitable par les équipes, les décideurs et les autorités de contrôle.`,
+      ctaLabel: "Voir nos services",
+      ctaHref: "/fr/services",
       image: highlightMedia.performance,
     },
     {
-      title: "Transfert durable",
-      text: "Les équipes client disposent de méthodes, standards et supports directement utilisables après la mission.",
+      title: serviceDetails[slug]?.capabilities?.[3] ?? "Transfert durable",
+      text: `Nous ancrons ${(
+        serviceDetails[slug]?.capabilities?.[3] ?? "le transfert de savoir-faire"
+      ).toLowerCase()} dans des standards, outils et routines directement réutilisables après la mission.`,
       ctaLabel: "Nous contacter",
       ctaHref: "/fr/contact",
       image: highlightMedia.transfer,
@@ -377,7 +385,7 @@ export const fr: Dictionary = {
         subtitle:
           "Nous accompagnons la conception et la mise en œuvre de stratégies intégrées pour passer d'un modèle d'exportation brute à une économie de valeur ajoutée locale.",
         ctaLabel: "Lancer une mission",
-        ctaHref: "/fr/contact",
+        ctaHref: "/fr/mission",
         image: homeMedia.heroLaboratory,
       },
     ],
@@ -456,19 +464,19 @@ export const fr: Dictionary = {
     introBlocks: [
       {
         title: "Notre conviction",
-        text: "La civilisation humaine doit tout au sol et au sous-sol. Nous devons l'exploiter intelligemment pour notre prospérité et le protéger pour les générations futures.",
+        text: "La civilisation humaine repose fondamentalement sur les ressources du sol et du sous-sol. Elles soutiennent le développement industriel, énergétique et technologique et doivent donc être exploitées de manière stratégique, efficiente et durable.",
       },
       {
         title: "Positionnement",
-        text: "Nous sommes une firme stratégique spécialisée en prestation de services et gouvernance des ressources minérales critiques, résilience des chaînes d'approvisionnement et industrialisation durable en Afrique.",
+        text: "Terra Pretiosa est un cabinet de conseil stratégique spécialisé dans la gouvernance des ressources minérales, la résilience des chaînes d'approvisionnement et l'industrialisation durable en Afrique.",
       },
       {
         title: "Ambition",
-        text: "Notre ambition est de renforcer la capacité des pays africains à transformer leurs ressources naturelles en leviers de développement économique, souveraineté industrielle et stabilité macroéconomique.",
+        text: "Notre ambition est de contribuer activement au renforcement des capacités des pays africains afin de transformer leurs ressources naturelles en leviers de développement économique, de souveraineté industrielle et de stabilité macroéconomique.",
       },
       {
         title: "Approche",
-        text: "Nous accompagnons gouvernements, institutions financières internationales et partenaires industriels avec une combinaison rigoureuse d'expertise technique minérale, analyse macroéconomique, politiques industrielles ciblées et gouvernance ESG alignée aux standards internationaux.",
+        text: "Nous accompagnons les gouvernements, les institutions financières internationales et les partenaires industriels dans la conception et la mise en œuvre de stratégies intégrées combinant expertise technique minière, analyse macroéconomique, politiques industrielles ciblées et cadres ESG alignés sur les standards internationaux.",
       },
     ],
     corridorTitle: "Corridor d'activité",
@@ -484,10 +492,10 @@ export const fr: Dictionary = {
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
     megatrendsTitle: "Mégatendance",
     megatrendsText:
-      "Face à la montée des exigences environnementales, de sécurité et de productivité, les États et compagnies minières africaines recherchent des partenaires capables d'offrir des services intégrés et durables: forage de précision, transport sécurisé, exhaure efficace des sites inondés et analyses rapides des minerais. Terra Pretiosa s'inscrit dans cette dynamique avec une forte réactivité locale et une conformité environnementale robuste.",
+      "La demande mondiale en ressources minérales stratégiques et critiques est en forte croissance. Dans ce contexte, les États et opérateurs miniers doivent s'appuyer sur des partenaires capables de fournir des solutions techniques intégrées, performantes et conformes aux standards internationaux, tout en sécurisant la chaîne de valeur et la création de valeur locale.",
     miningDevTitle: "Exploitation minière pour un développement efficace",
     miningDevText:
-      "Le concept clé est l'exploitation minière comme moteur de développement et de transformation continentale. Être acteur majeur des opérations minières permet de créer de la richesse, des emplois et de transmettre la connaissance et le savoir-faire.",
+      "Nous défendons une exploitation minière conçue comme un moteur de transformation économique. L'enjeu n'est pas seulement d'extraire, mais de structurer des opérations performantes capables de soutenir l'emploi, le transfert de compétences, la mobilisation des recettes publiques et l'industrialisation locale.",
     sustainableTitle: "Développement durable",
     sustainableBullets: [
       "Suivi environnemental périodique",
@@ -510,12 +518,12 @@ export const fr: Dictionary = {
   services: {
     landingTitle: "Services",
     landingIntro:
-      "Prestation de services en mines et ressources minérales: Terra Pretiosa intervient de l'analyse technique à la gouvernance stratégique avec une exécution orientée résultats, conformité et création de valeur locale.",
+      "Terra Pretiosa intervient sur l'ensemble de la chaîne minière, de l'analyse technique et des opérations de terrain jusqu'à la gouvernance stratégique du secteur, avec une exécution orientée résultats, conformité et création de valeur locale.",
     categoriesTitle: "Catégories de services",
     sitemapTitle: "Plan des services",
     featuredTitle: "Insight en vedette",
     featuredText:
-      "Nous plaçons l'Afrique au cœur de l'action en combinant excellence technique, maîtrise des risques opérationnels et gouvernance responsable.",
+      "Notre approche articule rigueur technique, continuité opérationnelle, conformité environnementale et gouvernance responsable pour transformer les ressources minérales en performance durable.",
     categories: [
       {
         slug: "essais-analyses",
@@ -784,44 +792,44 @@ export const fr: Dictionary = {
   team: {
     pageTitle: "Notre équipe",
     intro:
-      "Ici, nous mettrons les photos et mini CV de toute l'équipe qui travaille dans la firme.",
-    note: "Photos et mini CV en cours d'intégration.",
+      "La présentation détaillée de l'équipe Terra Pretiosa sera intégrée avec les photos et mini CV dès validation des profils définitifs.",
+    note: "Photos et mini CV seront ajoutés après validation client.",
     cvLabel: "Télécharger mini CV",
     members: [
       {
-        name: "Amina Traoré",
-        role: "Associée - Gouvernance minière",
-        bio: "Spécialiste des politiques minières, recettes extractives et cadres institutionnels.",
+        name: "Profil gouvernance minérale",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-1.svg",
       },
       {
-        name: "Moussa Diallo",
-        role: "Directeur opérations",
-        bio: "Expert en pilotage de sites miniers, performance terrain et sécurité opérationnelle.",
+        name: "Profil opérations minières",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-2.svg",
       },
       {
-        name: "Clara Mvemba",
-        role: "Lead environnement",
-        bio: "Ingénieure en gestion des eaux minières, conformité ESG et réhabilitation de sites.",
+        name: "Profil environnement",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-3.svg",
       },
       {
-        name: "Jean Kaboré",
-        role: "Responsable analyses",
-        bio: "Expert en QA/QC, préparation d'échantillons et interprétation des données analytiques.",
+        name: "Profil essais et analyses",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-4.svg",
       },
       {
-        name: "Fatou Ndiaye",
-        role: "Consultante formation",
-        bio: "Conçoit des programmes Lean/SPC et d'amélioration continue pour équipes techniques.",
+        name: "Profil formation",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-5.svg",
       },
       {
-        name: "David Okoro",
-        role: "Consultant stratégie",
-        bio: "Accompagne les stratégies d'intégration locale et de politique industrielle minérale.",
+        name: "Profil stratégie et gouvernance",
+        role: "En cours d'intégration",
+        bio: "Photo et mini CV à venir après validation des profils Terra Pretiosa.",
         image: "/placeholders/team-6.svg",
       },
     ],
@@ -829,7 +837,7 @@ export const fr: Dictionary = {
   contact: {
     pageTitle: "Contact",
     intro:
-      "Discutons de vos enjeux techniques, environnementaux et de gouvernance des matières premières minérales. Vous pouvez également nous contacter via le formulaire ci-dessous.",
+      "Échangeons sur vos enjeux techniques, environnementaux et de gouvernance des matières premières minérales. Utilisez le formulaire ci-dessous pour cadrer votre besoin, votre zone d'intervention et le type d'appui recherché.",
     hqTitle: "Siège social",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
     corridorTitle: "Corridor d'activité",
@@ -844,7 +852,7 @@ export const fr: Dictionary = {
     phoneLabel: "Téléphone",
     phoneValue: "Numéro personnel (temporaire, en attendant la ligne entreprise)",
     emailLabel: "Email",
-    emailValue: "Email de la compagnie à créer",
+    emailValue: "Adresse email de la compagnie en cours de création",
     formTitle: "Nous contacter",
     formSuccess: "Merci, votre message a bien été envoyé.",
     formFields: {
@@ -904,7 +912,7 @@ export const fr: Dictionary = {
   mission: {
     pageTitle: "Lancer une mission",
     intro:
-      "Partagez les objectifs et contraintes de votre mission. Notre équipe vous répondra avec une proposition adaptée au contexte de votre projet.",
+      "Décrivez le contexte de votre projet, les objectifs techniques ou institutionnels, le calendrier visé et les contraintes clés. Nous vous répondrons avec un cadrage de mission adapté à votre besoin.",
     formSuccess: "Merci. Votre demande de mission a été enregistrée.",
     missionTypes: [
       "Essais & Analyses",
@@ -949,7 +957,7 @@ export const fr: Dictionary = {
             title: "Corridor d'activité",
             links: [
               { label: "Pays d'intervention", href: "/fr/company#corridor" },
-              { label: "Lancer une mission", href: "/fr/contact" },
+              { label: "Lancer une mission", href: "/fr/mission" },
             ],
           },
         ],
@@ -1074,7 +1082,7 @@ export const fr: Dictionary = {
             links: [
               { label: "Tous les services", href: "/fr/services" },
               { label: "Nous écrire", href: "/fr/contact" },
-              { label: "Lancer une mission", href: "/fr/contact" },
+              { label: "Lancer une mission", href: "/fr/mission" },
             ],
           },
         ],
@@ -1084,7 +1092,7 @@ export const fr: Dictionary = {
     quickLinks: [
       { label: "Corridor d'activité", href: "/fr/company#corridor" },
       { label: "Page entreprise", href: "/fr/company" },
-      { label: "Formulaire mission", href: "/fr/contact" },
+      { label: "Formulaire mission", href: "/fr/mission" },
     ],
     legal: "(c) Terra Pretiosa. Tous droits réservés.",
     socials: [
@@ -1096,7 +1104,7 @@ export const fr: Dictionary = {
   news: {
     pageTitle: "Actualités & analyses",
     intro:
-      "Retours d'expérience opérationnels, notes de gouvernance minérale, points de vigilance ESG et analyses techniques sur la chaîne de valeur minière africaine.",
+      "Notes d'analyse, retours d'expérience et décryptages techniques consacrés à la gouvernance minérale, aux opérations minières, à la performance environnementale et à la création de valeur en Afrique.",
     allNewsLabel: "Toutes les analyses",
     latestLabel: "Dernières analyses",
     readArticle: "Lire l'analyse",

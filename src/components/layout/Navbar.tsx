@@ -416,7 +416,7 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
 
             <div className="mt-6 border-t border-white/10 pt-5">
               <Link
-                href={`/${lang}/contact`}
+                href={`/${lang}/mission`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="tp-blue-button w-full"
               >

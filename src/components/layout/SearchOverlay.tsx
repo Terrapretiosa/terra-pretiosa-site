@@ -32,6 +32,7 @@ export function SearchOverlay({
       { label: dictionary.nav.team, href: `/${lang}/team` },
       { label: dictionary.nav.news, href: `/${lang}/news` },
       { label: dictionary.nav.contact, href: `/${lang}/contact` },
+      { label: dictionary.nav.mission, href: `/${lang}/mission` },
     ];
 
     const newsItems = dictionary.news.articles.map((article) => ({
