@@ -42,9 +42,26 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
   const serviceFaqMap = lang === "fr" ? serviceFaqsBySlugFr : serviceFaqsBySlugEn;
   const serviceFaq = serviceFaqMap[service.slug] ?? [];
 
+  const contextualImagePool = Array.from(
+    new Set(
+      [
+        ...categoryData.services
+          .filter((item) => item.slug !== service.slug)
+          .map((item) => item.image),
+        categoryData.image,
+      ].filter((image): image is string => Boolean(image) && image !== service.image),
+    ),
+  );
+
+  const displayHighlights = service.highlights.map((highlight, index) => ({
+    ...highlight,
+    image:
+      contextualImagePool[index % contextualImagePool.length] ?? highlight.image,
+  }));
+
   const spotlightItems = [
     { image: service.image, label: service.title },
-    ...service.highlights.slice(0, 2).map((highlight) => ({
+    ...displayHighlights.slice(0, 2).map((highlight) => ({
       image: highlight.image,
       label: highlight.title,
     })),
@@ -60,7 +77,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       />
       <ScrollSpotlightHero items={spotlightItems} />
       <ServiceIntro service={service} dictionary={dictionary} />
-      <AnimatedHighlights lang={lang} items={service.highlights} />
+      <AnimatedHighlights lang={lang} items={displayHighlights} />
       <ServiceFaq title={dictionary.services.faqTitle} items={serviceFaq} />
       <RelatedServices
         lang={lang}
