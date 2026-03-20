@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
@@ -5,6 +6,19 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface ContactPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.contact.formTitle,
+    description: d.contact.intro,
+    alternates: {
+      languages: { fr: "/fr/contact", en: "/en/contact" },
+    },
+  };
 }
 
 export default async function ContactPage({ params }: ContactPageProps) {

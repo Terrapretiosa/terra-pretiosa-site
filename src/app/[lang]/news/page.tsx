@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +7,19 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface NewsPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: NewsPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.news.pageTitle,
+    description: d.news.intro,
+    alternates: {
+      languages: { fr: "/fr/news", en: "/en/news" },
+    },
+  };
 }
 
 export default async function NewsPage({ params }: NewsPageProps) {
@@ -39,9 +53,9 @@ export default async function NewsPage({ params }: NewsPageProps) {
       </div>
 
       {/* Articles grid */}
-      <section className="bg-neutral-50 py-16">
+      <section className="bg-neutral-50 py-10 sm:py-16">
         <div className="tp-container">
-          <div className="grid gap-8 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 sm:gap-8">
             {dictionary.news.articles.map((article, index) => (
               <Reveal key={article.slug} y={22} delayMs={index * 80}>
                 <article className="tp-card-glow group flex flex-col overflow-hidden rounded-2xl border border-blue-200/50 bg-gradient-to-br from-white to-blue-50/60 shadow-sm">
@@ -51,8 +65,8 @@ export default async function NewsPage({ params }: NewsPageProps) {
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-center transition duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 92vw, 46vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <span className="absolute bottom-3 left-4 rounded-full bg-blue-900/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
@@ -61,7 +75,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-1 flex-col p-4 sm:p-6">
                     <time className="text-xs font-medium text-blue-600/70">
                       {new Date(article.date).toLocaleDateString(
                         lang === "fr" ? "fr-FR" : "en-US",

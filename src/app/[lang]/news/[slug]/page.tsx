@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +7,25 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface ArticlePageProps {
   params: Promise<{ lang: string; slug: string }>;
+}
+
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { lang, slug } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  const article = d.news.articles.find((a) => a.slug === slug);
+  if (!article) return {};
+  return {
+    title: article.title,
+    description: article.excerpt,
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: article.date,
+      images: [article.image],
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
@@ -25,7 +45,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       {/* Hero with image */}
-      <div className="relative overflow-hidden bg-neutral-950 py-20 text-white sm:py-28">
+      <div className="relative overflow-hidden bg-neutral-950 py-14 text-white sm:py-20 md:py-28">
         <Image
           src={article.image}
           alt={article.title}
@@ -73,7 +93,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       </div>
 
       {/* Article body */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 sm:py-16">
         <div className="tp-container max-w-3xl">
           <Reveal y={16}>
             <div className="space-y-6">

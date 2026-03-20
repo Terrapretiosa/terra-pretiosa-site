@@ -19,7 +19,7 @@ export function ServiceCardsGrid({ lang, dictionary }: ServiceCardsGridProps) {
     .slice(0, 6);
 
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-20">
       <div className="tp-container">
         <Reveal y={24}>
           <p className="tp-eyebrow mb-3">
@@ -33,16 +33,16 @@ export function ServiceCardsGrid({ lang, dictionary }: ServiceCardsGridProps) {
             {dictionary.home.serviceGridIntro}
           </p>
         </Reveal>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, index) => (
             <Reveal key={card.slug} y={28} delayMs={index * 90}>
-              <article className="tp-card-glow group relative h-80 overflow-hidden rounded-2xl">
+              <article className="tp-card-glow group relative h-64 overflow-hidden rounded-2xl sm:h-80">
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-107"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover object-center transition duration-700 group-hover:scale-107"
+                  sizes="(max-width: 768px) 92vw, (max-width: 1024px) 45vw, 30vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                 {/* Cyan accent line at top */}

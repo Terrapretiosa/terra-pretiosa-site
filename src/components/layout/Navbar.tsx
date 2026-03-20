@@ -272,7 +272,7 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
           onClick={() => setMobileMenuOpen(false)}
         >
           <aside
-            className="tp-enter-up ml-auto flex h-[calc(100vh-56px)] w-[min(92vw,380px)] flex-col overflow-y-auto border-l border-white/10 bg-neutral-900 px-5 py-5 text-white shadow-2xl"
+            className="tp-enter-up ml-auto flex h-[calc(100dvh-56px)] w-[min(92vw,380px)] flex-col overflow-y-auto border-l border-white/10 bg-neutral-900 px-4 py-4 text-white shadow-2xl sm:px-5 sm:py-5"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4">

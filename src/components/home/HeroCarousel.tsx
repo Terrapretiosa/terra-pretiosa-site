@@ -35,9 +35,11 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
 
   return (
     <section
-      className="relative h-[78vh] min-h-[560px] overflow-hidden bg-neutral-900 text-white"
+      className="relative h-[85vh] min-h-[480px] overflow-hidden bg-neutral-900 text-white sm:h-[78vh] sm:min-h-[560px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => { setTimeout(() => setIsPaused(false), 4000); }}
     >
       {slides.map((slide, slideIndex) => (
         <div
@@ -53,7 +55,7 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
             fill
             priority={slideIndex === 0}
             className={cn(
-              "object-cover transition-transform duration-[6500ms] ease-out",
+              "object-cover object-center transition-transform duration-[6500ms] ease-out",
               slideIndex === index ? "scale-110" : "scale-100",
             )}
             sizes="100vw"
@@ -79,7 +81,7 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
                 </span>
                 <p className="tp-heading text-xs text-blue-100">{dictionary.siteName}</p>
               </div>
-              <h1 className="text-4xl font-semibold uppercase leading-tight tracking-[0.08em] sm:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold uppercase leading-tight tracking-[0.06em] sm:text-5xl sm:tracking-[0.08em] lg:text-6xl">
                 {slide.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base text-white/85 sm:text-lg">
@@ -105,9 +107,9 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
         </div>
       ))}
 
-      <div className="tp-container absolute bottom-7 left-1/2 flex w-full -translate-x-1/2 items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="h-0.5 w-24 overflow-hidden rounded-full bg-white/20 sm:w-40">
+      <div className="tp-container absolute bottom-5 left-1/2 flex w-full -translate-x-1/2 items-center justify-between sm:bottom-7">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden h-0.5 w-24 overflow-hidden rounded-full bg-white/20 sm:block sm:w-40">
             <span
               key={`progress-${index}`}
               className="block h-full origin-left rounded-full bg-gradient-to-r from-blue-300 to-white [animation:tpProgress_6.5s_linear_forwards]"
@@ -134,7 +136,7 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
           <button
             type="button"
             onClick={prevSlide}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20 active:scale-95 sm:h-10 sm:w-10"
             aria-label="Previous slide"
           >
             <svg
@@ -153,7 +155,7 @@ export function HeroCarousel({ dictionary }: HeroCarouselProps) {
           <button
             type="button"
             onClick={nextSlide}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm transition hover:border-white/80 hover:bg-white/20 active:scale-95 sm:h-10 sm:w-10"
             aria-label="Next slide"
           >
             <svg

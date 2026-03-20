@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FeatureCircleRow } from "@/components/home/FeatureCircleRow";
@@ -11,6 +12,21 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface HomePageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.siteName,
+    description: lang === "fr"
+      ? "Services miniers, gouvernance des matières premières minérales et conseil en Afrique et au-delà."
+      : "Mining services, mineral governance, and raw materials consulting across Africa and beyond.",
+    alternates: {
+      languages: { fr: "/fr", en: "/en" },
+    },
+  };
 }
 
 export default async function HomePage({ params }: HomePageProps) {
@@ -46,7 +62,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <HeroCarousel dictionary={dictionary} />
 
       {/* Stats strip */}
-      <section className="relative border-b border-blue-100/70 bg-white py-12">
+      <section className="relative border-b border-blue-100/70 bg-white py-8 sm:py-12">
         {/* Subtle top teal line */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
         <div className="tp-container">
@@ -95,7 +111,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <NewsInsights dictionary={dictionary} />
       <NewsHighlights lang={lang} dictionary={dictionary} />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-16 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-10 text-white sm:py-16">
         {/* Ambient grid */}
         <div className="tp-ambient-grid pointer-events-none absolute inset-0 opacity-25" />
         {/* Radial accent glow */}
@@ -111,7 +127,7 @@ export default async function HomePage({ params }: HomePageProps) {
                 {dictionary.home.ctaBand.title}
               </h2>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Link
                 href={`/${lang}/mission`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-blue-900 shadow-[0_4px_14px_rgba(255,255,255,0.20)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-[0_12px_24px_rgba(255,255,255,0.25)]"

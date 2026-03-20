@@ -149,13 +149,19 @@ export function ScrollSpotlightHero({ items, className }: ScrollSpotlightHeroPro
           <div className="relative h-[210px] sm:h-[320px] lg:h-[360px]">
             <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-3">
               {displayItems.map((item, index) => (
-                <div key={`${item.label}-base-${index}`} className="relative">
+                <div
+                  key={`${item.label}-base-${index}`}
+                  className={cn(
+                    "relative",
+                    index > 0 && "hidden sm:block",
+                  )}
+                >
                   <Image
                     src={item.image}
                     alt={item.label}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover object-center"
+                    sizes={index === 0 ? "(max-width: 640px) 100vw, 33vw" : "33vw"}
                   />
                 </div>
               ))}

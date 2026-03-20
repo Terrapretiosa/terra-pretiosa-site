@@ -36,9 +36,9 @@ function HighlightCard({
             <Image
               src={item.image}
               alt={item.title}
-              width={208}
-              height={208}
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 160px, (max-width: 1024px) 192px, 208px"
             />
           </div>
         </div>

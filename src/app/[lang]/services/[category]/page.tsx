@@ -67,14 +67,14 @@ export default async function ServiceCategoryPage({
           </Reveal>
           <Reveal x={24} y={20} delayMs={90}>
             <div className="tp-card-lift relative overflow-hidden rounded-sm border border-blue-200/60 bg-gradient-to-br from-white to-blue-50/70 p-2">
-              <div className="grid min-h-[170px] grid-cols-2 gap-2 sm:min-h-[240px]">
+              <div className="grid aspect-[4/3] grid-cols-2 gap-2 sm:aspect-[3/2]">
                 <div className="relative row-span-2 overflow-hidden rounded-sm">
                   <Image
                     src={heroImages[0]}
                     alt={categoryData.title}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 50vw, 20vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
@@ -83,8 +83,8 @@ export default async function ServiceCategoryPage({
                     src={heroImages[1]}
                     alt={categoryData.title}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 25vw, 20vw"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-sm">
@@ -92,8 +92,8 @@ export default async function ServiceCategoryPage({
                     src={heroImages[2]}
                     alt={categoryData.title}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 25vw, 20vw"
                   />
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default async function ServiceCategoryPage({
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition duration-500 hover:scale-105"
+                      className="object-cover object-center transition duration-500 hover:scale-105"
                       sizes="96px"
                     />
                   </div>

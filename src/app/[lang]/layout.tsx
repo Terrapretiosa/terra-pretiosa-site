@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { SetLangAttribute } from "@/components/layout/SetLangAttribute";
 import {
   SUPPORTED_LANGS,
   getDictionary,
@@ -31,6 +32,7 @@ export default async function LangLayout({
 
   return (
     <div className="min-h-screen bg-white">
+      <SetLangAttribute lang={lang} />
       <Navbar lang={lang} dictionary={dictionary} />
       <main className="pt-14">{children}</main>
       <Footer lang={lang} dictionary={dictionary} />

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +7,19 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface TeamPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: TeamPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.team.pageTitle,
+    description: d.team.intro,
+    alternates: {
+      languages: { fr: "/fr/team", en: "/en/team" },
+    },
+  };
 }
 
 export default async function TeamPage({ params }: TeamPageProps) {

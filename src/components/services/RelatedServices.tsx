@@ -42,8 +42,8 @@ export function RelatedServices({
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-center transition duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 92vw, 30vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
                 </div>

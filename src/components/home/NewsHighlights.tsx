@@ -41,8 +41,8 @@ export function NewsHighlights({ lang, dictionary }: NewsHighlightsProps) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-center transition duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 30vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 to-transparent" />
                   <span className="absolute bottom-3 left-3 rounded-full bg-blue-900/80 px-2.5 py-0.5 text-xs font-semibold text-white backdrop-blur-sm">

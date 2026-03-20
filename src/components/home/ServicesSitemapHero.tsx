@@ -20,7 +20,7 @@ export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroPro
         src={homeMedia.servicesSitemapBackground}
         alt={dictionary.home.servicesSitemapTitle}
         fill
-        className="object-cover opacity-20"
+        className="object-cover object-center opacity-20"
         sizes="100vw"
       />
       {/* Dark overlay */}
@@ -57,8 +57,8 @@ export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroPro
                   src={category.image}
                   alt={category.title}
                   fill
-                  className="object-cover opacity-20 grayscale transition duration-700 group-hover:scale-105 group-hover:opacity-30 group-hover:grayscale-0"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 20vw"
+                  className="object-cover object-center opacity-20 grayscale transition duration-700 group-hover:scale-105 group-hover:opacity-30 group-hover:grayscale-0"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1280px) 46vw, 20vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/35 via-neutral-950/68 to-neutral-950/88" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(156,234,234,0.14),transparent_36%)] opacity-80" />

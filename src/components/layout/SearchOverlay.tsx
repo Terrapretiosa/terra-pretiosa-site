@@ -83,7 +83,7 @@ export function SearchOverlay({
       aria-label={dictionary.search.title}
     >
       <div
-        className="tp-container tp-enter-up mt-24 max-w-4xl rounded-sm border border-white/10 bg-neutral-900 p-6"
+        className="tp-container tp-enter-up mt-16 max-w-4xl rounded-xl border border-white/10 bg-neutral-900 p-4 sm:mt-24 sm:p-6"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
@@ -104,21 +104,21 @@ export function SearchOverlay({
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder={dictionary.search.placeholder}
-          className="mt-5 w-full rounded-sm border border-white/20 bg-neutral-800 px-4 py-3 text-white outline-none transition focus:border-blue-300"
+          className="mt-4 w-full rounded-lg border border-white/20 bg-neutral-800 px-4 py-3 text-base text-white outline-none transition focus:border-blue-300 sm:mt-5 sm:text-sm"
         />
 
         <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
           {dictionary.search.suggestedLabel}
         </p>
 
-        <div className="mt-3 space-y-2">
+        <div className="mt-3 max-h-[50vh] space-y-2 overflow-y-auto sm:max-h-[60vh]">
           {filtered.length > 0 ? (
             filtered.map((item) => (
               <Link
                 key={`${item.href}-${item.label}`}
                 href={item.href}
                 onClick={onClose}
-                className="tp-card-lift block rounded-sm border border-white/10 px-4 py-3 text-sm text-white transition hover:bg-white/10"
+                className="tp-card-lift block rounded-lg border border-white/10 px-4 py-3.5 text-sm text-white transition hover:bg-white/10 active:bg-white/15"
               >
                 {item.label}
               </Link>

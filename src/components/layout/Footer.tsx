@@ -111,7 +111,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-xs text-white/60">{dictionary.footer.legal}</p>
+            <p className="mt-4 pb-2 text-xs text-white/60">{dictionary.footer.legal}</p>
           </div>
         </div>
 

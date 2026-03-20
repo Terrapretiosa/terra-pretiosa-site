@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/motion/Reveal";
@@ -6,6 +7,19 @@ import { companyMedia } from "@/content/media";
 
 interface CompanyPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.company.pageTitle,
+    description: d.company.introBlocks[0]?.text ?? "",
+    alternates: {
+      languages: { fr: "/fr/company", en: "/en/company" },
+    },
+  };
 }
 
 function AccentBullet() {
@@ -74,13 +88,13 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
             </Reveal>
 
             <Reveal x={24} y={20} delayMs={90}>
-              <div className="tp-card-glow relative min-h-[340px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
+              <div className="tp-card-glow relative aspect-[4/3] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm lg:aspect-auto lg:min-h-[340px]">
                 <Image
                   src={companyMedia.about}
                   alt={dictionary.company.introTitle}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 92vw, 40vw"
                 />
               </div>
             </Reveal>
@@ -123,13 +137,13 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
         <section id="megatrends" className="py-16 sm:py-20">
           <div className="tp-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal x={-20} y={18}>
-              <div className="tp-card-glow relative min-h-[280px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
+              <div className="tp-card-glow relative aspect-[4/3] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm lg:aspect-auto lg:min-h-[280px]">
                 <Image
                   src={companyMedia.megatrends}
                   alt={dictionary.company.megatrendsTitle}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 92vw, 40vw"
                 />
               </div>
             </Reveal>
@@ -182,13 +196,13 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
             </Reveal>
 
             <Reveal x={20} y={20} delayMs={90}>
-              <div className="tp-card-glow relative min-h-[280px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
+              <div className="tp-card-glow relative aspect-[4/3] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm lg:aspect-auto lg:min-h-[280px]">
                 <Image
                   src={companyMedia.sustainable}
                   alt={dictionary.company.sustainableTitle}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 92vw, 40vw"
                 />
               </div>
             </Reveal>

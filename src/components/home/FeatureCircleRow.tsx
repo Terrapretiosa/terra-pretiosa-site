@@ -44,7 +44,7 @@ export function FeatureCircleRow({
               alt={feature.title}
               fill
               className="object-cover transition duration-700 hover:scale-105"
-              sizes="(max-width: 640px) 288px, 320px"
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
             />
           </div>
         </Reveal>

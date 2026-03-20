@@ -100,7 +100,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
   };
 
   const fieldClass =
-    "w-full border border-blue-200/70 bg-white/95 px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-blue-700 focus:shadow-[0_0_0_3px_rgba(46,169,176,0.18)]";
+    "w-full rounded-lg border border-blue-200/70 bg-white/95 px-3 py-3 text-base text-slate-800 outline-none transition focus:border-blue-700 focus:shadow-[0_0_0_3px_rgba(46,169,176,0.18)] sm:py-2.5 sm:text-sm";
   const labelClass = "mb-1.5 block text-sm font-semibold text-slate-700";
 
   return (
@@ -151,6 +151,8 @@ export function ContactForm({ dictionary }: ContactFormProps) {
           <div>
             <label className={labelClass}>{dictionary.contact.formFields.phoneOptional}</label>
             <input
+              type="tel"
+              inputMode="tel"
               value={values.phone}
               onChange={(event) =>
                 setValues((prev) => ({ ...prev, phone: event.target.value }))
@@ -272,7 +274,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
         </label>
         {errors.consent ? <p className="mt-2 text-xs text-red-600">{errors.consent}</p> : null}
 
-        <button type="submit" className="tp-blue-button mt-5 min-w-40 px-10 py-3.5">
+        <button type="submit" className="tp-blue-button mt-5 w-full px-10 py-3.5 sm:w-auto sm:min-w-40">
           {dictionary.contact.formFields.submit}
         </button>
       </div>

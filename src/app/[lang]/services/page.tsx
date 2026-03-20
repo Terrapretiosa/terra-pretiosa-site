@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,6 +10,19 @@ import { homeMedia } from "@/content/media";
 
 interface ServicesPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: ServicesPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.nav.services,
+    description: d.services.landingIntro,
+    alternates: {
+      languages: { fr: "/fr/services", en: "/en/services" },
+    },
+  };
 }
 
 export default async function ServicesPage({ params }: ServicesPageProps) {
@@ -73,14 +87,14 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
           </Reveal>
           <Reveal x={24} y={20} delayMs={80}>
             <div className="tp-card-lift relative overflow-hidden rounded-sm border border-blue-200/60 bg-gradient-to-br from-white to-blue-50/70 p-2">
-              <div className="grid min-h-[170px] grid-cols-2 gap-2 sm:min-h-[240px]">
+              <div className="grid aspect-[4/3] grid-cols-2 gap-2 sm:aspect-[3/2]">
                 <div className="relative row-span-2 overflow-hidden rounded-sm">
                   <Image
                     src={heroImages[0]}
                     alt={dictionary.services.landingTitle}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 50vw, 20vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
@@ -89,8 +103,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                     src={heroImages[1]}
                     alt={dictionary.services.landingTitle}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 25vw, 20vw"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-sm">
@@ -98,8 +112,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                     src={heroImages[2]}
                     alt={dictionary.services.landingTitle}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 25vw, 20vw"
                   />
                 </div>
               </div>
@@ -120,11 +134,11 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
 
       <ScrollSpotlightHero items={spotlightItems} />
 
-      <section className="py-14">
+      <section className="py-10 sm:py-14">
         <div className="tp-container">
           <Reveal y={18}>
             <div className="max-w-3xl">
-              <h2 className="text-3xl font-semibold uppercase tracking-[0.06em] text-blue-900">
+              <h2 className="text-2xl font-semibold uppercase tracking-[0.06em] text-blue-900 sm:text-3xl">
                 {dictionary.services.categoriesTitle}
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-700">
@@ -132,7 +146,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
               </p>
             </div>
           </Reveal>
-          <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:mt-7 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
             {categories.map((category, index) => (
               <Reveal key={category.slug} y={20} delayMs={index * 70}>
                 <article className="tp-card-lift overflow-hidden rounded-2xl border border-blue-200/60 bg-gradient-to-br from-white to-blue-50/70">
@@ -141,8 +155,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                       src={category.image}
                       alt={category.title}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 92vw, (max-width: 1280px) 45vw, 30vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/78 via-neutral-950/20 to-transparent" />
                     <div className="absolute left-5 top-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-blue-900/80 text-xs font-semibold text-white backdrop-blur-sm">
@@ -212,8 +226,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover object-center transition duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 92vw, 45vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/45 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
@@ -228,7 +242,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
             </Reveal>
 
             <Reveal x={20} y={18} delayMs={90}>
-              <div className="tp-soft-panel rounded-2xl border border-neutral-200 bg-neutral-100 p-8">
+              <div className="tp-soft-panel rounded-2xl border border-neutral-200 bg-neutral-100 p-5 sm:p-8">
                 <p className="tp-heading text-xs text-blue-900">
                   {dictionary.services.featuredTitle}
                 </p>

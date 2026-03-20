@@ -8,7 +8,7 @@ interface NewsInsightsProps {
 
 export function NewsInsights({ dictionary }: NewsInsightsProps) {
   return (
-    <section className="bg-neutral-100 py-20">
+    <section className="bg-neutral-100 py-12 sm:py-20">
       <div className="tp-container">
         <Reveal y={18}>
           <p className="tp-eyebrow mb-2">
@@ -19,9 +19,9 @@ export function NewsInsights({ dictionary }: NewsInsightsProps) {
             {dictionary.home.insights.title}
           </h2>
         </Reveal>
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-[1.2fr_1fr]">
           <Reveal y={26}>
-            <article className="tp-card-glow group rounded-2xl border border-blue-200/50 bg-gradient-to-br from-white to-blue-50/60 p-8 shadow-sm">
+            <article className="tp-card-glow group rounded-2xl border border-blue-200/50 bg-gradient-to-br from-white to-blue-50/60 p-5 shadow-sm sm:p-8">
               {/* Left accent bar */}
               <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-700" />
               <h3 className="text-2xl font-semibold leading-snug text-blue-900">
