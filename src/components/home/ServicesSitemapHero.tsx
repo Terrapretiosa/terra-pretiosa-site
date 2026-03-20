@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
+import { homeMedia } from "@/content/media";
 import type { Dictionary, Lang } from "@/content/types";
 
 interface ServicesSitemapHeroProps {
@@ -16,7 +17,7 @@ export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroPro
     <section className="relative overflow-hidden bg-neutral-950 py-20 text-white">
       {/* Background image */}
       <Image
-        src="/placeholders/services-dark-hero.svg"
+        src={homeMedia.servicesSitemapBackground}
         alt={dictionary.home.servicesSitemapTitle}
         fill
         className="object-cover opacity-20"

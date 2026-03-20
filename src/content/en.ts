@@ -1,4 +1,5 @@
 import { fr } from "./fr";
+import { homeMedia } from "./media";
 import type { Dictionary } from "./types";
 
 const todo = "(TODO: review EN wording)";
@@ -175,7 +176,7 @@ export const en: Dictionary = {
           "Strategic firm specializing in mining services and mineral resource governance for sustainable industrialization in Africa.",
         ctaLabel: "Explore services",
         ctaHref: "/en/services",
-        image: "/placeholders/hero-1.png",
+        image: homeMedia.heroDrilling,
       },
       {
         title: "Supply chain resilience for critical minerals",
@@ -183,7 +184,7 @@ export const en: Dictionary = {
           "We strengthen reliability, compliance, and transparency from mine operations to export.",
         ctaLabel: "See our approach",
         ctaHref: "/en/company",
-        image: "/placeholders/hero-2.png",
+        image: homeMedia.heroGovernance,
       },
       {
         title: "Responsible mining operations",
@@ -191,7 +192,7 @@ export const en: Dictionary = {
           "Our teams integrate technical, ESG, and performance requirements for measurable outcomes.",
         ctaLabel: "Launch a mission",
         ctaHref: "/en/contact",
-        image: "/placeholders/hero-3.png",
+        image: homeMedia.heroLaboratory,
       },
     ],
     features: [
@@ -200,21 +201,21 @@ export const en: Dictionary = {
         text: "Testing, analysis, mining operations, environment, and governance combined in one delivery model.",
         ctaLabel: "Browse categories",
         ctaHref: "/en/services",
-        image: "/placeholders/feature-1.png",
+        image: homeMedia.featureIntegrated,
       },
       {
         title: "African footprint, international standards",
         text: "We operate across multiple mining jurisdictions with strong quality, compliance, and capacity-transfer discipline.",
         ctaLabel: "View activity corridor",
         ctaHref: "/en/company#corridor",
-        image: "/placeholders/feature-2.png",
+        image: homeMedia.featureCorridor,
       },
       {
         title: "Sustainable impact and value creation",
         text: "Our missions align industrial performance, mining revenues, and local economic development.",
         ctaLabel: "Read our ambitions",
         ctaHref: "/en/company#ambitions",
-        image: "/placeholders/feature-3.png",
+        image: homeMedia.featureSustainability,
       },
     ],
     servicesSitemapTitle: "SERVICES",
@@ -646,5 +647,4 @@ export const en: Dictionary = {
     noResult: "No result for this query.",
   },
 };
-
 

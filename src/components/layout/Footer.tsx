@@ -72,7 +72,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
                 <div className="space-y-1 border-t border-white/10 px-4 pb-4 pt-2">
                   {group.links.map((link) => (
                     <Link
-                      key={`mobile-${group.title}-${link.href}`}
+                      key={`mobile-${group.title}-${link.label}-${link.href}`}
                       href={link.href}
                       className="block py-1.5 text-sm text-white/80 underline-offset-2 transition hover:text-white hover:underline"
                     >
@@ -91,7 +91,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
             <div className="mt-3 flex flex-wrap gap-3 text-sm">
               {dictionary.footer.quickLinks.map((link) => (
                 <Link
-                  key={`mobile-quick-${link.href}`}
+                  key={`mobile-quick-${link.label}-${link.href}`}
                   href={link.href}
                   className="text-white/70 transition hover:text-white"
                 >
@@ -170,7 +170,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
                     <div className="mt-3 space-y-2">
                       {group.links.map((link) => (
                         <Link
-                          key={`${group.title}-${link.href}`}
+                          key={`${group.title}-${link.label}-${link.href}`}
                           href={link.href}
                           className="block text-sm text-white/80 underline-offset-2 transition hover:translate-x-1 hover:text-white hover:underline"
                         >
@@ -194,7 +194,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
             </span>
             {dictionary.footer.quickLinks.map((link) => (
               <Link
-                key={`quick-${link.href}`}
+                key={`quick-${link.label}-${link.href}`}
                 href={link.href}
                 className="text-white/70 transition hover:text-white"
               >

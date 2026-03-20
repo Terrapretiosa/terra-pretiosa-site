@@ -5,6 +5,7 @@ import { ServicesSitemapHero } from "@/components/home/ServicesSitemapHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScrollSpotlightHero } from "@/components/services/ScrollSpotlightHero";
 import { getDictionary, isSupportedLang } from "@/content";
+import { homeMedia } from "@/content/media";
 
 interface ServicesPageProps {
   params: Promise<{ lang: string }>;
@@ -23,9 +24,9 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     label: category.title,
   }));
   const heroImages = [
-    dictionary.services.categories[0]?.image ?? "/placeholders/services-landing.svg",
-    dictionary.services.categories[1]?.image ?? "/placeholders/services-landing.svg",
-    dictionary.services.categories[2]?.image ?? "/placeholders/services-landing.svg",
+    dictionary.services.categories[0]?.image ?? homeMedia.heroLaboratory,
+    dictionary.services.categories[1]?.image ?? homeMedia.heroDrilling,
+    dictionary.services.categories[2]?.image ?? homeMedia.featureSustainability,
   ];
 
   return (

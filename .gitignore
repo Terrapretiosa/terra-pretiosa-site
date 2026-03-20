@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local source assets and debugging artifacts
+IMages-websites-final/
+IMages-websites-final.zip
+Logo/
+.playwright-cli/
+dev-server.log
+tmp-contact-sheet.png

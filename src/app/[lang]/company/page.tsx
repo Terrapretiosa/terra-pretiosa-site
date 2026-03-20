@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/motion/Reveal";
 import { getDictionary, isSupportedLang } from "@/content";
+import { companyMedia } from "@/content/media";
 
 interface CompanyPageProps {
   params: Promise<{ lang: string }>;
@@ -75,7 +76,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
             <Reveal x={24} y={20} delayMs={90}>
               <div className="tp-card-glow relative min-h-[340px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
                 <Image
-                  src="/placeholders/company-about.svg"
+                  src={companyMedia.about}
                   alt={dictionary.company.introTitle}
                   fill
                   className="object-cover"
@@ -124,7 +125,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
             <Reveal x={-20} y={18}>
               <div className="tp-card-glow relative min-h-[280px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
                 <Image
-                  src="/placeholders/company-megatrends.svg"
+                  src={companyMedia.megatrends}
                   alt={dictionary.company.megatrendsTitle}
                   fill
                   className="object-cover"
@@ -183,7 +184,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
             <Reveal x={20} y={20} delayMs={90}>
               <div className="tp-card-glow relative min-h-[280px] overflow-hidden rounded-2xl border border-blue-200/50 bg-blue-50/35 shadow-sm">
                 <Image
-                  src="/placeholders/company-sustainable.svg"
+                  src={companyMedia.sustainable}
                   alt={dictionary.company.sustainableTitle}
                   fill
                   className="object-cover"
