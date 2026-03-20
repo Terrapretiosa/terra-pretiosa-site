@@ -69,6 +69,13 @@ export const highlightMedia = {
   transfer: "/site-images/highlights/transfer.webp",
 } as const;
 
+export const newsMedia = {
+  governance: "/site-images/categories/gouvernance-minerale.webp",
+  supplyChain: "/site-images/categories/operations-minieres.webp",
+  environment: "/site-images/categories/environnement.webp",
+  training: "/site-images/categories/formations.webp",
+} as const;
+
 export const megaMenuTileMedia: Record<string, string[]> = {
   "essais-analyses": [
     serviceMedia["fragmentation-des-roches"],

@@ -180,6 +180,12 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
               {dictionary.nav.team}
             </Link>
             <Link
+              href={`/${lang}/news`}
+              className="px-3 py-1 text-sm transition hover:-translate-y-0.5 hover:text-cyan-200"
+            >
+              {dictionary.nav.news}
+            </Link>
+            <Link
               href={`/${lang}/contact`}
               className="px-3 py-1 text-sm transition hover:-translate-y-0.5 hover:text-cyan-200"
             >
@@ -391,6 +397,13 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
                 className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
               >
                 {dictionary.nav.team}
+              </Link>
+              <Link
+                href={`/${lang}/news`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+              >
+                {dictionary.nav.news}
               </Link>
               <Link
                 href={`/${lang}/contact`}

@@ -30,8 +30,14 @@ export function SearchOverlay({
       { label: dictionary.nav.services, href: `/${lang}/services` },
       { label: dictionary.nav.company, href: `/${lang}/company` },
       { label: dictionary.nav.team, href: `/${lang}/team` },
+      { label: dictionary.nav.news, href: `/${lang}/news` },
       { label: dictionary.nav.contact, href: `/${lang}/contact` },
     ];
+
+    const newsItems = dictionary.news.articles.map((article) => ({
+      label: article.title,
+      href: `/${lang}/news/${article.slug}`,
+    }));
 
     const serviceItems = dictionary.services.categories.flatMap((category) => [
       { label: category.title, href: `/${lang}/services/${category.slug}` },
@@ -41,7 +47,7 @@ export function SearchOverlay({
       })),
     ]);
 
-    return [...baseItems, ...serviceItems];
+    return [...baseItems, ...newsItems, ...serviceItems];
   }, [dictionary, lang]);
 
   const filtered = useMemo(() => {

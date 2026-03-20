@@ -54,6 +54,16 @@ export interface ServiceItem {
   highlights: HighlightItem[];
 }
 
+export interface NewsArticle {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  body: string[];
+  tag: string;
+}
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -77,6 +87,7 @@ export interface Dictionary {
     services: string;
     company: string;
     team: string;
+    news: string;
     contact: string;
     search: string;
     login: string;
@@ -237,6 +248,14 @@ export interface Dictionary {
     quickLinks: LinkItem[];
     legal: string;
     socials: LinkItem[];
+  };
+  news: {
+    pageTitle: string;
+    intro: string;
+    allNewsLabel: string;
+    latestLabel: string;
+    readArticle: string;
+    articles: NewsArticle[];
   };
   search: {
     title: string;

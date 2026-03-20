@@ -1,5 +1,5 @@
 import { fr } from "./fr";
-import { homeMedia } from "./media";
+import { homeMedia, newsMedia } from "./media";
 import type { Dictionary } from "./types";
 
 const todo = "(TODO: review EN wording)";
@@ -144,6 +144,7 @@ export const en: Dictionary = {
     services: "Services",
     company: "Company",
     team: "Team",
+    news: "News",
     contact: "Contact",
     search: "Search",
     login: "Login",
@@ -492,6 +493,7 @@ export const en: Dictionary = {
               { label: "Sustainable development", href: "/en/company#sustainable" },
               { label: "Ambitions", href: "/en/company#ambitions" },
               { label: "Team", href: "/en/team" },
+              { label: "News", href: "/en/news" },
               { label: "Contact", href: "/en/contact" },
             ],
           },
@@ -641,6 +643,67 @@ export const en: Dictionary = {
       { label: "LinkedIn", href: "https://www.linkedin.com/" },
       { label: "X", href: "https://x.com/" },
       { label: "YouTube", href: "https://www.youtube.com/" },
+    ],
+  },
+  news: {
+    pageTitle: "News",
+    intro: "Follow our latest publications, analyses, and field insights from the mining sector in Africa.",
+    allNewsLabel: "All news",
+    latestLabel: "Latest news",
+    readArticle: "Read article",
+    articles: [
+      {
+        slug: "mineral-governance-africa-2026",
+        title: "Mineral governance in Africa: challenges and outlook for 2026",
+        excerpt: "African states are strengthening governance frameworks to better capture value from critical mineral resources.",
+        date: "2026-03-10",
+        image: newsMedia.governance,
+        tag: "Governance",
+        body: [
+          "Global demand for critical minerals is pushing African governments to rethink their governance frameworks. Traceability, transparency, and revenue optimization are at the heart of ongoing reforms.",
+          "Terra Pretiosa supports several administrations in structuring their revenue units and strengthening their control and reporting capabilities.",
+          "These transformations aim to ensure a more equitable distribution of value while attracting responsible investment to the continent.",
+        ],
+      },
+      {
+        slug: "critical-mineral-supply-chains",
+        title: "Supply chains: securing critical mineral flows",
+        excerpt: "The resilience of mineral supply chains has become a major strategic issue for industry and governments alike.",
+        date: "2026-02-22",
+        image: newsMedia.supplyChain,
+        tag: "Supply Chain",
+        body: [
+          "Geopolitical and logistical disruptions have highlighted the fragility of critical mineral supply chains. Mining operators and governments are seeking solutions to strengthen end-to-end reliability and compliance.",
+          "Our integrated approach — flow audits, export traceability, and production control — helps reduce revenue leakage and improve operational transparency.",
+          "Terra Pretiosa works with public and private partners to establish robust tracking and reporting mechanisms across the entire value chain.",
+        ],
+      },
+      {
+        slug: "mining-site-rehabilitation",
+        title: "Mining site rehabilitation: a sustainable approach",
+        excerpt: "Progressive rehabilitation of mining sites is becoming a regulatory imperative and an ESG performance lever.",
+        date: "2026-02-05",
+        image: newsMedia.environment,
+        tag: "Environment",
+        body: [
+          "Mine closure and rehabilitation are no longer peripheral steps. They are now integral to mine planning and operators' ESG commitments.",
+          "Terra Pretiosa offers risk-based site assessments, phased rehabilitation plans, and water quality monitoring to support operators in their environmental compliance journey.",
+          "This approach reconciles industrial performance with long-term environmental responsibility.",
+        ],
+      },
+      {
+        slug: "mining-skills-training",
+        title: "Capacity building: training mining sector actors",
+        excerpt: "Skills transfer is a key pillar for sustaining mining operations performance in Africa.",
+        date: "2026-01-18",
+        image: newsMedia.training,
+        tag: "Training",
+        body: [
+          "The African mining sector faces a skills challenge. Targeted training programs help strengthen local capabilities in continuous improvement, mineral processing, and quality management.",
+          "Terra Pretiosa deploys on-site training tailored to operational realities, with a focus on measuring results and sustainable knowledge transfer.",
+          "The goal is to build an operational excellence culture driven by autonomous and competent local teams.",
+        ],
+      },
     ],
   },
   search: {

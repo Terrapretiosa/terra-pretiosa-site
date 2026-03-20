@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FeatureCircleRow } from "@/components/home/FeatureCircleRow";
 import { HeroCarousel } from "@/components/home/HeroCarousel";
+import { NewsHighlights } from "@/components/home/NewsHighlights";
 import { NewsInsights } from "@/components/home/NewsInsights";
 import { ServiceCardsGrid } from "@/components/home/ServiceCardsGrid";
 import { ServicesSitemapHero } from "@/components/home/ServicesSitemapHero";
@@ -92,6 +93,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <ServicesSitemapHero lang={lang} dictionary={dictionary} />
       <ServiceCardsGrid lang={lang} dictionary={dictionary} />
       <NewsInsights dictionary={dictionary} />
+      <NewsHighlights lang={lang} dictionary={dictionary} />
 
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-16 text-white">
         {/* Ambient grid */}
