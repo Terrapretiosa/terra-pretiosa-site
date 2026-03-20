@@ -152,6 +152,9 @@ export interface Dictionary {
       primaryCta: string;
       secondaryCta: string;
     };
+    capabilitiesTitle: string;
+    exploreLabel: string;
+    allServicesLabel: string;
     relatedTitle: string;
     faqTitle: string;
   };

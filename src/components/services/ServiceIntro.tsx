@@ -1,11 +1,12 @@
 import { Reveal } from "@/components/motion/Reveal";
-import type { ServiceItem } from "@/content/types";
+import type { Dictionary, ServiceItem } from "@/content/types";
 
 interface ServiceIntroProps {
   service: ServiceItem;
+  dictionary: Dictionary;
 }
 
-export function ServiceIntro({ service }: ServiceIntroProps) {
+export function ServiceIntro({ service, dictionary }: ServiceIntroProps) {
   return (
     <section className="py-16">
       <div className="tp-container grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -22,7 +23,7 @@ export function ServiceIntro({ service }: ServiceIntroProps) {
         <Reveal delayMs={110} x={22} y={20}>
           <div className="rounded-2xl border border-blue-200/50 bg-gradient-to-br from-blue-50/70 to-white p-6 shadow-sm">
             <div className="mb-4 h-0.5 w-8 rounded-full bg-gradient-to-r from-blue-400 to-blue-700" />
-            <h2 className="tp-heading text-xs text-blue-900">Capabilities</h2>
+            <h2 className="tp-heading text-xs text-blue-900">{dictionary.services.capabilitiesTitle}</h2>
             <ul className="mt-5 space-y-3">
               {service.capabilities.map((capability) => (
                 <li key={capability} className="flex items-start gap-2.5 text-sm text-slate-600">

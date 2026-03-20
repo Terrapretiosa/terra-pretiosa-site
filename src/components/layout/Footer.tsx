@@ -23,9 +23,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
             <div>
               <p className="tp-heading text-sm text-cyan-200">{dictionary.siteName}</p>
               <p className="mt-3 text-sm text-white/75">
-                438 N Frederick Ave
-                <br />
-                Gaithersburg, MD 20877
+                {dictionary.contact.hqAddress}
               </p>
             </div>
             <Link
@@ -136,9 +134,7 @@ export function Footer({ lang, dictionary }: FooterProps) {
             <div>
               <p className="tp-heading text-sm text-cyan-200">{dictionary.siteName}</p>
               <p className="mt-4 text-sm leading-relaxed text-white/65">
-                438 N Frederick Ave
-                <br />
-                Gaithersburg, MD 20877
+                {dictionary.contact.hqAddress}
               </p>
               <Link
                 href={`/${lang}/contact`}

@@ -73,24 +73,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                       {member.bio}
                     </p>
-                    <Link
-                      href="#"
-                      className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-blue-800 transition duration-300 hover:gap-2.5 hover:text-blue-600"
-                    >
-                      {dictionary.team.cvLabel}
-                      <svg
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        className="h-3.5 w-3.5 shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="m9 18 6-6-6-6" />
-                      </svg>
-                    </Link>
+                    {/* CV link hidden until actual CV files are available */}
                   </div>
                 </article>
               </Reveal>

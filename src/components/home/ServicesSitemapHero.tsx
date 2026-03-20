@@ -10,8 +10,8 @@ interface ServicesSitemapHeroProps {
 }
 
 export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroProps) {
-  const exploreLabel = lang === "fr" ? "Explorer" : "Explore";
-  const allServicesLabel = lang === "fr" ? "Tous les services" : "All services";
+  const exploreLabel = dictionary.services.exploreLabel;
+  const allServicesLabel = dictionary.services.allServicesLabel;
 
   return (
     <section className="relative overflow-hidden bg-neutral-950 py-20 text-white">

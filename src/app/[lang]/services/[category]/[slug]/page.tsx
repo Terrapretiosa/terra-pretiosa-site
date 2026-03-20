@@ -59,7 +59,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         serviceTitle={service.title}
       />
       <ScrollSpotlightHero items={spotlightItems} />
-      <ServiceIntro service={service} />
+      <ServiceIntro service={service} dictionary={dictionary} />
       <AnimatedHighlights lang={lang} items={service.highlights} />
       <ServiceFaq title={dictionary.services.faqTitle} items={serviceFaq} />
       <RelatedServices
