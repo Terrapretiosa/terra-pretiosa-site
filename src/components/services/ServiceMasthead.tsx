@@ -44,7 +44,7 @@ export function ServiceMasthead({
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href={`/${lang}/contact`} className="tp-blue-button">
-              {dictionary.common.partnerCta}
+              {dictionary.common.contactUs}
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
@@ -57,9 +57,6 @@ export function ServiceMasthead({
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
-            </Link>
-            <Link href={`/${lang}/contact`} className="tp-outline-button">
-              {dictionary.common.contactUs}
             </Link>
           </div>
         </Reveal>
