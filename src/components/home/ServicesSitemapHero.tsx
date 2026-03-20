@@ -51,25 +51,35 @@ export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroPro
             <Reveal key={category.slug} y={22} delayMs={index * 70}>
               <Link
                 href={`/${lang}/services/${category.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/4 p-5 backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:border-blue-400/55 hover:bg-white/8 hover:shadow-[0_20px_50px_rgba(0,0,0,0.55),0_0_0_1px_rgba(68,200,203,0.30)]"
+                className="group relative flex h-full min-h-[260px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-5 backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:border-blue-400/55 hover:bg-white/8 hover:shadow-[0_20px_50px_rgba(0,0,0,0.55),0_0_0_1px_rgba(68,200,203,0.30)]"
               >
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover opacity-20 grayscale transition duration-700 group-hover:scale-105 group-hover:opacity-30 group-hover:grayscale-0"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 20vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/35 via-neutral-950/68 to-neutral-950/88" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(156,234,234,0.14),transparent_36%)] opacity-80" />
+
                 {/* Large background number */}
-                <span className="select-none text-5xl font-bold leading-none text-white/7 transition duration-500 group-hover:text-white/14">
+                <span className="relative z-10 select-none text-5xl font-bold leading-none text-white/25 transition duration-500 group-hover:text-white/40">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
                 {/* Category title */}
-                <h3 className="mt-4 text-sm font-semibold leading-snug text-white/85 transition duration-300 group-hover:text-white sm:text-base">
+                <h3 className="relative z-10 mt-4 text-sm font-semibold leading-snug text-white/90 transition duration-300 group-hover:text-white sm:text-base">
                   {category.title}
                 </h3>
 
                 {/* Service count */}
-                <p className="mt-1.5 text-xs text-white/38 transition duration-300 group-hover:text-white/60">
+                <p className="relative z-10 mt-1.5 text-xs text-white/60 transition duration-300 group-hover:text-white/80">
                   {category.services.length} services
                 </p>
 
                 {/* Explore link */}
-                <div className="mt-auto flex items-center gap-1.5 pt-5 text-xs font-semibold uppercase tracking-wide text-blue-400 transition duration-300 group-hover:gap-2.5 group-hover:text-blue-300">
+                <div className="relative z-10 mt-auto flex items-center gap-1.5 pt-5 text-xs font-semibold uppercase tracking-wide text-blue-300 transition duration-300 group-hover:gap-2.5 group-hover:text-blue-200">
                   {exploreLabel}
                   <svg
                     aria-hidden="true"
