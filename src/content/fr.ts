@@ -411,35 +411,36 @@ export const fr: Dictionary = {
     serviceGridIntro:
       "Une sélection de services à haute valeur ajoutée couvrant la chaîne technique, opérationnelle et de gouvernance.",
     insights: {
-      title: "Insights",
-      featuredTitle: "Mégatendance: services miniers intégrés et durables",
+      title: "Analyses",
+      featuredTitle:
+        "Minerais critiques : convertir la pression de la demande mondiale en valeur industrielle locale",
       featuredExcerpt:
-        "Face à la montée des exigences environnementales, de sécurité et de productivité, les États et compagnies minières africaines recherchent des partenaires capables de combiner technologie, réactivité locale et conformité environnementale.",
-      featuredHref: "/fr/company#megatrends",
+        "La hausse de la demande en minerais critiques ne crée pas automatiquement de prospérité pour les pays producteurs. La création de valeur dépend de quatre disciplines conjointes : qualité de la gouvernance, traçabilité des flux, maîtrise environnementale et montée en compétence des équipes techniques.",
+      featuredHref: "/fr/news/gouvernance-minerale-afrique-2026",
       items: [
         {
-          title: "Lutte contre la pauvreté rurale et le chômage des jeunes",
+          title: "Traçabilité export et sécurisation des recettes",
           excerpt:
-            "Nos interventions visent des impacts socioéconomiques locaux mesurables et durables.",
-          href: "/fr/company#megatrends",
+            "Le rapprochement entre tonnages produits, teneurs payables, humidité, expéditions et encaissements devient un levier central de gouvernance minérale.",
+          href: "/fr/news/chaines-approvisionnement-mineraux-critiques",
         },
         {
-          title: "Qualité des eaux et conformité ESG",
+          title: "Réhabilitation progressive et coûts de fermeture",
           excerpt:
-            "Le suivi des effluents et des eaux minières devient un levier de performance durable.",
-          href: "/fr/services/environnement",
+            "Les passifs environnementaux doivent être chiffrés tôt et intégrés aux plans de mine, aux bilans d'eau et aux garanties financières.",
+          href: "/fr/news/rehabilitation-sites-miniers",
         },
         {
-          title: "Transmission du savoir-faire minier",
+          title: "Compétences opératoires et stabilité usine",
           excerpt:
-            "Formations et renforcement de capacités pour opérateurs, institutions et administrations.",
-          href: "/fr/services/formations",
+            "La performance métallurgique durable repose sur la discipline opératoire, les standards de maintenance et le traitement rapide des écarts terrain.",
+          href: "/fr/news/formation-competences-minieres",
         },
         {
-          title: "Conseil en gouvernance des ressources minérales",
+          title: "Gouvernance minérale et arbitrages budgétaires",
           excerpt:
-            "Appui stratégique aux États pour structurer les recettes minières, le contrôle de production et la traçabilité export.",
-          href: "/fr/services/gouvernance-minerale",
+            "Les États doivent désormais piloter simultanément attractivité de l'investissement, capture de la rente et transformation locale.",
+          href: "/fr/news/gouvernance-minerale-afrique-2026",
         },
       ],
     },
@@ -1093,62 +1094,75 @@ export const fr: Dictionary = {
     ],
   },
   news: {
-    pageTitle: "Actualités",
-    intro: "Suivez nos dernières publications, analyses et retours d'expérience sur le secteur minier en Afrique.",
-    allNewsLabel: "Toutes les actualités",
-    latestLabel: "Dernières actualités",
-    readArticle: "Lire l'article",
+    pageTitle: "Actualités & analyses",
+    intro:
+      "Retours d'expérience opérationnels, notes de gouvernance minérale, points de vigilance ESG et analyses techniques sur la chaîne de valeur minière africaine.",
+    allNewsLabel: "Toutes les analyses",
+    latestLabel: "Dernières analyses",
+    readArticle: "Lire l'analyse",
     articles: [
       {
         slug: "gouvernance-minerale-afrique-2026",
-        title: "Gouvernance minérale en Afrique : enjeux et perspectives 2026",
-        excerpt: "Les États africains renforcent leurs cadres de gouvernance pour mieux capter la valeur des ressources minérales critiques.",
+        title:
+          "Minerais critiques en Afrique : de la rente extractive à la valeur industrielle",
+        excerpt:
+          "La décennie qui s'ouvre se jouera sur la capacité des pays producteurs à transformer les recettes minières en infrastructures, compétences, énergie fiable et base industrielle locale.",
         date: "2026-03-10",
         image: newsMedia.governance,
         tag: "Gouvernance",
         body: [
-          "La demande mondiale en minéraux critiques pousse les gouvernements africains à repenser leurs cadres de gouvernance. Traçabilité, transparence et optimisation des recettes minières sont au cœur des réformes en cours.",
-          "Terra Pretiosa accompagne plusieurs administrations dans la structuration de leurs unités de revenus et le renforcement de leurs capacités de contrôle et de reporting.",
-          "Ces transformations visent à garantir une répartition plus équitable de la valeur tout en attirant des investissements responsables sur le continent.",
+          "La compétition autour des minerais critiques ne porte plus uniquement sur l'accès au gisement. Elle porte désormais sur la qualité des cadres de gouvernance, la fiabilité des données déclaratives, la rapidité des décisions administratives et la capacité à créer de la valeur au-delà de l'exportation brute.",
+          "Pour les États producteurs, l'enjeu n'est pas seulement d'accroître les volumes sortis de mine. Il s'agit de sécuriser l'assiette fiscale, de contrôler les tonnages et les teneurs commercialisées, et d'orienter la rente minière vers des investissements productifs : énergie, logistique, formation technique et services industriels.",
+          "Une gouvernance robuste repose sur des mécanismes très concrets : procédures normalisées de reporting, rapprochement production-export, audit des flux de paiement, exigences ESG crédibles et instruments financiers permettant de couvrir les engagements de réhabilitation.",
+          "Terra Pretiosa accompagne cette transition en combinant conseil institutionnel, renforcement de capacités administratives et appui technique aux opérateurs afin que la performance minière se traduise en création de valeur mesurable pour les territoires.",
         ],
       },
       {
         slug: "chaines-approvisionnement-mineraux-critiques",
-        title: "Chaînes d'approvisionnement : sécuriser les flux de minéraux critiques",
-        excerpt: "La résilience des chaînes d'approvisionnement minérales est devenue un enjeu stratégique majeur pour les industriels et les États.",
+        title:
+          "Traçabilité export et contrôle de production : verrouiller les flux de minéraux critiques",
+        excerpt:
+          "L'enjeu n'est plus seulement d'extraire. Il faut rapprocher données de fosse, échantillonnage, stocks, expéditions et paiements pour fiabiliser la recette minière et limiter les écarts.",
         date: "2026-02-22",
         image: newsMedia.supplyChain,
         tag: "Supply Chain",
         body: [
-          "Les perturbations géopolitiques et logistiques ont mis en lumière la fragilité des chaînes d'approvisionnement en minéraux critiques. Les opérateurs miniers et les gouvernements cherchent des solutions pour renforcer la fiabilité et la conformité de bout en bout.",
-          "Notre approche intégrée — audit des flux, traçabilité export et contrôle de production — permet de réduire les fuites de revenus et d'améliorer la transparence des opérations.",
-          "Terra Pretiosa travaille avec des partenaires publics et privés pour établir des mécanismes robustes de suivi et de reporting sur l'ensemble de la chaîne de valeur.",
+          "Les ruptures logistiques et les exigences accrues des acheteurs ont déplacé le centre de gravité de la performance minière vers la maîtrise des flux. Une chaîne de valeur crédible doit être capable de relier données de production, qualité marchande, humidité, pertes de manutention, volumes exportés et règlements effectivement reçus.",
+          "Dans de nombreux contextes, l'écart de performance ne se situe pas à l'usine mais dans les interfaces : sondages mal rapprochés des stocks, absence de contrôles indépendants, faible discipline documentaire ou reporting non harmonisé entre mine, laboratoire, logistique et administration.",
+          "Le contrôle de production et la traçabilité export doivent donc reposer sur une architecture opérationnelle claire : points de mesure identifiés, chaîne de custody documentée, protocoles de réconciliation matière et tableaux de bord partagés entre exploitant, autorités de contrôle et fonctions financières.",
+          "Terra Pretiosa structure ces dispositifs pour réduire les fuites de revenus, améliorer la qualité des déclarations et renforcer la confiance entre opérateurs, États et partenaires commerciaux.",
         ],
       },
       {
         slug: "rehabilitation-sites-miniers",
-        title: "Réhabilitation des sites miniers : une approche durable",
-        excerpt: "La réhabilitation progressive des sites miniers devient un impératif réglementaire et un levier de performance ESG.",
+        title:
+          "Réhabilitation progressive : intégrer fermeture, gestion des eaux et passifs dès la conception",
+        excerpt:
+          "La performance ESG d'un site minier se construit dès l'étude de faisabilité, lorsque les passifs, les risques hydrogéologiques et les coûts de fermeture peuvent encore être maîtrisés.",
         date: "2026-02-05",
         image: newsMedia.environment,
         tag: "Environnement",
         body: [
-          "La fermeture et la réhabilitation des sites miniers ne sont plus des étapes annexes. Elles font désormais partie intégrante de la planification minière et des engagements ESG des opérateurs.",
-          "Terra Pretiosa propose des diagnostics de sites basés sur les risques, des plans de réhabilitation phasés et un suivi de la qualité des eaux pour accompagner les opérateurs dans leur démarche de conformité environnementale.",
-          "Cette approche permet de concilier performance industrielle et responsabilité environnementale sur le long terme.",
+          "La fermeture n'est plus un sujet de fin de vie de la mine. Elle est devenue une variable de conception qui influence le séquencement des travaux, la gestion des stériles, la stratégie de stockage des résidus et le coût total du projet.",
+          "Une approche rigoureuse commence par l'identification précoce des passifs potentiels : drainage minier acide, stabilité géotechnique, contamination des eaux, érosion, sécurité des infrastructures abandonnées et usages futurs du foncier.",
+          "La réhabilitation progressive permet de traiter ces enjeux au rythme de l'exploitation plutôt qu'en fin de cycle, lorsque les coûts augmentent et que la marge de manœuvre technique se réduit. Elle améliore également la lisibilité des engagements ESG auprès des communautés, des investisseurs et des autorités.",
+          "Terra Pretiosa accompagne les opérateurs avec des diagnostics de risque, des plans de réhabilitation phasés, des bilans d'eau et des dispositifs de suivi environnemental permettant d'aligner conformité réglementaire, maîtrise des coûts et crédibilité opérationnelle.",
         ],
       },
       {
         slug: "formation-competences-minieres",
-        title: "Renforcement des compétences : former les acteurs du secteur minier",
-        excerpt: "Le transfert de compétences est un pilier essentiel pour pérenniser la performance des opérations minières en Afrique.",
+        title:
+          "Compétences mine-usine : la performance durable se construit sur le terrain",
+        excerpt:
+          "La stabilité métallurgique, la disponibilité des équipements et la rigueur QA/QC dépendent moins des présentations en salle que de la discipline opératoire installée sur site.",
         date: "2026-01-18",
         image: newsMedia.training,
         tag: "Formation",
         body: [
-          "Le secteur minier africain fait face à un défi de compétences. Les programmes de formation ciblés permettent de renforcer les capacités locales en amélioration continue, traitement minéralurgique et gestion de la qualité.",
-          "Terra Pretiosa déploie des formations sur site adaptées aux réalités opérationnelles, avec un accent sur la mesure des résultats et le transfert durable de savoir-faire.",
-          "L'objectif est de construire une culture d'excellence opérationnelle portée par des équipes locales autonomes et compétentes.",
+          "Dans de nombreuses opérations, les contre-performances répétées ne proviennent pas d'un manque d'équipements, mais d'écarts de pratique : paramètres de procédé mal tenus, inspections préventives irrégulières, dérive des protocoles d'échantillonnage ou transmission incomplète entre équipes de quart.",
+          "La montée en compétence doit donc être pensée comme un dispositif de terrain. Elle combine standards opératoires, routines de supervision, analyses de causes racines, coaching poste de travail et indicateurs simples directement exploitables par les responsables mine, usine, maintenance et laboratoire.",
+          "Les formations efficaces relient les contenus techniques aux variables de performance réelles : récupération métallurgique, dilution, disponibilité mécanique, qualité des données analytiques, temps d'arrêt et conformité environnementale.",
+          "Terra Pretiosa construit ses programmes de formation autour de cette logique d'appropriation opérationnelle afin que le transfert de savoir-faire se traduise par moins de variabilité, plus de maîtrise et une meilleure autonomie des équipes locales.",
         ],
       },
     ],

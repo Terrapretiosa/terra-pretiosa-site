@@ -227,28 +227,35 @@ export const en: Dictionary = {
       "A selection of high-value services for demanding mining missions.",
     insights: {
       title: "Insights",
-      featuredTitle: "Megatrends: agile mineral governance",
+      featuredTitle:
+        "Critical minerals: turning global demand pressure into local industrial value",
       featuredExcerpt:
-        "Global energy transition raises pressure on critical minerals. Governments and operators must strengthen governance, traceability, and local integration.",
-      featuredHref: "/en/company#megatrends",
+        "Rising demand for critical minerals does not automatically generate prosperity for producing countries. Value creation depends on four disciplines working together: governance quality, flow traceability, environmental control, and technical capability building.",
+      featuredHref: "/en/news/mineral-governance-africa-2026",
       items: [
         {
-          title: "Local industrialization and shared value",
+          title: "Export traceability and revenue security",
           excerpt:
-            "Local integration turns mineral resources into long-term industrial growth.",
-          href: "/en/company#ambitions",
+            "Reconciling produced tonnage, payable grade, moisture, shipped volumes, and cash collection is now a core mineral-governance control.",
+          href: "/en/news/critical-mineral-supply-chains",
         },
         {
-          title: "Water quality and ESG compliance",
+          title: "Progressive rehabilitation and closure cost control",
           excerpt:
-            "Effluent and water monitoring are now key drivers of sustainable performance.",
-          href: "/en/services/environnement",
+            "Mining liabilities must be quantified early and integrated into mine planning, water balances, and financial assurance mechanisms.",
+          href: "/en/news/mining-site-rehabilitation",
         },
         {
-          title: "Public capacity reinforcement",
+          title: "Operational skills and plant stability",
           excerpt:
-            "Mining administrations need robust tools for revenue governance and traceability.",
-          href: "/en/services/gouvernance-minerale",
+            "Sustainable metallurgical performance depends on operating discipline, maintenance standards, and rapid treatment of field deviations.",
+          href: "/en/news/mining-skills-training",
+        },
+        {
+          title: "Mineral governance and fiscal arbitration",
+          excerpt:
+            "Producing states now need to balance investment attractiveness, rent capture, and domestic industrial development at the same time.",
+          href: "/en/news/mineral-governance-africa-2026",
         },
       ],
     },
@@ -646,62 +653,75 @@ export const en: Dictionary = {
     ],
   },
   news: {
-    pageTitle: "News",
-    intro: "Follow our latest publications, analyses, and field insights from the mining sector in Africa.",
-    allNewsLabel: "All news",
-    latestLabel: "Latest news",
+    pageTitle: "News & Analysis",
+    intro:
+      "Operational lessons learned, mineral-governance notes, ESG watchpoints, and technical analysis across the African mining value chain.",
+    allNewsLabel: "All articles",
+    latestLabel: "Latest articles",
     readArticle: "Read article",
     articles: [
       {
         slug: "mineral-governance-africa-2026",
-        title: "Mineral governance in Africa: challenges and outlook for 2026",
-        excerpt: "African states are strengthening governance frameworks to better capture value from critical mineral resources.",
+        title:
+          "Critical minerals in Africa: moving from extractive rent to industrial value",
+        excerpt:
+          "The next decade will depend on whether producing countries can convert mining revenues into infrastructure, skills, reliable power, and local industrial capability.",
         date: "2026-03-10",
         image: newsMedia.governance,
         tag: "Governance",
         body: [
-          "Global demand for critical minerals is pushing African governments to rethink their governance frameworks. Traceability, transparency, and revenue optimization are at the heart of ongoing reforms.",
-          "Terra Pretiosa supports several administrations in structuring their revenue units and strengthening their control and reporting capabilities.",
-          "These transformations aim to ensure a more equitable distribution of value while attracting responsible investment to the continent.",
+          "Competition around critical minerals is no longer only about access to the orebody. It is increasingly about governance quality, data reliability, permitting discipline, and the ability to create value beyond raw ore exports.",
+          "For producing states, the objective is not simply to increase mined volume. It is to secure the fiscal base, control marketed tonnage and grade, and direct mining rent toward productive investments such as power, logistics, technical education, and industrial services.",
+          "Robust mineral governance rests on practical mechanisms: standardized reporting procedures, production-to-export reconciliation, payment-flow audits, credible ESG requirements, and financial instruments capable of covering rehabilitation commitments.",
+          "Terra Pretiosa supports this transition by combining institutional advisory, administrative capacity building, and technical support for operators so that mining performance translates into measurable economic value.",
         ],
       },
       {
         slug: "critical-mineral-supply-chains",
-        title: "Supply chains: securing critical mineral flows",
-        excerpt: "The resilience of mineral supply chains has become a major strategic issue for industry and governments alike.",
+        title:
+          "Export traceability and production control: locking down critical mineral flows",
+        excerpt:
+          "The challenge is no longer just extraction. Operators and regulators need reconciled pit, laboratory, stockpile, shipment, and payment data to secure mining revenue.",
         date: "2026-02-22",
         image: newsMedia.supplyChain,
         tag: "Supply Chain",
         body: [
-          "Geopolitical and logistical disruptions have highlighted the fragility of critical mineral supply chains. Mining operators and governments are seeking solutions to strengthen end-to-end reliability and compliance.",
-          "Our integrated approach — flow audits, export traceability, and production control — helps reduce revenue leakage and improve operational transparency.",
-          "Terra Pretiosa works with public and private partners to establish robust tracking and reporting mechanisms across the entire value chain.",
+          "Logistics shocks and tighter buyer requirements have shifted mining performance toward flow control. A credible value chain must be able to connect production data, commercial quality, moisture, handling losses, exported volumes, and actual cash settlement.",
+          "In many operations, the performance gap is not inside the plant but at the interfaces: poorly reconciled stock movements, weak independent controls, inconsistent documentation, or fragmented reporting between mine, laboratory, logistics, and administration.",
+          "Production control and export traceability therefore need a clear operating architecture with defined measurement points, documented chain of custody, reconciliation protocols, and dashboards shared between operators, regulators, and finance teams.",
+          "Terra Pretiosa structures these systems to reduce revenue leakage, improve declaration quality, and strengthen confidence between operators, states, and commercial counterparties.",
         ],
       },
       {
         slug: "mining-site-rehabilitation",
-        title: "Mining site rehabilitation: a sustainable approach",
-        excerpt: "Progressive rehabilitation of mining sites is becoming a regulatory imperative and an ESG performance lever.",
+        title:
+          "Progressive rehabilitation: integrating closure, water, and liabilities from project design",
+        excerpt:
+          "A mine's ESG credibility is built at feasibility stage, when liabilities, hydrogeological risks, and closure costs can still be controlled technically and financially.",
         date: "2026-02-05",
         image: newsMedia.environment,
         tag: "Environment",
         body: [
-          "Mine closure and rehabilitation are no longer peripheral steps. They are now integral to mine planning and operators' ESG commitments.",
-          "Terra Pretiosa offers risk-based site assessments, phased rehabilitation plans, and water quality monitoring to support operators in their environmental compliance journey.",
-          "This approach reconciles industrial performance with long-term environmental responsibility.",
+          "Closure is no longer a late-life issue. It has become a design variable that influences mine sequencing, waste placement, residue management strategy, and total project cost.",
+          "A rigorous approach starts with early identification of liabilities: acid mine drainage potential, geotechnical instability, water contamination pathways, erosion, abandoned-infrastructure safety, and future land-use constraints.",
+          "Progressive rehabilitation addresses these risks at the pace of mining instead of waiting until the end of the cycle, when costs rise and technical flexibility drops. It also improves the credibility of ESG commitments with communities, investors, and regulators.",
+          "Terra Pretiosa supports operators through risk diagnostics, phased rehabilitation plans, water balances, and environmental monitoring frameworks that align regulatory compliance, cost control, and operational credibility.",
         ],
       },
       {
         slug: "mining-skills-training",
-        title: "Capacity building: training mining sector actors",
-        excerpt: "Skills transfer is a key pillar for sustaining mining operations performance in Africa.",
+        title:
+          "Mine-to-plant skills: durable performance is built in the field",
+        excerpt:
+          "Stable metallurgy, equipment availability, and QA/QC discipline depend less on classroom theory than on the operating discipline installed on site.",
         date: "2026-01-18",
         image: newsMedia.training,
         tag: "Training",
         body: [
-          "The African mining sector faces a skills challenge. Targeted training programs help strengthen local capabilities in continuous improvement, mineral processing, and quality management.",
-          "Terra Pretiosa deploys on-site training tailored to operational realities, with a focus on measuring results and sustainable knowledge transfer.",
-          "The goal is to build an operational excellence culture driven by autonomous and competent local teams.",
+          "In many operations, repeated underperformance does not come from missing equipment but from practice drift: unstable process settings, inconsistent preventive inspection, weak sampling discipline, or poor handover between shifts.",
+          "Capability building must therefore be designed as a field system. It combines operating standards, supervision routines, root-cause analysis, workstation coaching, and practical indicators that mine, plant, maintenance, and laboratory supervisors can act on immediately.",
+          "Effective training links technical content directly to performance variables such as metallurgical recovery, dilution, mechanical availability, analytical-data quality, downtime, and environmental compliance.",
+          "Terra Pretiosa structures its programs around this operational-ownership logic so that skills transfer produces less variability, stronger control, and higher autonomy in local teams.",
         ],
       },
     ],
@@ -713,4 +733,3 @@ export const en: Dictionary = {
     noResult: "No result for this query.",
   },
 };
-
