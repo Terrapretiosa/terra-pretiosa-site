@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Terra Pretiosa — Mining services, mineral governance, and raw materials consulting across Africa and beyond.",
-  metadataBase: new URL("https://terra-pretiosa.com"),
+  metadataBase: new URL("https://terrapretiosa.com"),
   openGraph: {
     type: "website",
     siteName: "Terra Pretiosa",

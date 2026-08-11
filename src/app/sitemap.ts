@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getDictionary, SUPPORTED_LANGS } from "@/content";
 
-const BASE_URL = "https://terra-pretiosa.com";
+const BASE_URL = "https://terrapretiosa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

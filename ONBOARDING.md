@@ -160,22 +160,25 @@ sure they are correct and monitored.
 5. Add spam protection — a honeypot field at minimum, hCaptcha or Turnstile if the form
    attracts bots.
 
-### 5.2 🔴 The production domain is not live
+### 5.2 ✅ Production domain — resolved
 
-`terra-pretiosa.com` does not currently resolve. It has not been registered, or has not been
-pointed at the hosting. The site is reachable only at its `.vercel.app` address.
+The site is live at **<https://terrapretiosa.com>**, registered at Namecheap, with DNS served
+by Namecheap's nameservers and an apex `A` record pointing at Vercel. Email for the domain
+runs on Namecheap Private Email (`mx1/mx2.privateemail.com`), separately from the website.
 
-The domain is **hardcoded in three files** and all three must be updated together if the
-final domain differs:
+The site canonical URL is **hardcoded in three files**. If the domain ever changes, all three
+must be updated together:
 
 | File | Affects |
 | --- | --- |
-| `src/app/layout.tsx` | `metadataBase` — social sharing previews |
+| `src/app/layout.tsx` | `metadataBase` — social sharing preview URLs |
 | `src/app/sitemap.ts` | `BASE_URL` — every URL in the sitemap |
 | `src/app/robots.ts` | Sitemap location advertised to search engines |
 
-Once registered, add the domain in Vercel under **Project → Settings → Domains** and apply
-the DNS records it displays at the registrar. Vercel issues the SSL certificate automatically.
+> These three previously pointed at `terra-pretiosa.com` (hyphenated), which is not a
+> registered domain — so the published `robots.txt` and `sitemap.xml` were referring search
+> engines to a non-existent host. Corrected to `terrapretiosa.com`. After deploying the fix,
+> resubmit the sitemap in Google Search Console.
 
 ### 5.3 🟡 The team page is an intentional placeholder
 
