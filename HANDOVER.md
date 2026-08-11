@@ -72,6 +72,12 @@ No separate delivery is needed — these are committed to the repository and tra
 | Original written brief | `Instructions from victor/grands point pour le site WEB.docx` |
 | Original FAQ source material | `FAQ.txt` |
 
+**A note on the imagery.** The photography used across the site was supplied by Terra
+Pretiosa. The archival PNG originals in `IMages-websites-final/` and `public/placeholders/`
+retain the embedded metadata they arrived with; the optimised `.webp` files actually served
+to visitors carry no metadata, as the conversion process removes it. If any image is ever
+replaced, the same conversion step applies — see the README.
+
 ### 1.5 Credentials
 
 **None to transfer.** The project uses no third-party services, no API keys, no database, and
