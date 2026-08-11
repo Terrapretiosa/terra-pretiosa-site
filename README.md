@@ -125,7 +125,7 @@ terra-pretiosa-site/
 ├── Logo/                        # Vector logo original (.ai)
 ├── Instructions from victor/    # Original client brief (.docx)
 ├── FAQ.txt                      # Original client FAQ source material
-└── HANDOVER.md                  # Ownership transfer + known gaps — READ THIS
+└── ONBOARDING.md                # Access, working process, open items — READ THIS
 ```
 
 ---
@@ -355,6 +355,7 @@ but Vercel is the least maintenance.
 
 ## Known limitations
 
-Please read [`HANDOVER.md`](HANDOVER.md) — it documents what is finished, what was
-intentionally left for a later phase, and how to complete each remaining item. The most
-important one: **the contact and mission forms do not yet send email.**
+Please read [`ONBOARDING.md`](ONBOARDING.md) — it documents the working process for this
+repository, what is finished, what was intentionally left for a later phase, and how to
+complete each remaining item. The most important one: **the contact and mission forms do not
+yet send email.**
