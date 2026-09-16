@@ -46,7 +46,7 @@ export function ServicesSitemapHero({ lang, dictionary }: ServicesSitemapHeroPro
         </Reveal>
 
         {/* Category cards */}
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {dictionary.services.categories.map((category, index) => (
             <Reveal key={category.slug} y={22} delayMs={index * 70}>
               <Link

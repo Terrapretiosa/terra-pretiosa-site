@@ -471,7 +471,7 @@ export const en: Dictionary = {
         image: homeMedia.heroGovernance,
       },
       {
-        title: "Partner to states, institutions, and industry",
+        title: "Partner to states and industry",
         subtitle:
           "We support integrated strategies that move mineral-producing economies from raw exports toward competitive local value creation.",
         ctaLabel: "Launch a mission",
@@ -482,15 +482,15 @@ export const en: Dictionary = {
     features: [
       {
         title: "Integrated mining and mineral-resources offering",
-        text: "Testing and analysis, mining operations, training, environmental performance, and governance advisory combined in one delivery model.",
+        text: "Testing and analysis, training, environmental performance, and governance advisory combined in one delivery model.",
         ctaLabel: "Browse categories",
         ctaHref: "/en/services",
         image: homeMedia.featureIntegrated,
       },
       {
-        title: "African operating corridor",
-        text: "We work across Burkina Faso, the DRC, Guinea Conakry, Senegal, Niger, and Mali, with headquarters in Gaithersburg, Maryland.",
-        ctaLabel: "View activity corridor",
+        title: "An international presence",
+        text: "We work alongside producing states and industrial operators, on site and remotely, adapting our teams to the constraints of each jurisdiction.",
+        ctaLabel: "See our presence",
         ctaHref: "/en/company#corridor",
         image: homeMedia.featureCorridor,
       },
@@ -566,23 +566,20 @@ export const en: Dictionary = {
       },
       {
         title: "Approach",
-        text: "We support governments, international financial institutions, and industrial partners through integrated strategies combining mining technical expertise, macroeconomic analysis, targeted industrial policy, and ESG-aligned governance frameworks.",
+        text: "We support governments and industrial partners through integrated strategies combining mining technical expertise, macroeconomic analysis, targeted industrial policy, and ESG-aligned governance frameworks.",
       },
     ],
-    corridorTitle: "Activity corridor",
+    corridorTitle: "Presence",
     corridorCountries: [
-      "Burkina Faso",
-      "DRC",
-      "Guinea Conakry",
-      "Senegal",
-      "Niger",
-      "Mali",
+      "On-site and remote engagements",
+      "Support to producing states and industrial operators",
+      "Teams deployable across several jurisdictions",
     ],
     hqTitle: "Headquarters",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
     megatrendsTitle: "Megatrends",
     megatrendsText:
-      "Global demand for strategic and critical minerals is rising sharply. In that context, states and mining operators need partners able to deliver integrated technical solutions, operational credibility, and value-chain discipline aligned with international standards.",
+      "As the energy transition and sustainable development take hold, global demand for critical and strategic metals is expected to quadruple by 2045. Africa alone holds around one third of the world's reserves of critical and strategic metals. Positioning the continent to capture the local value of those minerals is therefore essential. Terra Pretiosa brings its expertise to advisory, R&D, processing and training in the development of critical and strategic metals.",
     miningDevTitle: "Mining for effective development",
     miningDevText:
       "We see mining as a transformation engine. The objective is not simply to extract, but to structure high-performing operations that support jobs, skills transfer, public revenue mobilization, and local industrial development.",
@@ -704,28 +701,24 @@ export const en: Dictionary = {
       "Discuss your technical, environmental, or mineral-governance requirements with Terra Pretiosa. Use the form below to frame the need, location, and type of support expected.",
     hqTitle: "Headquarters",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
-    corridorTitle: "Activity corridor",
+    corridorTitle: "Presence",
     corridorCountries: [
-      "Burkina Faso",
-      "DRC",
-      "Guinea Conakry",
-      "Senegal",
-      "Niger",
-      "Mali",
+      "On-site and remote engagements",
+      "Support to producing states and industrial operators",
+      "Teams deployable across several jurisdictions",
     ],
     phoneLabel: "Phone",
     phoneValue: "Personal number (temporary, pending company line)",
     emailLabel: "Email",
-    emailValue: "Company email address to be created",
+    emailValue: "info@terrapretiosa.com",
     formTitle: "Contact us",
-    formSuccess: "Thank you, your message has been sent.",
+    formSuccess: "Your email application is opening with your message ready to go. It only reaches us once you click Send. If nothing opens, write to us directly:",
     formFields: {
       firstName: "First Name *",
       lastName: "Last Name *",
       email: "Email *",
       phoneOptional: "Phone (optional)",
       serviceLocation: "Service Location *",
-      stateProvince: "State/Province",
       serviceIndustry: "Service Industry",
       enquiryType: "Type of enquiry *",
       message: "Message *",
@@ -735,24 +728,6 @@ export const en: Dictionary = {
     },
     formOptions: {
       selectPlaceholder: "-",
-      serviceLocations: [
-        "Burkina Faso",
-        "DRC",
-        "Guinea Conakry",
-        "Senegal",
-        "Niger",
-        "Mali",
-        "United States",
-      ],
-      statesProvinces: [
-        "Kadiogo",
-        "Haut-Katanga",
-        "Conakry",
-        "Dakar",
-        "Niamey",
-        "Bamako",
-        "Maryland",
-      ],
       serviceIndustries: [
         "Testing & Analysis",
         "Mining Operations",
@@ -777,7 +752,7 @@ export const en: Dictionary = {
     pageTitle: "Launch a mission",
     intro:
       "Describe your project context, technical or institutional objectives, target timeline, and key constraints. Our team will respond with a mission framing adapted to your needs.",
-    formSuccess: "Thank you. Your mission request has been registered.",
+    formSuccess: "Your email application is opening with your request ready to go. It only reaches us once you click Send. If nothing opens, write to us directly:",
     missionTypes: [
       "Testing & Analysis",
       "Mining Operations",
@@ -818,9 +793,9 @@ export const en: Dictionary = {
             ],
           },
           {
-            title: "Activity corridor",
+            title: "Presence",
             links: [
-              { label: "Countries of operation", href: "/en/company#corridor" },
+              { label: "Our presence", href: "/en/company#corridor" },
               { label: "Launch a mission", href: "/en/mission" },
             ],
           },
@@ -864,6 +839,17 @@ export const en: Dictionary = {
                 label: "Mining Transport",
                 href: "/en/services/operations-minieres/transport-minier",
               },
+            ],
+          },
+          // Moved from column 4 to rebalance the footer while the "Mining
+          // Operations" group above is hidden. Move it back when the category
+          // returns.
+          {
+            title: "Quick access",
+            links: [
+              { label: "All services", href: "/en/services" },
+              { label: "Contact us", href: "/en/contact" },
+              { label: "Launch a mission", href: "/en/mission" },
             ],
           },
         ],
@@ -941,20 +927,12 @@ export const en: Dictionary = {
               },
             ],
           },
-          {
-            title: "Quick access",
-            links: [
-              { label: "All services", href: "/en/services" },
-              { label: "Contact us", href: "/en/contact" },
-              { label: "Launch a mission", href: "/en/mission" },
-            ],
-          },
         ],
       },
     ],
     quickLinksTitle: "Other links",
     quickLinks: [
-      { label: "Activity corridor", href: "/en/company#corridor" },
+      { label: "Our presence", href: "/en/company#corridor" },
       { label: "Company page", href: "/en/company" },
       { label: "Mission request", href: "/en/mission" },
     ],

@@ -381,7 +381,7 @@ export const fr: Dictionary = {
         image: homeMedia.heroGovernance,
       },
       {
-        title: "Partenaire des États, institutions et industriels",
+        title: "Partenaire des États et des industriels",
         subtitle:
           "Nous accompagnons la conception et la mise en œuvre de stratégies intégrées pour passer d'un modèle d'exportation brute à une économie de valeur ajoutée locale.",
         ctaLabel: "Lancer une mission",
@@ -392,15 +392,15 @@ export const fr: Dictionary = {
     features: [
       {
         title: "Une offre intégrée Mines & Ressources",
-        text: "Essais et analyses, opérations minières, formations, environnement et gouvernance: des services intégrés, durables et orientés résultats.",
+        text: "Essais et analyses, formations, environnement et gouvernance: des services intégrés, durables et orientés résultats.",
         ctaLabel: "Explorer les catégories",
         ctaHref: "/fr/services",
         image: homeMedia.featureIntegrated,
       },
       {
-        title: "Corridor d'activité africain",
-        text: "Nous intervenons au Burkina Faso, en RDC, en Guinée Conakry, au Sénégal, au Niger et au Mali, avec un siège social à Gaithersburg (Maryland, USA).",
-        ctaLabel: "Voir le corridor d'activité",
+        title: "Une présence internationale",
+        text: "Nous intervenons aux côtés d'États producteurs et d'opérateurs industriels, sur site comme à distance, en adaptant nos équipes aux contraintes de chaque juridiction.",
+        ctaLabel: "Découvrir notre présence",
         ctaHref: "/fr/company#corridor",
         image: homeMedia.featureCorridor,
       },
@@ -476,23 +476,20 @@ export const fr: Dictionary = {
       },
       {
         title: "Approche",
-        text: "Nous accompagnons les gouvernements, les institutions financières internationales et les partenaires industriels dans la conception et la mise en œuvre de stratégies intégrées combinant expertise technique minière, analyse macroéconomique, politiques industrielles ciblées et cadres ESG alignés sur les standards internationaux.",
+        text: "Nous accompagnons les gouvernements et les partenaires industriels dans la conception et la mise en œuvre de stratégies intégrées combinant expertise technique minière, analyse macroéconomique, politiques industrielles ciblées et cadres ESG alignés sur les standards internationaux.",
       },
     ],
-    corridorTitle: "Corridor d'activité",
+    corridorTitle: "Présence",
     corridorCountries: [
-      "Burkina Faso",
-      "RDC",
-      "Guinée Conakry",
-      "Sénégal",
-      "Niger",
-      "Mali",
+      "Interventions sur site et à distance",
+      "Accompagnement d'États producteurs et d'opérateurs industriels",
+      "Équipes mobilisables sur plusieurs juridictions",
     ],
     hqTitle: "Siège",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
     megatrendsTitle: "Mégatendance",
     megatrendsText:
-      "La demande mondiale en ressources minérales stratégiques et critiques est en forte croissance. Dans ce contexte, les États et opérateurs miniers doivent s'appuyer sur des partenaires capables de fournir des solutions techniques intégrées, performantes et conformes aux standards internationaux, tout en sécurisant la chaîne de valeur et la création de valeur locale.",
+      "À l'aube de la transition énergétique et du développement durable, la demande mondiale en métaux critiques et stratégiques est prévue pour quadrupler d'ici 2045. L'Afrique à elle seule détient environ un tiers des réserves en métaux critiques et stratégiques. Il est donc important de se positionner pour offrir à l'Afrique la capacité de bénéficier de la valorisation locale de ces minéraux sur le continent. Terra Pretiosa se veut être une entreprise qui apporte son savoir-faire dans le conseil, la R&D, la transformation et la formation en développement des métaux critiques et stratégiques.",
     miningDevTitle: "Exploitation minière pour un développement efficace",
     miningDevText:
       "Nous défendons une exploitation minière conçue comme un moteur de transformation économique. L'enjeu n'est pas seulement d'extraire, mais de structurer des opérations performantes capables de soutenir l'emploi, le transfert de compétences, la mobilisation des recettes publiques et l'industrialisation locale.",
@@ -840,28 +837,24 @@ export const fr: Dictionary = {
       "Échangeons sur vos enjeux techniques, environnementaux et de gouvernance des matières premières minérales. Utilisez le formulaire ci-dessous pour cadrer votre besoin, votre zone d'intervention et le type d'appui recherché.",
     hqTitle: "Siège social",
     hqAddress: "438 N Frederick Ave, Gaithersburg, MD 20877",
-    corridorTitle: "Corridor d'activité",
+    corridorTitle: "Présence",
     corridorCountries: [
-      "Burkina Faso",
-      "RDC",
-      "Guinée Conakry",
-      "Sénégal",
-      "Niger",
-      "Mali",
+      "Interventions sur site et à distance",
+      "Accompagnement d'États producteurs et d'opérateurs industriels",
+      "Équipes mobilisables sur plusieurs juridictions",
     ],
     phoneLabel: "Téléphone",
     phoneValue: "Numéro personnel (temporaire, en attendant la ligne entreprise)",
     emailLabel: "Email",
-    emailValue: "Adresse email de la compagnie en cours de création",
+    emailValue: "info@terrapretiosa.com",
     formTitle: "Nous contacter",
-    formSuccess: "Merci, votre message a bien été envoyé.",
+    formSuccess: "Votre logiciel de messagerie s'ouvre avec votre message déjà rédigé. Il ne nous parviendra qu'une fois que vous aurez cliqué sur « Envoyer ». Si rien ne s'ouvre, écrivez-nous directement :",
     formFields: {
       firstName: "Prénom *",
       lastName: "Nom *",
       email: "Email *",
       phoneOptional: "Téléphone (optionnel)",
       serviceLocation: "Lieu du service *",
-      stateProvince: "État/Province",
       serviceIndustry: "Secteur de service",
       enquiryType: "Type de demande *",
       message: "Message *",
@@ -871,24 +864,6 @@ export const fr: Dictionary = {
     },
     formOptions: {
       selectPlaceholder: "-",
-      serviceLocations: [
-        "Burkina Faso",
-        "RDC",
-        "Guinée Conakry",
-        "Sénégal",
-        "Niger",
-        "Mali",
-        "États-Unis",
-      ],
-      statesProvinces: [
-        "Kadiogo",
-        "Haut-Katanga",
-        "Conakry",
-        "Dakar",
-        "Niamey",
-        "Bamako",
-        "Maryland",
-      ],
       serviceIndustries: [
         "Essais & Analyses",
         "Opérations minières",
@@ -913,7 +888,7 @@ export const fr: Dictionary = {
     pageTitle: "Lancer une mission",
     intro:
       "Décrivez le contexte de votre projet, les objectifs techniques ou institutionnels, le calendrier visé et les contraintes clés. Nous vous répondrons avec un cadrage de mission adapté à votre besoin.",
-    formSuccess: "Merci. Votre demande de mission a été enregistrée.",
+    formSuccess: "Votre logiciel de messagerie s'ouvre avec votre demande déjà rédigée. Elle ne nous parviendra qu'une fois que vous aurez cliqué sur « Envoyer ». Si rien ne s'ouvre, écrivez-nous directement :",
     missionTypes: [
       "Essais & Analyses",
       "Opérations minières",
@@ -954,9 +929,9 @@ export const fr: Dictionary = {
             ],
           },
           {
-            title: "Corridor d'activité",
+            title: "Présence",
             links: [
-              { label: "Pays d'intervention", href: "/fr/company#corridor" },
+              { label: "Notre présence", href: "/fr/company#corridor" },
               { label: "Lancer une mission", href: "/fr/mission" },
             ],
           },
@@ -1000,6 +975,17 @@ export const fr: Dictionary = {
                 label: "Transport minier",
                 href: "/fr/services/operations-minieres/transport-minier",
               },
+            ],
+          },
+          // Déplacé depuis la colonne 4 pour rééquilibrer le footer pendant que
+          // le groupe « Opérations minières » ci-dessus est masqué. À remettre
+          // en colonne 4 quand la catégorie revient.
+          {
+            title: "Accès rapide",
+            links: [
+              { label: "Tous les services", href: "/fr/services" },
+              { label: "Nous écrire", href: "/fr/contact" },
+              { label: "Lancer une mission", href: "/fr/mission" },
             ],
           },
         ],
@@ -1077,20 +1063,12 @@ export const fr: Dictionary = {
               },
             ],
           },
-          {
-            title: "Accès rapide",
-            links: [
-              { label: "Tous les services", href: "/fr/services" },
-              { label: "Nous écrire", href: "/fr/contact" },
-              { label: "Lancer une mission", href: "/fr/mission" },
-            ],
-          },
         ],
       },
     ],
     quickLinksTitle: "Autres liens",
     quickLinks: [
-      { label: "Corridor d'activité", href: "/fr/company#corridor" },
+      { label: "Notre présence", href: "/fr/company#corridor" },
       { label: "Page entreprise", href: "/fr/company" },
       { label: "Formulaire mission", href: "/fr/mission" },
     ],
@@ -1104,7 +1082,7 @@ export const fr: Dictionary = {
   news: {
     pageTitle: "Actualités & analyses",
     intro:
-      "Notes d'analyse, retours d'expérience et décryptages techniques consacrés à la gouvernance minérale, aux opérations minières, à la performance environnementale et à la création de valeur en Afrique.",
+      "Notes d'analyse, retours d'expérience et décryptages techniques consacrés à la gouvernance minérale, à la performance environnementale et à la création de valeur en Afrique.",
     allNewsLabel: "Toutes les analyses",
     latestLabel: "Dernières analyses",
     readArticle: "Lire l'analyse",

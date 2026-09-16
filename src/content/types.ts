@@ -200,7 +200,6 @@ export interface Dictionary {
       email: string;
       phoneOptional: string;
       serviceLocation: string;
-      stateProvince: string;
       serviceIndustry: string;
       enquiryType: string;
       message: string;
@@ -210,8 +209,6 @@ export interface Dictionary {
     };
     formOptions: {
       selectPlaceholder: string;
-      serviceLocations: string[];
-      statesProvinces: string[];
       serviceIndustries: string[];
       enquiryTypes: string[];
     };
