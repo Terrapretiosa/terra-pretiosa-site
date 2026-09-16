@@ -111,9 +111,14 @@ export default async function HomePage({ params }: HomePageProps) {
       <ServicesSitemapHero lang={lang} dictionary={dictionary} />
       <ServiceCardsGrid lang={lang} dictionary={dictionary} />
       <TransformationScroll
+        lang={lang}
+        leadTitle={dictionary.home.transformation.leadTitle}
+        leadCtaLabel={dictionary.home.transformation.leadCtaLabel}
+        leadCtaHref={dictionary.home.transformation.leadCtaHref}
         title={dictionary.home.transformation.title}
         intro={dictionary.home.transformation.intro}
         beats={dictionary.home.transformation.beats}
+        ctaBand={dictionary.home.ctaBand}
       />
       <NewsInsights dictionary={dictionary} />
       <NewsHighlights lang={lang} dictionary={dictionary} />

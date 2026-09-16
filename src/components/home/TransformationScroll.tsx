@@ -1,13 +1,32 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import type { TransformationBeat } from "@/content/types";
+import type { Lang, TransformationBeat } from "@/content/types";
+import { cn } from "@/lib/cn";
 
 interface TransformationScrollProps {
+  leadTitle: string;
+  leadCtaLabel: string;
+  leadCtaHref: string;
   title: string;
   intro: string;
   beats: TransformationBeat[];
+  ctaBand: { missionCta: string; contactCta: string };
+  lang: Lang;
+  /**
+   * La section ouvre la page. Quatre conséquences, indissociables — d'où une
+   * seule propriété plutôt que quatre, pour qu'elles ne puissent pas diverger :
+   *
+   *   — elle annule le `pt-14` de <main> (src/app/[lang]/layout.tsx) pour
+   *     atteindre y=0 sous le bandeau devenu transparent ;
+   *   — son `leadTitle` est le <h1> du document ;
+   *   — sa première image est l'élément LCP, donc préchargée ;
+   *   — sa première scène s'ouvre texte VISIBLE : elle ne le fait pas entrer,
+   *     elle ne fait que le sortir.
+   */
+  lead?: boolean;
 }
 
 /**
@@ -22,6 +41,17 @@ const TEXT_RAMP = 0.22;
 
 /** Ignore les variations d'avancement sous ce seuil (cf. ScrollSpotlightHero). */
 const DEAD_BAND = 0.003;
+
+/**
+ * Qualité de livraison des quatre scènes. Doit figurer dans `images.qualities`
+ * de next.config.ts : une valeur non déclarée ne produit qu'un avertissement au
+ * build, mais /_next/image répond 400 en production.
+ *
+ * 62 plutôt que 75 : ces photographies sont plein cadre, en mouvement, sous un
+ * voile blue-950/35 à /85. Mesuré sur un build de production, l'image LCP passe
+ * de 364 Ko à 211 Ko en 1920 et tient sous 75 Ko en 828.
+ */
+const SCENE_QUALITY = 62;
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
@@ -62,10 +92,28 @@ const textEnvelope = (progress: number) =>
     1,
   );
 
+/**
+ * Enveloppe de la scène d'ouverture : le texte est DÉJÀ là quand on arrive, il
+ * ne fait que sortir.
+ *
+ * Sans ça, un scintillement garanti à chaque chargement : le serveur rend la
+ * scène à `--tp-t: 1` — l'état achevé, qui est le bon repli sans JavaScript —
+ * puis l'hydratation calcule aussitôt `textEnvelope(0) = 0`. Le <h1>
+ * apparaîtrait, disparaîtrait, et ne reviendrait qu'après 66vh de défilement.
+ */
+const leadEnvelope = (progress: number) =>
+  clamp((1 - progress) / TEXT_RAMP, 0, 1);
+
 export function TransformationScroll({
+  leadTitle,
+  leadCtaLabel,
+  leadCtaHref,
   title,
   intro,
   beats,
+  ctaBand,
+  lang,
+  lead = false,
 }: TransformationScrollProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -137,7 +185,8 @@ export function TransformationScroll({
         }
         lastRef.current[index] = next;
         el.style.setProperty("--tp-p", next.toFixed(4));
-        el.style.setProperty("--tp-t", textEnvelope(next).toFixed(4));
+        const envelope = lead && index === 0 ? leadEnvelope : textEnvelope;
+        el.style.setProperty("--tp-t", envelope(next).toFixed(4));
       });
     };
 
@@ -162,24 +211,35 @@ export function TransformationScroll({
         window.cancelAnimationFrame(rafId);
       }
     };
-  }, [isNearViewport, reduceMotion]);
+  }, [isNearViewport, reduceMotion, lead]);
 
   if (beats.length === 0) {
     return null;
   }
 
   return (
-    <section ref={sectionRef} className="bg-blue-950 text-white">
-      {/* Intro dans le flux, avant que l'épinglage ne commence. */}
-      <div className="tp-container py-16 sm:py-24">
-        <div className="mb-4 h-0.5 w-10 rounded-full bg-gradient-to-r from-blue-300 to-blue-500" />
-        <h2 className="max-w-3xl text-3xl font-semibold uppercase tracking-[0.07em] sm:text-4xl">
-          {title}
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
-          {intro}
-        </p>
-      </div>
+    <section
+      ref={sectionRef}
+      // -mt-14 annule le pt-14 de <main> pour que la première scène atteigne
+      // y=0 sous le bandeau transparent. Sûr : <main> a un rembourrage non nul,
+      // donc la marge négative ne peut pas s'échapper vers le haut — elle
+      // décale l'enfant dans la boîte de rembourrage et s'arrête à 0.
+      className={cn("bg-blue-950 text-white", lead && "-mt-14")}
+    >
+      {/* Intro dans le flux — seulement quand la section n'ouvre PAS la page.
+          En tête, elle est fondue dans la première scène : un bloc de texte
+          avant la première image irait contre tout l'effet. */}
+      {lead ? null : (
+        <div className="tp-container py-16 sm:py-24">
+          <div className="mb-4 h-0.5 w-10 rounded-full bg-gradient-to-r from-blue-300 to-blue-500" />
+          <h2 className="max-w-3xl text-3xl font-semibold uppercase tracking-[0.07em] sm:text-4xl">
+            {title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+            {intro}
+          </p>
+        </div>
+      )}
 
       {beats.map((beat, index) => (
         <div
@@ -196,7 +256,11 @@ export function TransformationScroll({
           // pourrait plus ramener la piste à un seul écran.
           style={
             {
-              "--tp-p": 1,
+              // La scène d'ouverture est rendue à son état de DÉPART (p=0), pas
+              // à son état achevé : c'est ce que l'hydratation va calculer, donc
+              // serveur et client sont d'accord et rien ne bouge au chargement.
+              // Les autres restent à 1, leur repli sans JavaScript.
+              "--tp-p": lead && index === 0 ? 0 : 1,
               "--tp-t": 1,
               "--tp-track": `${TRACK_VH}svh`,
             } as CSSProperties
@@ -204,31 +268,102 @@ export function TransformationScroll({
           className="tp-scene relative"
         >
           <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-            <SceneVisual beat={beat} />
+            <SceneVisual beat={beat} priority={lead && index === 0} />
 
-            {/* Voile : lisibilité du texte, et il masque une part de la mollesse
-                d'une photographie de 1536 px étirée en plein écran. */}
+            {/* Voile : lisibilité du texte par-dessus la photographie. */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/35 to-blue-950/60" />
 
             <div className="tp-container relative flex h-full items-end pb-16 sm:items-center sm:pb-0">
               <div className="tp-scene-text max-w-xl">
                 <p className="tp-heading text-xs text-blue-300">{beat.eyebrow}</p>
-                <h3 className="mt-3 text-3xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl">
-                  {beat.title}
-                </h3>
+
+                {lead && index === 0 ? (
+                  <>
+                    <h1 className="mt-3 text-3xl font-semibold uppercase leading-tight tracking-[0.04em] drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl">
+                      {leadTitle}
+                    </h1>
+                    {/* Masqué sur petit écran : la scène d'ouverture empile
+                        déjà surtitre, h1, h2 et paragraphe, et cette phrase
+                        redit ce que le h1 annonce. */}
+                    <p className="mt-4 hidden max-w-xl text-base leading-relaxed text-white/75 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:block">
+                      {intro}
+                    </p>
+                    {/* Une taille en dessous des autres scènes : il ne doit pas
+                        concurrencer le h1 posé juste au-dessus. */}
+                    <h2 className="mt-5 text-xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-2xl">
+                      {beat.title}
+                    </h2>
+                  </>
+                ) : (
+                  <h2 className="mt-3 text-3xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl">
+                    {beat.title}
+                  </h2>
+                )}
+
                 <p className="mt-5 text-base leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:text-lg">
                   {beat.text}
                 </p>
+
+                {lead && index === 0 ? (
+                  <Link href={leadCtaHref} className="tp-blue-button mt-7">
+                    {leadCtaLabel}
+                  </Link>
+                ) : null}
               </div>
             </div>
+
+            {/* Indicateur de défilement, purement décoratif : rien ne signale
+                autrement qu'une photographie plein cadre réagit au défilement.
+                `aria-hidden` est délibéré et non un oubli — l'affordance est
+                visuelle, et on n'annonce pas à un lecteur d'écran que la page
+                défile. Il disparaît en mouvement réduit avec son animation. */}
+            {lead && index === 0 ? (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-6 mx-auto hidden h-6 w-6 rotate-45 border-b-2 border-r-2 border-white/50 [animation:tpFloat_2.4s_ease-in-out_infinite] motion-reduce:hidden sm:block"
+              />
+            ) : null}
           </div>
         </div>
       ))}
+
+      {/* Les appels à l'action sont DANS LE FLUX, après la dernière piste, et
+          non dans le texte animé : `.tp-scene-text` anime l'opacité, qui ne
+          retire ni le pointeur ni l'ordre de tabulation. Deux liens à
+          `opacity: 0` posés sur le dernier écran seraient cliquables sans être
+          visibles, et un piège au clavier. */}
+      {lead ? (
+        <div className="tp-container flex flex-col gap-3 py-14 sm:flex-row sm:items-center sm:py-20">
+          <Link
+            href={`/${lang}/mission`}
+            className="tp-blue-button tp-card-lift bg-white text-center text-blue-900 hover:bg-blue-100"
+          >
+            {ctaBand.missionCta}
+          </Link>
+          <Link
+            href={`/${lang}/contact`}
+            className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+          >
+            {ctaBand.contactCta}
+          </Link>
+        </div>
+      ) : null}
     </section>
   );
 }
 
-function SceneVisual({ beat }: { beat: TransformationBeat }) {
+function SceneVisual({
+  beat,
+  priority,
+}: {
+  beat: TransformationBeat;
+  /**
+   * Passé par les TROIS branches ci-dessous, jamais par une seule : `mode` est
+   * une donnée de contenu, et personne ne doit pouvoir faire sauter le
+   * préchargement de l'image LCP en modifiant fr.ts.
+   */
+  priority: boolean;
+}) {
   // Le diptyque : deux couches de la MÊME photographie, chacune cadrée sur sa
   // moitié. Les largeurs et le décalage sont dérivés de la césure mesurée —
   // voir le commentaire de .tp-wipe-layer-before dans globals.css.
@@ -241,6 +376,8 @@ function SceneVisual({ beat }: { beat: TransformationBeat }) {
             alt={beat.imageAlt}
             fill
             sizes="200vw"
+            quality={SCENE_QUALITY}
+            priority={priority}
             className="object-cover object-center"
           />
         </div>
@@ -255,6 +392,7 @@ function SceneVisual({ beat }: { beat: TransformationBeat }) {
               aria-hidden="true"
               fill
               sizes="200vw"
+              quality={SCENE_QUALITY}
               className="object-cover object-center"
             />
           </div>
@@ -277,6 +415,8 @@ function SceneVisual({ beat }: { beat: TransformationBeat }) {
           alt={beat.imageAlt}
           fill
           sizes="122vw"
+          quality={SCENE_QUALITY}
+          priority={priority}
           className="object-cover object-center"
         />
       </div>
@@ -295,6 +435,8 @@ function SceneVisual({ beat }: { beat: TransformationBeat }) {
       alt={beat.imageAlt}
       fill
       sizes="100vw"
+      quality={SCENE_QUALITY}
+      priority={priority}
       className="tp-scene-image object-cover object-center"
     />
   );
