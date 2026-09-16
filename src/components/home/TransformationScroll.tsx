@@ -86,24 +86,17 @@ const trackProgress = (rect: DOMRect, stageHeight: number) => {
   return clamp(-rect.top / travel, 0, 1);
 };
 
-/** Enveloppe du texte : monte sur la première rampe, tient, redescend. */
-const textEnvelope = (progress: number) =>
-  clamp(
-    Math.min(progress / TEXT_RAMP, (1 - progress) / TEXT_RAMP),
-    0,
-    1,
-  );
-
 /**
- * Enveloppe de la scène d'ouverture : le texte est DÉJÀ là quand on arrive, il
- * ne fait que sortir.
+ * Sortie du bloc de texte en fin de scène. L'ENTRÉE n'est plus ici : elle est
+ * calculée en CSS, ligne par ligne, à partir de --tp-p et du décalage --tp-in
+ * porté par chaque ligne. C'est ce qui donne l'impression de continuer à lire
+ * en défilant, au lieu de voir un bloc entier apparaître d'un coup.
  *
- * Sans ça, un scintillement garanti à chaque chargement : le serveur rend la
- * scène à `--tp-t: 1` — l'état achevé, qui est le bon repli sans JavaScript —
- * puis l'hydratation calcule aussitôt `textEnvelope(0) = 0`. Le <h1>
- * apparaîtrait, disparaîtrait, et ne reviendrait qu'après 66vh de défilement.
+ * Du même coup la scène d'ouverture n'a plus besoin de sa propre enveloppe :
+ * toutes les scènes sortent de la même façon, et c'est --tp-in qui décide de ce
+ * qui est déjà visible à l'arrivée.
  */
-const leadEnvelope = (progress: number) =>
+const exitEnvelope = (progress: number) =>
   clamp((1 - progress) / TEXT_RAMP, 0, 1);
 
 export function TransformationScroll({
@@ -187,8 +180,7 @@ export function TransformationScroll({
         }
         lastRef.current[index] = next;
         el.style.setProperty("--tp-p", next.toFixed(4));
-        const envelope = lead && index === 0 ? leadEnvelope : textEnvelope;
-        el.style.setProperty("--tp-t", envelope(next).toFixed(4));
+        el.style.setProperty("--tp-t", exitEnvelope(next).toFixed(4));
       });
     };
 
@@ -213,7 +205,7 @@ export function TransformationScroll({
         window.cancelAnimationFrame(rafId);
       }
     };
-  }, [isNearViewport, reduceMotion, lead]);
+  }, [isNearViewport, reduceMotion]);
 
   if (beats.length === 0) {
     return null;
@@ -243,7 +235,9 @@ export function TransformationScroll({
         </div>
       )}
 
-      {beats.map((beat, index) => (
+      {beats.map((beat, index) => {
+        const isLead = lead && index === 0;
+        return (
         <div
           key={beat.title}
           ref={(el) => {
@@ -262,7 +256,7 @@ export function TransformationScroll({
               // à son état achevé : c'est ce que l'hydratation va calculer, donc
               // serveur et client sont d'accord et rien ne bouge au chargement.
               // Les autres restent à 1, leur repli sans JavaScript.
-              "--tp-p": lead && index === 0 ? 0 : 1,
+              "--tp-p": isLead ? 0 : 1,
               "--tp-t": 1,
               "--tp-track": `${TRACK_VH}svh`,
             } as CSSProperties
@@ -270,44 +264,72 @@ export function TransformationScroll({
           className="tp-scene relative"
         >
           <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-            <SceneVisual beat={beat} priority={lead && index === 0} />
+            <SceneVisual beat={beat} priority={isLead} />
 
             {/* Voile : lisibilité du texte par-dessus la photographie. */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/35 to-blue-950/60" />
 
             <div className="tp-container relative flex h-full items-end pb-16 sm:items-center sm:pb-0">
-              <div className="tp-scene-text max-w-xl">
-                <p className="tp-heading text-xs text-blue-300">{beat.eyebrow}</p>
+              <div className="max-w-xl">
+                {/* --tp-in : l'avancement auquel la ligne apparaît. L'écart de
+                    0,08 entre deux lignes vaut environ 24vh de défilement sur
+                    une piste de 300vh — assez pour qu'on ait fini de lire l'une
+                    quand la suivante arrive.
 
-                {lead && index === 0 ? (
+                    Sur la scène d'ouverture, surtitre et <h1> sont à -0,2 :
+                    négatif, donc déjà pleinement visibles à l'arrivée. Ils ne
+                    doivent jamais apparaître en différé, c'est le titre de la
+                    page. */}
+                <p
+                  className="tp-line tp-heading text-xs text-blue-300"
+                  style={{ "--tp-in": isLead ? -0.2 : 0 } as CSSProperties}
+                >
+                  {beat.eyebrow}
+                </p>
+
+                {isLead ? (
                   <>
-                    <h1 className="mt-3 text-3xl font-semibold uppercase leading-tight tracking-[0.04em] drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl">
+                    <h1
+                      className="tp-line mt-3 text-3xl font-semibold uppercase leading-tight tracking-[0.04em] drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl"
+                      style={{ "--tp-in": -0.2 } as CSSProperties}
+                    >
                       {leadTitle}
                     </h1>
-                    {/* Masqué sur petit écran : la scène d'ouverture empile
-                        déjà surtitre, h1, h2 et paragraphe, et cette phrase
-                        redit ce que le h1 annonce. */}
-                    <p className="mt-4 hidden max-w-xl text-base leading-relaxed text-white/75 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:block">
+                    <p
+                      className="tp-line mt-4 hidden max-w-xl text-base leading-relaxed text-white/75 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:block"
+                      style={{ "--tp-in": 0.1 } as CSSProperties}
+                    >
                       {intro}
                     </p>
-                    {/* Une taille en dessous des autres scènes : il ne doit pas
-                        concurrencer le h1 posé juste au-dessus. */}
-                    <h2 className="mt-5 text-xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-2xl">
+                    <h2
+                      className="tp-line mt-5 text-xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-2xl"
+                      style={{ "--tp-in": 0.2 } as CSSProperties}
+                    >
                       {beat.title}
                     </h2>
                   </>
                 ) : (
-                  <h2 className="mt-3 text-3xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl">
+                  <h2
+                    className="tp-line mt-3 text-3xl font-semibold leading-tight drop-shadow-[0_2px_18px_rgba(2,6,23,0.7)] sm:text-5xl"
+                    style={{ "--tp-in": 0.08 } as CSSProperties}
+                  >
                     {beat.title}
                   </h2>
                 )}
 
-                <p className="mt-5 text-base leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:text-lg">
+                <p
+                  className="tp-line mt-5 text-base leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:text-lg"
+                  style={{ "--tp-in": isLead ? 0.3 : 0.18 } as CSSProperties}
+                >
                   {beat.text}
                 </p>
 
-                {lead && index === 0 ? (
-                  <Link href={leadCtaHref} className="tp-blue-button mt-7">
+                {isLead ? (
+                  <Link
+                    href={leadCtaHref}
+                    className="tp-line tp-blue-button mt-7"
+                    style={{ "--tp-in": 0.4 } as CSSProperties}
+                  >
                     {leadCtaLabel}
                   </Link>
                 ) : null}
@@ -319,7 +341,7 @@ export function TransformationScroll({
                 `aria-hidden` est délibéré et non un oubli — l'affordance est
                 visuelle, et on n'annonce pas à un lecteur d'écran que la page
                 défile. Il disparaît en mouvement réduit avec son animation. */}
-            {lead && index === 0 ? (
+            {isLead ? (
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 bottom-6 mx-auto hidden h-6 w-6 rotate-45 border-b-2 border-r-2 border-white/50 [animation:tpFloat_2.4s_ease-in-out_infinite] motion-reduce:hidden sm:block"
@@ -327,10 +349,11 @@ export function TransformationScroll({
             ) : null}
           </div>
         </div>
-      ))}
+        );
+      })}
 
       {/* Les appels à l'action sont DANS LE FLUX, après la dernière piste, et
-          non dans le texte animé : `.tp-scene-text` anime l'opacité, qui ne
+          non dans le texte animé : `.tp-line` anime l'opacité, qui ne
           retire ni le pointeur ni l'ordre de tabulation. Deux liens à
           `opacity: 0` posés sur le dernier écran seraient cliquables sans être
           visibles, et un piège au clavier. */}

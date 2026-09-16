@@ -157,10 +157,26 @@ body {
   transform: translate3d(calc(var(--tp-p) * -18%), 0, 0);
 }
 
-/* Le texte entre, tient, puis sort — l'enveloppe vient de --tp-t. */
-.tp-scene-text {
-  opacity: var(--tp-t);
-  transform: translate3d(0, calc((1 - var(--tp-t)) * 26px), 0);
+/* Le texte arrive LIGNE PAR LIGNE, pour qu'on continue de lire en défilant.
+
+   Deux rôles séparés, et cette séparation est ce qui rend le repli correct :
+
+     --tp-p  → l'ENTRÉE, calculée ici en CSS, décalée par ligne via --tp-in
+     --tp-t  → la SORTIE du bloc entier, calculée en JS
+
+   Sans JavaScript, les deux valent 1 (voir @property plus haut) : le terme
+   d'entrée sature à 1 et la sortie vaut 1, donc toutes les lignes sont
+   visibles. Faire dépendre l'entrée d'un seul des deux aurait rendu le texte
+   invisible sans JS — l'échec du mauvais côté.
+
+   --tp-in est l'avancement auquel la ligne commence à apparaître. Une valeur
+   négative la rend visible dès l'arrivée : c'est ce qu'il faut pour le <h1> de
+   la scène d'ouverture, qui ne doit jamais clignoter. */
+.tp-line {
+  --tp-reveal: clamp(0, calc((var(--tp-p) - var(--tp-in, 0)) / 0.09), 1);
+  opacity: calc(var(--tp-t) * var(--tp-reveal));
+  transform: translate3d(0, calc((1 - var(--tp-reveal)) * 18px), 0);
+  transition: none;
 }
 
 /* ---- Balayage avant/après en plein écran -------------------------------
