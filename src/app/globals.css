@@ -135,51 +135,95 @@ body {
    initial-value vaut 1 et non 0 : l'état au repos doit être l'état ACHEVÉ,
    pour que la section reste lisible sans JavaScript et en mouvement réduit.
    --------------------------------------------------------------------------- */
-@property --tp-wipe {
+/* --tp-p : avancement linéaire de la scène épinglée, 0 à 1.
+   --tp-t : enveloppe du texte (entrée, maintien, sortie), calculée en JS.
+
+   Les deux sont déclarées avec initial-value: 1 — l'état AU REPOS est l'état
+   ACHEVÉ. Sans déclaration @property, une variable non définie rendrait la
+   règle clip-path invalide, celle-ci retomberait sur `none`, et la moitié
+   « après » couvrirait tout le cadre sans aucun balayage : l'échec se ferait
+   dans le mauvais sens. Avec 1, la section reste juste et lisible sans
+   JavaScript et en mouvement réduit. */
+@property --tp-p {
   syntax: "<number>";
   inherits: true;
   initial-value: 1;
 }
 
-/* Moitié « après » d'un diptyque : entièrement masquée à 0, découverte à 1. */
-.tp-wipe-after {
-  clip-path: inset(0 0 0 calc(100% * (1 - var(--tp-wipe))));
+@property --tp-t {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
 }
 
-/* Filet de séparation, qui suit le bord du découpage. Il nomme la frontière et
-   masque au passage l'erreur sous-pixel au niveau de la césure de la source. */
+/* Lent dézoom pendant que la scène est épinglée. À 1 : échelle neutre. */
+.tp-scene-image {
+  transform: scale(calc(1.12 - var(--tp-p) * 0.12));
+}
+
+/* Balayage latéral : la couche est plus large que la scène et glisse. Utilisé
+   là où la photographie se lit de gauche à droite. Transformation composée. */
+.tp-scene-pan {
+  width: 122%;
+  transform: translate3d(calc(var(--tp-p) * -18%), 0, 0);
+}
+
+/* Le texte entre, tient, puis sort — l'enveloppe vient de --tp-t. */
+.tp-scene-text {
+  opacity: var(--tp-t);
+  transform: translate3d(0, calc((1 - var(--tp-t)) * 26px), 0);
+}
+
+/* ---- Balayage avant/après en plein écran -------------------------------
+   La césure de la source est mesurée à x=781/1536, soit 50,85 % : les deux
+   moitiés ne font PAS la même largeur (781 px contre 755 px). Elles ne peuvent
+   donc pas remplir la même scène à la même échelle. Chaque couche porte donc
+   sa propre largeur, dérivée ainsi (W = largeur de la scène) :
+
+     couche avant : 1536/781 = 196,67 %  à  left: 0
+       → la fenêtre montre exactement la source [0, 781]
+     couche après : 1536/755 = 203,44 %  à  left: -103,44 %
+       → la fenêtre montre exactement la source [781, 1536]
+
+   Aucune fuite d'une moitié dans l'autre, aucun bord vide. L'écart d'échelle
+   de 0,7 % entre les deux moitiés est imperceptible.
+
+   À NE PAS simplifier en deux couches de 200 % : la moitié « après »
+   emporterait alors 13 px de la scène « avant » sur son bord gauche, visibles
+   en permanence à l'état achevé. */
+.tp-wipe-layer-before {
+  width: 196.67%;
+  left: 0;
+}
+
+.tp-wipe-layer-after {
+  width: 203.44%;
+  left: -103.44%;
+}
+
+/* La fenêtre qui découvre la moitié « après ». */
+.tp-wipe-window {
+  clip-path: inset(0 0 0 calc(100% * (1 - var(--tp-p))));
+}
+
+/* Filet de séparation, qui suit le bord du découpage : il nomme la frontière
+   et masque l'erreur sous-pixel au niveau de la césure. */
 .tp-wipe-seam {
-  left: calc(100% * (1 - var(--tp-wipe)));
-}
-
-/* Scène unique balayée latéralement : la couche interne est plus large que son
-   cadre et glisse. Transformation composée, pas de repeint. */
-.tp-beat-pan {
-  transform: translate3d(calc(var(--tp-wipe) * -15%), 0, 0);
-}
-
-/* Parallaxe verticale douce. Le signe s'inverse via --tp-dir (1 ou -1). */
-.tp-beat-parallax {
-  transform: translate3d(0, calc((0.5 - var(--tp-wipe)) * 22px * var(--tp-dir, 1)), 0)
-    scale(1.04);
-}
-
-/* Le texte monte et s'éclaircit. Plancher à 0.45 : lisible même à 0. */
-.tp-beat-text {
-  transform: translate3d(0, calc((1 - var(--tp-wipe)) * 14px), 0);
-  opacity: calc(0.45 + var(--tp-wipe) * 0.55);
+  left: calc(100% * (1 - var(--tp-p)));
 }
 
 /* Les deux états déclaratifs où rien ne doit bouger : l'état achevé. */
 @media (prefers-reduced-motion: reduce) {
-  .tp-beat {
-    --tp-wipe: 1;
+  .tp-scene {
+    --tp-p: 1;
+    --tp-t: 1;
   }
 }
 
 @media (scripting: none) {
-  .tp-beat {
-    --tp-wipe: 1;
+  .tp-scene {
+    --tp-p: 1;
+    --tp-t: 1;
   }
 }
 
