@@ -212,11 +212,29 @@ body {
   left: calc(100% * (1 - var(--tp-p)));
 }
 
-/* Les deux états déclaratifs où rien ne doit bouger : l'état achevé. */
+/* Mouvement réduit.
+
+   ATTENTION, et ce commentaire remplace une affirmation fausse : ces
+   déclarations de --tp-p / --tp-t sont INATTEINTES. Chaque .tp-scene porte les
+   mêmes propriétés dans son attribut `style` en ligne, qui l'emporte sur un
+   sélecteur de classe. Elles posent les mêmes valeurs, donc rien ne casse — mais
+   ce n'est pas d'ici que vient le repli. Ce qui l'assure réellement, c'est
+   `@property { initial-value: 1 }` plus le style en ligne.
+
+   Ce que ce bloc fait vraiment, et qui compte : ramener la piste à la hauteur
+   d'une scène. Sans ça, un utilisateur en mouvement réduit traverserait quand
+   même douze écrans de quatre images fixes. La hauteur arrive elle aussi en
+   ligne, d'où la variable --tp-track : c'est le seul moyen pour le CSS d'avoir
+   le dernier mot. */
+.tp-scene {
+  height: var(--tp-track);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tp-scene {
     --tp-p: 1;
     --tp-t: 1;
+    --tp-track: 100svh;
   }
 }
 

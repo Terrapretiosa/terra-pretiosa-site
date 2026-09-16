@@ -23,13 +23,6 @@ const TEXT_RAMP = 0.22;
 /** Ignore les variations d'avancement sous ce seuil (cf. ScrollSpotlightHero). */
 const DEAD_BAND = 0.003;
 
-/**
- * En deçà de ce seuil, un `resize` est traité comme le rétractement de la barre
- * d'URL mobile et la hauteur en cache n'est PAS mise à jour, sinon l'avancement
- * sauterait en plein défilement. Au-delà : rotation ou vrai redimensionnement.
- */
-const VIEWPORT_JUMP_THRESHOLD = 120;
-
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
 
@@ -38,11 +31,23 @@ const clamp = (value: number, min: number, max: number) =>
  * la scène, elle, ne bouge pas. À `rect.top === 0` la scène vient de s'épingler
  * (0) ; elle se détache quand la piste a fini de passer (1).
  *
- * La hauteur du bandeau fixe n'entre pas dans ce calcul : la scène est épinglée
- * à `top: 0` et passe sous le bandeau, donc il n'occulte rien de la piste.
+ * La distance parcourue vaut la hauteur de la piste MOINS celle de la scène :
+ * un `sticky` est borné par son bloc conteneur. La hauteur de la fenêtre n'a
+ * rien à faire ici, et l'y mettre était un vrai défaut — sur mobile en haut de
+ * page la barre d'URL est déployée, donc `innerHeight` valait la grande hauteur
+ * d'écran et non la petite, et l'avancement courait 7,5 % trop vite : la scène
+ * se figeait une centaine de pixels avant de se détacher.
+ *
+ * La hauteur de la scène est MESURÉE plutôt que déduite du rapport 300/100.
+ * Ce rapport n'est pas une propriété du composant : il tombe en mouvement
+ * réduit, où la piste est ramenée à la hauteur d'une scène et où la distance
+ * devient nulle — d'où la garde ci-dessous.
+ *
+ * La hauteur du bandeau fixe n'entre pas non plus dans le calcul : la scène est
+ * épinglée à `top: 0` et passe dessous, donc il n'occulte rien de la piste.
  */
-const trackProgress = (rect: DOMRect, viewportH: number) => {
-  const travel = rect.height - viewportH;
+const trackProgress = (rect: DOMRect, stageHeight: number) => {
+  const travel = rect.height - stageHeight;
   if (travel <= 0) {
     return 0;
   }
@@ -65,7 +70,6 @@ export function TransformationScroll({
   const sectionRef = useRef<HTMLElement>(null);
   const trackRefs = useRef<(HTMLDivElement | null)[]>([]);
   const lastRef = useRef<number[]>([]);
-  const viewportRef = useRef(0);
   const [isNearViewport, setIsNearViewport] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -102,25 +106,32 @@ export function TransformationScroll({
       return;
     }
 
-    viewportRef.current = window.innerHeight;
     let rafId = 0;
 
     const tick = () => {
       rafId = 0;
-      const viewportH = viewportRef.current;
       const elements = trackRefs.current;
 
-      // Lire TOUTES les positions d'abord, écrire ensuite. Entrelacer les deux
+      // Lire TOUTES les mesures d'abord, écrire ensuite. Entrelacer les deux
       // forcerait un recalcul de mise en page par scène au lieu d'un seul pour
-      // toute la section.
-      const rects = elements.map((el) => el?.getBoundingClientRect() ?? null);
+      // toute la section. La hauteur de la scène se lit ici même : c'est le
+      // premier enfant de la piste, et cette lecture reste dans la phase de
+      // lecture, donc elle ne coûte aucun recalcul supplémentaire.
+      const measures = elements.map((el) =>
+        el
+          ? {
+              rect: el.getBoundingClientRect(),
+              stage: (el.firstElementChild as HTMLElement | null)?.offsetHeight ?? 0,
+            }
+          : null,
+      );
 
-      rects.forEach((rect, index) => {
+      measures.forEach((measure, index) => {
         const el = elements[index];
-        if (!el || !rect) {
+        if (!el || !measure) {
           return;
         }
-        const next = trackProgress(rect, viewportH);
+        const next = trackProgress(measure.rect, measure.stage);
         if (Math.abs(next - (lastRef.current[index] ?? -1)) < DEAD_BAND) {
           return;
         }
@@ -137,21 +148,16 @@ export function TransformationScroll({
       rafId = window.requestAnimationFrame(tick);
     };
 
-    const onResize = () => {
-      const next = window.innerHeight;
-      if (Math.abs(next - viewportRef.current) > VIEWPORT_JUMP_THRESHOLD) {
-        viewportRef.current = next;
-        schedule();
-      }
-    };
-
+    // Un `resize` recalcule simplement. Il n'y a plus de hauteur de fenêtre en
+    // cache à protéger : la géométrie est mesurée sur les éléments eux-mêmes,
+    // donc le rétractement de la barre d'URL mobile n'a plus aucune prise.
     schedule();
     window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("resize", schedule, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("resize", schedule);
       if (rafId) {
         window.cancelAnimationFrame(rafId);
       }
@@ -183,8 +189,17 @@ export function TransformationScroll({
           }}
           // Valeurs par défaut rendues par le serveur : aucune fenêtre avant
           // hydratation, et l'état au repos est l'état achevé.
+          //
+          // La hauteur passe par --tp-track, jamais par `height` directement :
+          // une hauteur en ligne l'emporterait sur toute règle de feuille de
+          // style, et le bloc `prefers-reduced-motion` de globals.css ne
+          // pourrait plus ramener la piste à un seul écran.
           style={
-            { "--tp-p": 1, "--tp-t": 1, height: `${TRACK_VH}svh` } as CSSProperties
+            {
+              "--tp-p": 1,
+              "--tp-t": 1,
+              "--tp-track": `${TRACK_VH}svh`,
+            } as CSSProperties
           }
           className="tp-scene relative"
         >
