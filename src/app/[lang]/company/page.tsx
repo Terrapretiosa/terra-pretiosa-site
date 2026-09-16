@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: CompanyPageProps): Promise<Me
     title: d.company.pageTitle,
     description: d.company.introBlocks[0]?.text ?? "",
     alternates: {
+      canonical: `/${lang}/company`,
       languages: { fr: "/fr/company", en: "/en/company" },
     },
   };

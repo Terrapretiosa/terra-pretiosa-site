@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MissionForm } from "@/components/forms/MissionForm";
 import { Reveal } from "@/components/motion/Reveal";
@@ -5,6 +6,20 @@ import { getDictionary, isSupportedLang } from "@/content";
 
 interface MissionPageProps {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: MissionPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const d = getDictionary(lang);
+  return {
+    title: d.mission.pageTitle,
+    description: d.mission.intro,
+    alternates: {
+      canonical: `/${lang}/mission`,
+      languages: { fr: "/fr/mission", en: "/en/mission" },
+    },
+  };
 }
 
 export default async function MissionPage({ params }: MissionPageProps) {

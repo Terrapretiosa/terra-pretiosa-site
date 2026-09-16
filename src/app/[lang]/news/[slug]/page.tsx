@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: `/${lang}/news/${slug}`,
+    },
     openGraph: {
       type: "article",
       title: article.title,

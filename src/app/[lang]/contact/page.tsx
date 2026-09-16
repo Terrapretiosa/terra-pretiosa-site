@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
     title: d.contact.formTitle,
     description: d.contact.intro,
     alternates: {
+      canonical: `/${lang}/contact`,
       languages: { fr: "/fr/contact", en: "/en/contact" },
     },
   };

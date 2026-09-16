@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +9,28 @@ import { getCategoryBySlug, getDictionary, isSupportedLang } from "@/content";
 
 interface ServiceCategoryPageProps {
   params: Promise<{ lang: string; category: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ServiceCategoryPageProps): Promise<Metadata> {
+  const { lang, category } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const categoryData = getCategoryBySlug(getDictionary(lang), category);
+  // Une catégorie masquée ou inconnue n'a pas de métadonnées : la page rend un
+  // 404, et lui en donner ferait exister dans l'en-tête ce que la route refuse.
+  if (!categoryData) return {};
+  return {
+    title: categoryData.title,
+    description: categoryData.summary,
+    alternates: {
+      canonical: `/${lang}/services/${category}`,
+      languages: {
+        fr: `/fr/services/${category}`,
+        en: `/en/services/${category}`,
+      },
+    },
+  };
 }
 
 export default async function ServiceCategoryPage({

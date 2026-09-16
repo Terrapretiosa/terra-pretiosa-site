@@ -162,9 +162,15 @@ sure they are correct and monitored.
 
 ### 5.2 ✅ Production domain — resolved
 
-The site is live at **<https://terrapretiosa.com>**, registered at Namecheap, with DNS served
-by Namecheap's nameservers and an apex `A` record pointing at Vercel. Email for the domain
-runs on Namecheap Private Email (`mx1/mx2.privateemail.com`), separately from the website.
+The site is live at **<https://www.terrapretiosa.com>**, registered at Namecheap, with DNS
+served by Namecheap's nameservers and an apex `A` record pointing at Vercel. Email for the
+domain runs on Namecheap Private Email (`mx1/mx2.privateemail.com`), separately from the
+website.
+
+**`www` is the canonical host.** Requesting `https://terrapretiosa.com/...` returns a `308`
+redirect to the same path under `www.`, because `www` is set as the primary domain in Vercel.
+Use the `www` form everywhere — in the three files below, in Search Console, and in any link
+you publish.
 
 The site canonical URL is **hardcoded in three files**. If the domain ever changes, all three
 must be updated together:
@@ -177,8 +183,10 @@ must be updated together:
 
 > These three previously pointed at `terra-pretiosa.com` (hyphenated), which is not a
 > registered domain — so the published `robots.txt` and `sitemap.xml` were referring search
-> engines to a non-existent host. Corrected to `terrapretiosa.com`. After deploying the fix,
-> resubmit the sitemap in Google Search Console.
+> engines to a non-existent host. Corrected to `terrapretiosa.com`, then to
+> `www.terrapretiosa.com` once it was measured that the apex only 308-redirects: every URL in
+> the sitemap was advertising an address that bounced. After deploying the fix, resubmit the
+> sitemap in Google Search Console.
 
 ### 5.3 🟡 The team page is an intentional placeholder
 
