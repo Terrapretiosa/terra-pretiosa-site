@@ -38,7 +38,6 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     (sum, categoryItem) => sum + categoryItem.services.length,
     0,
   );
-  const corridorCount = dictionary.company.corridorCountries.length;
   const featuredArticle = dictionary.news.articles[0];
   const spotlightItems = categories.slice(0, 3).map((categoryItem) => ({
     image: categoryItem.image,
@@ -63,7 +62,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
               <p className="mt-3 max-w-3xl text-base text-slate-700">
                 {dictionary.services.landingIntro}
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl border border-blue-200/60 bg-white/80 p-4">
                   <p className="text-2xl font-semibold text-blue-900">{categories.length}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.08em] text-slate-500">
@@ -74,12 +73,6 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                   <p className="text-2xl font-semibold text-blue-900">{totalServices}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.08em] text-slate-500">
                     {dictionary.nav.services}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-blue-200/60 bg-white/80 p-4">
-                  <p className="text-2xl font-semibold text-blue-900">{corridorCount}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.08em] text-slate-500">
-                    {dictionary.company.corridorTitle}
                   </p>
                 </div>
               </div>
@@ -146,7 +139,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
               </p>
             </div>
           </Reveal>
-          <div className="mt-5 grid gap-4 sm:mt-7 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:mt-7 sm:gap-5 md:grid-cols-2 xl:grid-cols-2">
             {categories.map((category, index) => (
               <Reveal key={category.slug} y={20} delayMs={index * 70}>
                 <article className="tp-card-lift overflow-hidden rounded-2xl border border-blue-200/60 bg-gradient-to-br from-white to-blue-50/70">

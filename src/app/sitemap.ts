@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getDictionary, SUPPORTED_LANGS } from "@/content";
+import { TEAM_PAGE_HIDDEN } from "@/content/visibility";
 
 const BASE_URL = "https://terrapretiosa.com";
 
@@ -10,7 +11,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const d = getDictionary(lang);
 
     // Static pages
-    const staticRoutes = ["", "/company", "/services", "/team", "/contact", "/news", "/mission"];
+    const staticRoutes = [
+      "",
+      "/company",
+      "/services",
+      "/team",
+      "/contact",
+      "/news",
+      "/mission",
+    ].filter((route) => !(TEAM_PAGE_HIDDEN && route === "/team"));
     for (const route of staticRoutes) {
       entries.push({
         url: `${BASE_URL}/${lang}${route}`,

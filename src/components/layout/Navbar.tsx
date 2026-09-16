@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { SearchOverlay } from "@/components/layout/SearchOverlay";
-import { megaMenuCategoryOrder } from "@/content/nav";
 import type { Dictionary, Lang } from "@/content/types";
+import { TEAM_PAGE_HIDDEN } from "@/content/visibility";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { cn } from "@/lib/cn";
 
@@ -25,8 +25,10 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
+  // Dérivé des catégories visibles plutôt que d'une liste parallèle : masquer
+  // une catégorie ne doit pas laisser le méga-menu ouvrir sur un slug absent.
   const [activeCategorySlug, setActiveCategorySlug] = useState<string>(
-    megaMenuCategoryOrder[0],
+    dictionary.services.categories[0]?.slug ?? "",
   );
 
   const altLang: Lang = lang === "fr" ? "en" : "fr";
@@ -173,12 +175,14 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
             >
               {dictionary.nav.company}
             </button>
-            <Link
-              href={`/${lang}/team`}
-              className="px-3 py-1 text-sm transition hover:-translate-y-0.5 hover:text-cyan-200"
-            >
-              {dictionary.nav.team}
-            </Link>
+            {TEAM_PAGE_HIDDEN ? null : (
+              <Link
+                href={`/${lang}/team`}
+                className="px-3 py-1 text-sm transition hover:-translate-y-0.5 hover:text-cyan-200"
+              >
+                {dictionary.nav.team}
+              </Link>
+            )}
             <Link
               href={`/${lang}/news`}
               className="px-3 py-1 text-sm transition hover:-translate-y-0.5 hover:text-cyan-200"
@@ -391,13 +395,15 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
                 </div>
               ) : null}
 
-              <Link
-                href={`/${lang}/team`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
-              >
-                {dictionary.nav.team}
-              </Link>
+              {TEAM_PAGE_HIDDEN ? null : (
+                <Link
+                  href={`/${lang}/team`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-wide transition hover:bg-white/10"
+                >
+                  {dictionary.nav.team}
+                </Link>
+              )}
               <Link
                 href={`/${lang}/news`}
                 onClick={() => setMobileMenuOpen(false)}

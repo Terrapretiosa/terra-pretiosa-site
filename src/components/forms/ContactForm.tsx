@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import type { Dictionary } from "@/content/types";
+import { buildMailtoHref } from "@/lib/mailto";
 
 interface ContactFormProps {
   dictionary: Dictionary;
@@ -14,7 +15,6 @@ interface ContactValues {
   email: string;
   phone: string;
   serviceLocation: string;
-  stateProvince: string;
   serviceIndustry: string;
   enquiryType: string;
   message: string;
@@ -32,7 +32,6 @@ export function ContactForm({ dictionary }: ContactFormProps) {
     email: "",
     phone: "",
     serviceLocation: "",
-    stateProvince: "",
     serviceIndustry: "",
     enquiryType: "",
     message: "",
@@ -82,21 +81,28 @@ export function ContactForm({ dictionary }: ContactFormProps) {
       return;
     }
 
-    console.log("Contact form payload:", values);
+    const f = dictionary.contact.formFields;
+    const href = buildMailtoHref(
+      dictionary.contact.emailValue,
+      `${dictionary.contact.pageTitle} — ${values.firstName} ${values.lastName}`.trim(),
+      [
+        { label: f.firstName.replace(" *", ""), value: values.firstName },
+        { label: f.lastName.replace(" *", ""), value: values.lastName },
+        { label: f.email.replace(" *", ""), value: values.email },
+        { label: f.phoneOptional, value: values.phone },
+        { label: f.serviceLocation.replace(" *", ""), value: values.serviceLocation },
+        { label: f.serviceIndustry, value: values.serviceIndustry },
+        { label: f.enquiryType.replace(" *", ""), value: values.enquiryType },
+        { label: f.message.replace(" *", ""), value: values.message },
+      ],
+    );
+
+    // Les valeurs ne sont volontairement PAS réinitialisées : si le visiteur
+    // n'a pas de logiciel de messagerie configuré, rien ne s'ouvrira et il ne
+    // doit pas perdre ce qu'il a saisi.
     setSubmitted(true);
-    setValues({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      serviceLocation: "",
-      stateProvince: "",
-      serviceIndustry: "",
-      enquiryType: "",
-      message: "",
-      consent: false,
-    });
     setErrors({});
+    window.location.href = href;
   };
 
   const fieldClass =
@@ -163,41 +169,16 @@ export function ContactForm({ dictionary }: ContactFormProps) {
 
           <div>
             <label className={labelClass}>{dictionary.contact.formFields.serviceLocation}</label>
-            <select
+            <input
               value={values.serviceLocation}
               onChange={(event) =>
                 setValues((prev) => ({ ...prev, serviceLocation: event.target.value }))
               }
               className={fieldClass}
-            >
-              <option value="">{dictionary.contact.formOptions.selectPlaceholder}</option>
-              {dictionary.contact.formOptions.serviceLocations.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+            />
             {errors.serviceLocation ? (
               <p className="mt-1 text-xs text-red-600">{errors.serviceLocation}</p>
             ) : null}
-          </div>
-
-          <div>
-            <label className={labelClass}>{dictionary.contact.formFields.stateProvince}</label>
-            <select
-              value={values.stateProvince}
-              onChange={(event) =>
-                setValues((prev) => ({ ...prev, stateProvince: event.target.value }))
-              }
-              className={fieldClass}
-            >
-              <option value="">{dictionary.contact.formOptions.selectPlaceholder}</option>
-              {dictionary.contact.formOptions.statesProvinces.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
           </div>
 
           <div>
@@ -218,7 +199,7 @@ export function ContactForm({ dictionary }: ContactFormProps) {
             </select>
           </div>
 
-          <div>
+          <div className="sm:col-span-2">
             <label className={labelClass}>{dictionary.contact.formFields.enquiryType}</label>
             <select
               value={values.enquiryType}
@@ -280,9 +261,17 @@ export function ContactForm({ dictionary }: ContactFormProps) {
       </div>
 
       {submitted && !hasErrors ? (
-        <p className="tp-enter-up rounded-sm border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
-          {dictionary.contact.formSuccess}
-        </p>
+        <div className="tp-enter-up rounded-sm border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+          <p>{dictionary.contact.formSuccess}</p>
+          <p className="mt-1">
+            <a
+              href={`mailto:${dictionary.contact.emailValue}`}
+              className="font-semibold underline underline-offset-2"
+            >
+              {dictionary.contact.emailValue}
+            </a>
+          </p>
+        </div>
       ) : null}
     </form>
   );

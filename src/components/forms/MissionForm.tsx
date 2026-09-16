@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import type { Dictionary } from "@/content/types";
+import { buildMailtoHref } from "@/lib/mailto";
 
 interface MissionFormProps {
   dictionary: Dictionary;
@@ -72,19 +73,26 @@ export function MissionForm({ dictionary }: MissionFormProps) {
       return;
     }
 
-    console.log("Mission form payload:", values);
+    const f = dictionary.mission.formFields;
+    const href = buildMailtoHref(
+      dictionary.contact.emailValue,
+      `${dictionary.mission.pageTitle} — ${values.name}`.trim(),
+      [
+        { label: f.name, value: values.name },
+        { label: f.email, value: values.email },
+        { label: f.organization, value: values.organization },
+        { label: f.country, value: values.country },
+        { label: f.missionType, value: values.missionType },
+        { label: f.timeline, value: values.timeline },
+        { label: f.budget, value: values.budget },
+        { label: f.details, value: values.details },
+      ],
+    );
+
+    // Valeurs conservées volontairement — voir ContactForm.
     setSubmitted(true);
-    setValues({
-      name: "",
-      email: "",
-      organization: "",
-      country: "",
-      missionType: "",
-      timeline: "",
-      budget: "",
-      details: "",
-    });
     setErrors({});
+    window.location.href = href;
   };
 
   const fieldClass =
@@ -216,9 +224,17 @@ export function MissionForm({ dictionary }: MissionFormProps) {
       </button>
 
       {submitted && !hasErrors ? (
-        <p className="tp-enter-up rounded-sm border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
-          {dictionary.mission.formSuccess}
-        </p>
+        <div className="tp-enter-up rounded-sm border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+          <p>{dictionary.mission.formSuccess}</p>
+          <p className="mt-1">
+            <a
+              href={`mailto:${dictionary.contact.emailValue}`}
+              className="font-semibold underline underline-offset-2"
+            >
+              {dictionary.contact.emailValue}
+            </a>
+          </p>
+        </div>
       ) : null}
     </form>
   );

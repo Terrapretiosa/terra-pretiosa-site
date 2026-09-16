@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Dictionary, Lang } from "@/content/types";
+import { TEAM_PAGE_HIDDEN } from "@/content/visibility";
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -29,7 +30,9 @@ export function SearchOverlay({
     const baseItems: SearchItem[] = [
       { label: dictionary.nav.services, href: `/${lang}/services` },
       { label: dictionary.nav.company, href: `/${lang}/company` },
-      { label: dictionary.nav.team, href: `/${lang}/team` },
+      ...(TEAM_PAGE_HIDDEN
+        ? []
+        : [{ label: dictionary.nav.team, href: `/${lang}/team` }]),
       { label: dictionary.nav.news, href: `/${lang}/news` },
       { label: dictionary.nav.contact, href: `/${lang}/contact` },
       { label: dictionary.nav.mission, href: `/${lang}/mission` },

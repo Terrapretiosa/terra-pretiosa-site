@@ -129,7 +129,14 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 <p className="mt-3 tp-heading text-xs text-blue-900">
                   {dictionary.contact.emailLabel}
                 </p>
-                <p className="mt-1 text-sm text-slate-600">{dictionary.contact.emailValue}</p>
+                <p className="mt-1 text-sm">
+                  <a
+                    href={`mailto:${dictionary.contact.emailValue}`}
+                    className="text-blue-800 underline underline-offset-2 transition hover:text-blue-600"
+                  >
+                    {dictionary.contact.emailValue}
+                  </a>
+                </p>
               </article>
             </div>
           </Reveal>
