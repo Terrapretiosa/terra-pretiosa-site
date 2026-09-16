@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   },
   description:
     "Terra Pretiosa — Mining services, mineral governance, and raw materials consulting across Africa and beyond.",
-  metadataBase: new URL("https://terrapretiosa.com"),
+  // Le domaine servi est celui avec "www" : l'apex terrapretiosa.com renvoie
+  // un 308 vers lui. Déclarer l'apex ici ferait pointer toutes les URL
+  // canoniques et de partage social vers une adresse qui redirige.
+  metadataBase: new URL("https://www.terrapretiosa.com"),
   openGraph: {
     type: "website",
     siteName: "Terra Pretiosa",

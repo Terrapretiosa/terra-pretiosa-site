@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 import { getDictionary, SUPPORTED_LANGS } from "@/content";
 import { TEAM_PAGE_HIDDEN } from "@/content/visibility";
 
-const BASE_URL = "https://terrapretiosa.com";
+// Avec "www" : c'est le domaine que Vercel sert, l'apex y redirige en 308.
+// Doit rester aligné sur metadataBase (layout.tsx) et robots.ts.
+const BASE_URL = "https://www.terrapretiosa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
