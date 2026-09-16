@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
       ? "Services miniers, gouvernance des matières premières minérales et conseil en Afrique et au-delà."
       : "Mining services, mineral governance, and raw materials consulting across Africa and beyond.",
     alternates: {
+      canonical: `/${lang}`,
       languages: { fr: "/fr", en: "/en" },
     },
   };

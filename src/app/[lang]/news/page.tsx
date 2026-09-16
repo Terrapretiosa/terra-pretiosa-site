@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: NewsPageProps): Promise<Metad
     title: d.news.pageTitle,
     description: d.news.intro,
     alternates: {
+      canonical: `/${lang}/news`,
       languages: { fr: "/fr/news", en: "/en/news" },
     },
   };
