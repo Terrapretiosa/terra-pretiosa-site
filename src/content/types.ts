@@ -44,6 +44,27 @@ export interface HighlightItem {
   image: string;
 }
 
+/**
+ * Un panneau de la séquence narrative au défilement de la page d'accueil.
+ *
+ * `mode` décrit ce que la photographie permet, pas un effet choisi :
+ *   pan      — scène unique, on la balaie latéralement
+ *   parallax — scène unique, léger décalage vertical
+ *   wipe     — vrai diptyque, la séparation glisse d'une moitié à l'autre
+ *
+ * `imageAlt` est obligatoire : ces photographies racontent, elles ne décorent
+ * pas. Pour un `wipe`, le texte doit décrire les DEUX moitiés, puisqu'il s'agit
+ * d'une seule photographie.
+ */
+export interface TransformationBeat {
+  eyebrow: string;
+  title: string;
+  text: string;
+  image: string;
+  imageAlt: string;
+  mode: "pan" | "parallax" | "wipe";
+}
+
 export interface ServiceItem {
   slug: string;
   title: string;
@@ -130,6 +151,11 @@ export interface Dictionary {
       title: string;
       missionCta: string;
       contactCta: string;
+    };
+    transformation: {
+      title: string;
+      intro: string;
+      beats: TransformationBeat[];
     };
   };
   company: {

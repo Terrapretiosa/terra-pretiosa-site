@@ -7,6 +7,7 @@ import { NewsHighlights } from "@/components/home/NewsHighlights";
 import { NewsInsights } from "@/components/home/NewsInsights";
 import { ServiceCardsGrid } from "@/components/home/ServiceCardsGrid";
 import { ServicesSitemapHero } from "@/components/home/ServicesSitemapHero";
+import { TransformationScroll } from "@/components/home/TransformationScroll";
 import { Reveal } from "@/components/motion/Reveal";
 import { getDictionary, isSupportedLang } from "@/content";
 
@@ -108,6 +109,11 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <ServicesSitemapHero lang={lang} dictionary={dictionary} />
       <ServiceCardsGrid lang={lang} dictionary={dictionary} />
+      <TransformationScroll
+        title={dictionary.home.transformation.title}
+        intro={dictionary.home.transformation.intro}
+        beats={dictionary.home.transformation.beats}
+      />
       <NewsInsights dictionary={dictionary} />
       <NewsHighlights lang={lang} dictionary={dictionary} />
 
