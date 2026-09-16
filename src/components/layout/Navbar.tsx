@@ -116,13 +116,40 @@ export function Navbar({ lang, dictionary }: NavbarProps) {
     };
   }, []);
 
+  // Le bandeau ne devient transparent qu'en haut de la page d'accueil, où il se
+  // pose sur la première scène plein cadre. La condition sur les panneaux n'est
+  // pas un détail : le méga-menu et le tiroir mobile sont des panneaux opaques,
+  // et un bandeau translucide au-dessus se lirait comme un défaut d'affichage.
+  //
+  // `pathname` peut valoir null : les deux comparaisons sont alors fausses, donc
+  // on retombe sur l'état opaque. Échec du bon côté.
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
+  const isOverlayOpen = Boolean(openMenu) || searchOpen || mobileMenuOpen;
+  const isTransparent = isHome && !isScrolled && !isOverlayOpen;
+
+  // UN SEUL jeton de fond est émis, via une chaîne ternaire.
+  //
+  // `cn` (src/lib/cn.ts) est un simple `join` : il n'arbitre rien. Deux classes
+  // `bg-*` dans la même chaîne laisseraient trancher l'ordre du CSS généré,
+  // lequel suit l'ordre ALPHABÉTIQUE des noms de couleur de Tailwind. Ça
+  // fonctionnerait aujourd'hui — « transparent » passe après « blue » — mais par
+  // accident de vocabulaire, et ça s'inverserait le jour où la base deviendrait
+  // `slate` ou `zinc`. La chaîne ci-dessous rend le résultat indépendant de cet
+  // ordre.
+  //
+  // `border-b` reste dans la base et seule sa COULEUR varie : la hauteur peinte
+  // tient ainsi à 57 px dans les trois états, ce dont dépendent le `-mt-14` de
+  // la première section et le `top-14` du tiroir mobile.
+  const headerTone = isTransparent
+    ? "border-transparent bg-transparent bg-gradient-to-b from-blue-950/70 to-transparent"
+    : isScrolled
+      ? "border-cyan-300/35 bg-blue-950/95 shadow-[0_8px_20px_rgba(2,6,23,0.3)] backdrop-blur"
+      : "border-cyan-300/35 bg-blue-900";
+
   return (
     <div ref={rootRef} className="fixed inset-x-0 top-0 z-50">
       <header
-        className={cn(
-          "border-b border-cyan-300/35 bg-blue-900 text-white transition-all duration-300",
-          isScrolled && "bg-blue-950/95 shadow-[0_8px_20px_rgba(2,6,23,0.3)] backdrop-blur",
-        )}
+        className={cn("border-b text-white transition-all duration-300", headerTone)}
       >
         <div className="tp-container flex h-14 items-center gap-3">
           <Link
