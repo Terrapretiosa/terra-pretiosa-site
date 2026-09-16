@@ -123,19 +123,8 @@ body {
 
 /* ---------------------------------------------------------------------------
    Séquence narrative au défilement (TransformationScroll)
-
-   --tp-wipe va de 0 (état initial) à 1 (état achevé). Le composant l'écrit
-   directement sur l'élément, sans passer par un état React.
-
-   La déclaration @property est porteuse, pas décorative : sans elle, une
-   variable non définie rendrait toute la règle clip-path invalide, celle-ci
-   retomberait sur `none`, et la moitié « après » couvrirait tout le cadre sans
-   aucun balayage. L'échec se ferait dans le mauvais sens.
-
-   initial-value vaut 1 et non 0 : l'état au repos doit être l'état ACHEVÉ,
-   pour que la section reste lisible sans JavaScript et en mouvement réduit.
-   --------------------------------------------------------------------------- */
-/* --tp-p : avancement linéaire de la scène épinglée, 0 à 1.
+   ---------------------------------------------------------------------------
+   --tp-p : avancement linéaire de la scène épinglée, 0 à 1.
    --tp-t : enveloppe du texte (entrée, maintien, sortie), calculée en JS.
 
    Les deux sont déclarées avec initial-value: 1 — l'état AU REPOS est l'état
@@ -178,34 +167,34 @@ body {
    Valeurs dérivées de company/sustainable-rehabilitation.webp. Elles dépendent
    du FICHIER : remplacer la photo oblige à remesurer et à réécrire ce bloc.
 
-   Césure mesurée à x=1098 sur 2160, soit 50,83 %. C'est une bande d'environ
-   3 px (1096–1098), pas une ligne : prendre 1098 place toute la zone de
+   Césure mesurée à x=1301 sur 2560, soit 50,82 %. C'est une bande d'environ
+   4 px (1298–1301), pas une ligne : prendre 1301 place toute la zone de
    transition du côté « avant ». Ne pas la « corriger » vers le centre de la
    bande, la moitié « après » en hériterait.
 
-   Les deux moitiés ne font PAS la même largeur — 1098 px contre 1062 px — donc
+   Les deux moitiés ne font PAS la même largeur — 1301 px contre 1259 px — donc
    elles ne peuvent pas remplir la même scène à la même échelle. Chaque couche
    porte sa propre largeur (W = largeur de la scène) :
 
-     couche avant : 2160/1098 = 196,72 %  à  left: 0
-       → la fenêtre montre exactement la source [0, 1098]
-     couche après : 2160/1062 = 203,39 %  à  left: -103,39 %
-       → la fenêtre montre exactement la source [1098, 2160]
+     couche avant : 2560/1301 = 196,77 %  à  left: 0
+       → la fenêtre montre exactement la source [0, 1301]
+     couche après : 2560/1259 = 203,34 %  à  left: -103,34 %
+       → la fenêtre montre exactement la source [1301, 2560]
 
    Aucune fuite d'une moitié dans l'autre, aucun bord vide. L'écart d'échelle
    de 0,7 % entre les deux moitiés est imperceptible.
 
    À NE PAS simplifier en deux couches de 200 % : la moitié « après »
-   emporterait alors 18 px de la scène « avant » sur son bord gauche, visibles
+   emporterait alors 21 px de la scène « avant » sur son bord gauche, visibles
    en permanence à l'état achevé. */
 .tp-wipe-layer-before {
-  width: 196.72%;
+  width: 196.77%;
   left: 0;
 }
 
 .tp-wipe-layer-after {
-  width: 203.39%;
-  left: -103.39%;
+  width: 203.34%;
+  left: -103.34%;
 }
 
 /* La fenêtre qui découvre la moitié « après ». */
