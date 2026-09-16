@@ -1,5 +1,11 @@
 import { fr } from "./fr";
-import { highlightMedia, homeMedia, newsMedia } from "./media";
+import {
+  companyMedia,
+  highlightMedia,
+  homeMedia,
+  newsMedia,
+  serviceMedia,
+} from "./media";
 import type { Dictionary } from "./types";
 
 const categoryTranslations: Record<string, { title: string; summary: string }> =
@@ -468,7 +474,9 @@ export const en: Dictionary = {
           "Strategic advisory firm specialized in mineral-resource governance, supply-chain resilience, and sustainable industrialization in Africa.",
         ctaLabel: "See our approach",
         ctaHref: "/en/company",
-        image: homeMedia.heroGovernance,
+        // See the note in fr.ts: heroGovernance is an AI-generated image,
+        // replaced in the carousel only.
+        image: companyMedia.megatrends,
       },
       {
         title: "Partner to states and industry",
@@ -546,6 +554,52 @@ export const en: Dictionary = {
       title: "Ready to launch a structuring mission?",
       missionCta: "Launch a mission",
       contactCta: "Contact us",
+    },
+    // Scroll-driven narrative. Images come through media.ts, which is NOT
+    // filtered by visibility.ts — none of these four belongs to the hidden
+    // category; checked when this was written.
+    transformation: {
+      title: "From rock to rehabilitation",
+      intro:
+        "A mine produces material. Our work is to turn it into decisions that hold up, and then to give the ground back.",
+      beats: [
+        {
+          eyebrow: "01 — The material",
+          title: "It starts with a representative sample",
+          text: "An assay result is worth exactly what the test portion behind it is worth. Drying, crushing, grinding, homogenisation: reliability is decided here, before any instrument is switched on.",
+          image: highlightMedia.diagnostic,
+          imageAlt:
+            "Two steel sieve pans on red laterite ground: coarse gravel in one, fine sand in the other.",
+          mode: "pan",
+        },
+        {
+          eyebrow: "02 — The measurement",
+          title: "We measure the water before we talk about it",
+          text: "Surface and groundwater monitoring, effluents, acid mine drainage. Thresholds matched to each use and each site, with compliance reporting that stands up in front of a regulator.",
+          image: serviceMedia["surveillance-qualite-des-eaux"],
+          imageAlt:
+            "A gloved hand holds a tube of turbid water drawn from a forest-edged lake.",
+          mode: "parallax",
+        },
+        {
+          eyebrow: "03 — The traceability",
+          title: "Every sample carries its identity",
+          text: "Documented chain of custody, blanks, duplicates and certified reference materials. Without traceability, a figure is only an opinion with a decimal point.",
+          image: highlightMedia.performance,
+          imageAlt:
+            "Barcoded sample tubes beside sheets of barcode labels, on a black background.",
+          mode: "parallax",
+        },
+        {
+          eyebrow: "04 — The rehabilitation",
+          title: "Putting the ground back starts here",
+          text: "Liability assessment, stabilisation, phased revegetation. The work does not end the day extraction stops — that is the day it begins.",
+          image: companyMedia.sustainable,
+          imageAlt:
+            "A photograph in two halves: on the left, orange acidic water and bare earth scattered with dead trees; on the right, young plants, some still in their pots, set out in rows on dark soil up to the forest edge.",
+          mode: "wipe",
+        },
+      ],
     },
   },
   company: {

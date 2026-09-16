@@ -1,5 +1,6 @@
 import {
   categoryMedia,
+  companyMedia,
   highlightMedia,
   homeMedia,
   newsMedia,
@@ -378,7 +379,11 @@ export const fr: Dictionary = {
           "Firme stratégique spécialisée en prestation de services et gouvernance des ressources minérales, résilience des chaînes d'approvisionnement et industrialisation durable en Afrique.",
         ctaLabel: "Voir notre approche",
         ctaHref: "/fr/company",
-        image: homeMedia.heroGovernance,
+        // homeMedia.heroGovernance est une image générée par IA (mineur, piles
+        // de pièces, flèche verte, main déformée). Remplacée ici seulement :
+        // elle reste en place sur la page entreprise, la catégorie gouvernance
+        // et ses trois services — choix explicite du client.
+        image: companyMedia.megatrends,
       },
       {
         title: "Partenaire des États et des industriels",
@@ -456,6 +461,52 @@ export const fr: Dictionary = {
       title: "Prêt à lancer une mission structurante ?",
       missionCta: "Lancer une mission",
       contactCta: "Nous contacter",
+    },
+    // Séquence narrative au défilement. Les images sont référencées via
+    // media.ts, qui n'est PAS filtré par visibility.ts : aucune de ces quatre
+    // photographies n'appartient à la catégorie masquée, vérifié à l'écriture.
+    transformation: {
+      title: "De la roche à la remise en état",
+      intro:
+        "Une mine produit de la matière. Notre métier est de la transformer en décisions défendables, puis de rendre le terrain.",
+      beats: [
+        {
+          eyebrow: "01 — La matière",
+          title: "Tout commence par un échantillon représentatif",
+          text: "Un résultat d'analyse ne vaut que ce que vaut la prise d'essai qui l'a produit. Séchage, concassage, broyage, homogénéisation : c'est là que se joue la fiabilité de tout ce qui suit.",
+          image: highlightMedia.diagnostic,
+          imageAlt:
+            "Deux tamis d'acier posés sur un sol latéritique rouge : gravier grossier dans l'un, sable fin dans l'autre.",
+          mode: "pan",
+        },
+        {
+          eyebrow: "02 — La mesure",
+          title: "On mesure l'eau avant d'en parler",
+          text: "Surveillance des eaux de surface et souterraines, effluents, drainage minier acide. Des seuils adaptés à chaque usage et à chaque site, avec un rapportage de conformité qui tient devant un régulateur.",
+          image: serviceMedia["surveillance-qualite-des-eaux"],
+          imageAlt:
+            "Une main gantée tient un tube d'eau trouble prélevée dans un lac bordé de forêt.",
+          mode: "parallax",
+        },
+        {
+          eyebrow: "03 — La traçabilité",
+          title: "Chaque échantillon porte son identité",
+          text: "Chaîne de custody documentée, blancs, duplicatas et standards certifiés. Sans traçabilité, une donnée n'est qu'une opinion chiffrée.",
+          image: highlightMedia.performance,
+          imageAlt:
+            "Des tubes d'échantillons étiquetés de codes-barres, posés près de planches d'étiquettes, sur fond noir.",
+          mode: "parallax",
+        },
+        {
+          eyebrow: "04 — La remise en état",
+          title: "La remise en état commence ici",
+          text: "Diagnostic des passifs, stabilisation, revégétalisation progressive. Le chantier n'est pas fini le jour où l'on cesse d'extraire — il commence.",
+          image: companyMedia.sustainable,
+          imageAlt:
+            "Photographie en deux moitiés : à gauche une eau acide orangée et une terre nue parsemée d'arbres morts ; à droite de jeunes plants, certains encore dans leurs pots, alignés sur un sol sombre jusqu'à la lisière de la forêt.",
+          mode: "wipe",
+        },
+      ],
     },
   },
   company: {

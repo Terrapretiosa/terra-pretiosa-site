@@ -121,6 +121,68 @@ body {
   background-clip: padding-box, border-box;
 }
 
+/* ---------------------------------------------------------------------------
+   Séquence narrative au défilement (TransformationScroll)
+
+   --tp-wipe va de 0 (état initial) à 1 (état achevé). Le composant l'écrit
+   directement sur l'élément, sans passer par un état React.
+
+   La déclaration @property est porteuse, pas décorative : sans elle, une
+   variable non définie rendrait toute la règle clip-path invalide, celle-ci
+   retomberait sur `none`, et la moitié « après » couvrirait tout le cadre sans
+   aucun balayage. L'échec se ferait dans le mauvais sens.
+
+   initial-value vaut 1 et non 0 : l'état au repos doit être l'état ACHEVÉ,
+   pour que la section reste lisible sans JavaScript et en mouvement réduit.
+   --------------------------------------------------------------------------- */
+@property --tp-wipe {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+/* Moitié « après » d'un diptyque : entièrement masquée à 0, découverte à 1. */
+.tp-wipe-after {
+  clip-path: inset(0 0 0 calc(100% * (1 - var(--tp-wipe))));
+}
+
+/* Filet de séparation, qui suit le bord du découpage. Il nomme la frontière et
+   masque au passage l'erreur sous-pixel au niveau de la césure de la source. */
+.tp-wipe-seam {
+  left: calc(100% * (1 - var(--tp-wipe)));
+}
+
+/* Scène unique balayée latéralement : la couche interne est plus large que son
+   cadre et glisse. Transformation composée, pas de repeint. */
+.tp-beat-pan {
+  transform: translate3d(calc(var(--tp-wipe) * -15%), 0, 0);
+}
+
+/* Parallaxe verticale douce. Le signe s'inverse via --tp-dir (1 ou -1). */
+.tp-beat-parallax {
+  transform: translate3d(0, calc((0.5 - var(--tp-wipe)) * 22px * var(--tp-dir, 1)), 0)
+    scale(1.04);
+}
+
+/* Le texte monte et s'éclaircit. Plancher à 0.45 : lisible même à 0. */
+.tp-beat-text {
+  transform: translate3d(0, calc((1 - var(--tp-wipe)) * 14px), 0);
+  opacity: calc(0.45 + var(--tp-wipe) * 0.55);
+}
+
+/* Les deux états déclaratifs où rien ne doit bouger : l'état achevé. */
+@media (prefers-reduced-motion: reduce) {
+  .tp-beat {
+    --tp-wipe: 1;
+  }
+}
+
+@media (scripting: none) {
+  .tp-beat {
+    --tp-wipe: 1;
+  }
+}
+
 @keyframes tpDrift {
   0% {
     background-position: 0% 0%, 100% 0%, 0 0;
