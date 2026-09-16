@@ -559,6 +559,9 @@ export const en: Dictionary = {
     // filtered by visibility.ts — none of these four belongs to the hidden
     // category; checked when this was written.
     transformation: {
+      leadTitle: "Human civilization depends on the ground and subsoil",
+      leadCtaLabel: "Explore services",
+      leadCtaHref: "/en/services",
       title: "From rock to rehabilitation",
       intro:
         "A mine produces material. Our work is to turn it into decisions that hold up, and then to give the ground back.",

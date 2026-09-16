@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FeatureCircleRow } from "@/components/home/FeatureCircleRow";
-import { HeroCarousel } from "@/components/home/HeroCarousel";
 import { NewsHighlights } from "@/components/home/NewsHighlights";
 import { NewsInsights } from "@/components/home/NewsInsights";
 import { ServiceCardsGrid } from "@/components/home/ServiceCardsGrid";
@@ -61,7 +60,19 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <>
-      <HeroCarousel dictionary={dictionary} />
+      {/* Ouvre la page : le -mt-14 de cette section mange les 56px de <main>.
+          Toute section insérée AVANT celle-ci les perdrait. */}
+      <TransformationScroll
+        lead
+        lang={lang}
+        leadTitle={dictionary.home.transformation.leadTitle}
+        leadCtaLabel={dictionary.home.transformation.leadCtaLabel}
+        leadCtaHref={dictionary.home.transformation.leadCtaHref}
+        title={dictionary.home.transformation.title}
+        intro={dictionary.home.transformation.intro}
+        beats={dictionary.home.transformation.beats}
+        ctaBand={dictionary.home.ctaBand}
+      />
 
       {/* Stats strip */}
       <section className="relative border-b border-blue-100/70 bg-white py-8 sm:py-12">
@@ -110,11 +121,6 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <ServicesSitemapHero lang={lang} dictionary={dictionary} />
       <ServiceCardsGrid lang={lang} dictionary={dictionary} />
-      <TransformationScroll
-        title={dictionary.home.transformation.title}
-        intro={dictionary.home.transformation.intro}
-        beats={dictionary.home.transformation.beats}
-      />
       <NewsInsights dictionary={dictionary} />
       <NewsHighlights lang={lang} dictionary={dictionary} />
 

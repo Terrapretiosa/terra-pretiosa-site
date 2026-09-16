@@ -175,30 +175,37 @@ body {
 }
 
 /* ---- Balayage avant/après en plein écran -------------------------------
-   La césure de la source est mesurée à x=781/1536, soit 50,85 % : les deux
-   moitiés ne font PAS la même largeur (781 px contre 755 px). Elles ne peuvent
-   donc pas remplir la même scène à la même échelle. Chaque couche porte donc
-   sa propre largeur, dérivée ainsi (W = largeur de la scène) :
+   Valeurs dérivées de company/sustainable-rehabilitation.webp. Elles dépendent
+   du FICHIER : remplacer la photo oblige à remesurer et à réécrire ce bloc.
 
-     couche avant : 1536/781 = 196,67 %  à  left: 0
-       → la fenêtre montre exactement la source [0, 781]
-     couche après : 1536/755 = 203,44 %  à  left: -103,44 %
-       → la fenêtre montre exactement la source [781, 1536]
+   Césure mesurée à x=1098 sur 2160, soit 50,83 %. C'est une bande d'environ
+   3 px (1096–1098), pas une ligne : prendre 1098 place toute la zone de
+   transition du côté « avant ». Ne pas la « corriger » vers le centre de la
+   bande, la moitié « après » en hériterait.
+
+   Les deux moitiés ne font PAS la même largeur — 1098 px contre 1062 px — donc
+   elles ne peuvent pas remplir la même scène à la même échelle. Chaque couche
+   porte sa propre largeur (W = largeur de la scène) :
+
+     couche avant : 2160/1098 = 196,72 %  à  left: 0
+       → la fenêtre montre exactement la source [0, 1098]
+     couche après : 2160/1062 = 203,39 %  à  left: -103,39 %
+       → la fenêtre montre exactement la source [1098, 2160]
 
    Aucune fuite d'une moitié dans l'autre, aucun bord vide. L'écart d'échelle
    de 0,7 % entre les deux moitiés est imperceptible.
 
    À NE PAS simplifier en deux couches de 200 % : la moitié « après »
-   emporterait alors 13 px de la scène « avant » sur son bord gauche, visibles
+   emporterait alors 18 px de la scène « avant » sur son bord gauche, visibles
    en permanence à l'état achevé. */
 .tp-wipe-layer-before {
-  width: 196.67%;
+  width: 196.72%;
   left: 0;
 }
 
 .tp-wipe-layer-after {
-  width: 203.44%;
-  left: -103.44%;
+  width: 203.39%;
+  left: -103.39%;
 }
 
 /* La fenêtre qui découvre la moitié « après ». */
@@ -212,11 +219,29 @@ body {
   left: calc(100% * (1 - var(--tp-p)));
 }
 
-/* Les deux états déclaratifs où rien ne doit bouger : l'état achevé. */
+/* Mouvement réduit.
+
+   ATTENTION, et ce commentaire remplace une affirmation fausse : ces
+   déclarations de --tp-p / --tp-t sont INATTEINTES. Chaque .tp-scene porte les
+   mêmes propriétés dans son attribut `style` en ligne, qui l'emporte sur un
+   sélecteur de classe. Elles posent les mêmes valeurs, donc rien ne casse — mais
+   ce n'est pas d'ici que vient le repli. Ce qui l'assure réellement, c'est
+   `@property { initial-value: 1 }` plus le style en ligne.
+
+   Ce que ce bloc fait vraiment, et qui compte : ramener la piste à la hauteur
+   d'une scène. Sans ça, un utilisateur en mouvement réduit traverserait quand
+   même douze écrans de quatre images fixes. La hauteur arrive elle aussi en
+   ligne, d'où la variable --tp-track : c'est le seul moyen pour le CSS d'avoir
+   le dernier mot. */
+.tp-scene {
+  height: var(--tp-track);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tp-scene {
     --tp-p: 1;
     --tp-t: 1;
+    --tp-track: 100svh;
   }
 }
 

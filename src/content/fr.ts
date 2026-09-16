@@ -466,6 +466,9 @@ export const fr: Dictionary = {
     // media.ts, qui n'est PAS filtré par visibility.ts : aucune de ces quatre
     // photographies n'appartient à la catégorie masquée, vérifié à l'écriture.
     transformation: {
+      leadTitle: "La civilisation humaine doit tout au sol et au sous-sol",
+      leadCtaLabel: "Découvrir nos services",
+      leadCtaHref: "/fr/services",
       title: "De la roche à la remise en état",
       intro:
         "Une mine produit de la matière. Notre métier est de la transformer en décisions défendables, puis de rendre le terrain.",

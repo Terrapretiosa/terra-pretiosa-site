@@ -153,6 +153,20 @@ export interface Dictionary {
       contactCta: string;
     };
     transformation: {
+      /**
+       * Le `<h1>` du document quand la section ouvre la page. Distinct de
+       * `title`, qui reste le titre de la séquence : la phrase de
+       * positionnement de l'entreprise vaut mieux, comme titre de page, qu'un
+       * intitulé narratif.
+       */
+      leadTitle: string;
+      /**
+       * Bouton de la première scène. Clés propres à la section plutôt que
+       * réemploi de `home.hero[0]`, qui appartient au carrousel : la section ne
+       * doit pas dépendre de données qu'elle n'affiche pas.
+       */
+      leadCtaLabel: string;
+      leadCtaHref: string;
       title: string;
       intro: string;
       beats: TransformationBeat[];
