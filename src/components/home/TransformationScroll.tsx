@@ -47,11 +47,13 @@ const DEAD_BAND = 0.003;
  * de next.config.ts : une valeur non déclarée ne produit qu'un avertissement au
  * build, mais /_next/image répond 400 en production.
  *
- * 62 plutôt que 75 : ces photographies sont plein cadre, en mouvement, sous un
- * voile blue-950/35 à /85. Mesuré sur un build de production, l'image LCP passe
- * de 364 Ko à 211 Ko en 1920 et tient sous 75 Ko en 828.
+ * 55 et non 75 : ces photographies sont plein cadre, en mouvement, sous un voile
+ * blue-950/35 à /85. Les sources agrandies en 4000 px portent beaucoup plus de
+ * haute fréquence, donc un même réglage coûte davantage — à 62 l'image LCP
+ * pesait 295 Ko et sortait du budget. À 55 elle tient 219 Ko en 1920 et 65 Ko en
+ * 828, tout en restant NETTEMENT plus nette qu'avant : 15,4 contre 10,1.
  */
-const SCENE_QUALITY = 62;
+const SCENE_QUALITY = 55;
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
