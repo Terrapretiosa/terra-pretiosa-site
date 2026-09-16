@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/motion/Reveal";
@@ -17,6 +18,29 @@ import { serviceFaqsBySlugEn, serviceFaqsBySlugFr } from "@/content/serviceFaqs"
 
 interface ServiceDetailPageProps {
   params: Promise<{ lang: string; category: string; slug: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ServiceDetailPageProps): Promise<Metadata> {
+  const { lang, category, slug } = await params;
+  if (!isSupportedLang(lang)) return {};
+  const categoryData = getCategoryBySlug(getDictionary(lang), category);
+  if (!categoryData) return {};
+  const service = getServiceBySlug(categoryData, slug);
+  if (!service) return {};
+  return {
+    title: service.title,
+    description: service.excerpt,
+    alternates: {
+      canonical: `/${lang}/services/${category}/${slug}`,
+      languages: {
+        fr: `/fr/services/${category}/${slug}`,
+        en: `/en/services/${category}/${slug}`,
+      },
+    },
+    openGraph: { images: [service.image] },
+  };
 }
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {

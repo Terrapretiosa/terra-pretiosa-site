@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: ServicesPageProps): Promise<M
     title: d.nav.services,
     description: d.services.landingIntro,
     alternates: {
+      canonical: `/${lang}/services`,
       languages: { fr: "/fr/services", en: "/en/services" },
     },
   };
