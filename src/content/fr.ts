@@ -485,7 +485,7 @@ export const fr: Dictionary = {
         {
           eyebrow: "02 — La mesure",
           title: "On mesure l'eau avant d'en parler",
-          text: "Surveillance des eaux de surface et souterraines, effluents, drainage minier acide. Des seuils adaptés à chaque usage et à chaque site, avec un rapportage de conformité qui tient devant un régulateur.",
+          text: "Surveillance des eaux de surface et souterraines, effluents, drainage minier acide. Des seuils adaptés à chaque usage et à chaque site, avec des rapports de conformité qui tiennent devant un régulateur.",
           image: serviceMedia["surveillance-qualite-des-eaux"],
           imageAlt:
             "Une main gantée tient un tube d'eau trouble prélevée dans un lac bordé de forêt.",
