@@ -266,8 +266,23 @@ export function TransformationScroll({
           <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
             <SceneVisual beat={beat} priority={isLead} />
 
-            {/* Voile : lisibilité du texte par-dessus la photographie. */}
+            {/* Deux voiles, et il en faut deux.
+
+                Le vertical donne l'assise générale. Mais le texte est centré
+                verticalement, donc il tombe dans sa bande la plus CLAIRE (/35).
+                Mesuré sur la photo d'ouverture — de la latérite orange vif —
+                le blanc y descend à 2,2:1 sur les 2 % de fond les plus clairs,
+                très en dessous des 4,5:1 exigés. Éclaircir le texte n'y change
+                presque rien : le blanc pur plafonne à 2,7:1. C'est le fond le
+                problème, pas l'encre.
+
+                D'où le second voile, LATÉRAL : il assombrit la colonne de
+                gauche où vit le texte et se dissipe vers la droite, ce qui
+                laisse la photographie lisible là où personne n'écrit. Combiné
+                au vertical, on atteint ~/70 dans la zone de texte, soit 4,9:1
+                dans le pire cas. */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/35 to-blue-950/60" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-950/70 via-blue-950/50 to-transparent" />
 
             <div className="tp-container relative flex h-full items-end pb-16 sm:items-center sm:pb-0">
               <div className="max-w-xl">
@@ -296,7 +311,7 @@ export function TransformationScroll({
                       {leadTitle}
                     </h1>
                     <p
-                      className="tp-line mt-4 hidden max-w-xl text-base leading-relaxed text-white/75 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:block"
+                      className="tp-line mt-4 hidden max-w-xl text-base leading-relaxed text-white/90 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:block"
                       style={{ "--tp-in": 0.1 } as CSSProperties}
                     >
                       {intro}
@@ -318,7 +333,7 @@ export function TransformationScroll({
                 )}
 
                 <p
-                  className="tp-line mt-5 text-base leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:text-lg"
+                  className="tp-line mt-5 text-base leading-relaxed text-white/90 drop-shadow-[0_1px_10px_rgba(2,6,23,0.8)] sm:text-lg"
                   style={{ "--tp-in": isLead ? 0.3 : 0.18 } as CSSProperties}
                 >
                   {beat.text}

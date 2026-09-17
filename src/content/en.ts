@@ -564,7 +564,7 @@ export const en: Dictionary = {
       leadCtaHref: "/en/services",
       title: "From rock to rehabilitation",
       intro:
-        "A mine produces material. Our work is to turn it into decisions that hold up, and then to give the ground back.",
+        "A mine extracts rock. Our work is to draw verifiable data from it, and then to support the rehabilitation of the site.",
       beats: [
         {
           eyebrow: "01 — The material",

@@ -471,7 +471,7 @@ export const fr: Dictionary = {
       leadCtaHref: "/fr/services",
       title: "De la roche à la remise en état",
       intro:
-        "Une mine produit de la matière. Notre métier est de la transformer en décisions défendables, puis de rendre le terrain.",
+        "Une mine extrait de la roche. Notre métier est d'en tirer des données vérifiables, puis d'accompagner la remise en état du site.",
       beats: [
         {
           eyebrow: "01 — La matière",
